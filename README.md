@@ -18,7 +18,7 @@
   <li>Digitalisation of services </li>
   <li>Workers that may introduce new type of services</li>
   <li>Customers that may introduce specific requirements</li>
-<ul>
+</ul>
 
 <hr>
  
