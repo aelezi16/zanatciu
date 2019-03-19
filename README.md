@@ -5,6 +5,7 @@
 <h1>
   Motivation:
 </h1>
+
 <ul>
   <li>Capable workers and job seekers that have a hard time finding a job or a gig</li>
   <li>Customers that have a hard time finding craftsman, workers, or casual people that can help them</li>
@@ -14,14 +15,14 @@
   <li>Customers that may introduce specific requirements</li>
 <ul>
 
- <hr>
+<hr>
  
- <h1>
+<h1>
   Description:
 </h1>
- <hr>
+<br>
  
- <p>
+<p>
 Zanatciu aims to create a service that connects potential craftsman to people that require their service, and potential service  
 </p>
   
