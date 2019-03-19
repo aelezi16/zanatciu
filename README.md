@@ -1,13 +1,7 @@
-
-<center>
+<h1>Project name: Zanatciu</h1>
   
- <h1>
-Description
- <h1>
-    
-</center>
-
-
-
-
-hhh
+<hr>
+<h1>
+  Description
+</h1>
+  
