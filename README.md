@@ -1,3 +1,8 @@
+<html>
+  <head>
+  </head>  
+  
+<body>
 <h1>Project name: Zanatciu</h1>
   
 <hr>
@@ -25,4 +30,5 @@
 <p>
 Zanatciu aims to create a service that connects potential craftsman to people that require their service, and potential service  
 </p>
-  
+  </body>
+</html>
