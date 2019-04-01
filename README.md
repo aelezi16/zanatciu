@@ -3,7 +3,7 @@
   </head>  
   
 <body>
-<h1>Project name: Zanatciu</h1>
+<h1>Zanatciu</h1>
   
 <hr>
 
