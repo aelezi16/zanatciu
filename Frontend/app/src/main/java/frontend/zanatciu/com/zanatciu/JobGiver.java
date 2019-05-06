@@ -6,4 +6,6 @@ import java.io.Serializable;
 public class JobGiver implements Serializable {
 
 
+
+    int val;
 }
