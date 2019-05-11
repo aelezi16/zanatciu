@@ -1,4 +1,4 @@
-package frontend.zanatciu.com.zanatciu;
+package frontend.zanatciu.com.zanatciu.PunetEMia;
 
 import java.io.Serializable;
 

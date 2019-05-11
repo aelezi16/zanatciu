@@ -1,7 +1,9 @@
-package frontend.zanatciu.com.zanatciu;
+package frontend.zanatciu.com.zanatciu.Funksionalitete.ViewModels;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import frontend.zanatciu.com.zanatciu.R;
 
 public class Login extends AppCompatActivity {
 
