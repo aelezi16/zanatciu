@@ -1,5 +1,6 @@
 package com.zanatciu.backend.domain.profile.service.impl;
 
+import com.zanatciu.backend.config.converter.ModelMapper;
 import com.zanatciu.backend.domain.profile.dto.ProfileDto;
 import com.zanatciu.backend.domain.profile.model.Profile;
 import com.zanatciu.backend.domain.profile.repo.ProfileRepo;
@@ -13,21 +14,31 @@ import java.util.Optional;
 public class ProfileServiceImpl implements ProfileService {
 
     private ProfileRepo profileRepo;
+    private ModelMapper<Profile, ProfileDto> modelMapper;
 
     @Autowired
-    public ProfileServiceImpl(ProfileRepo profileRepo){
+    public ProfileServiceImpl(
+            ProfileRepo profileRepo,
+            ModelMapper<Profile, ProfileDto> modelMapper
+    ){
         this.profileRepo = profileRepo;
+        this.modelMapper = modelMapper;
     }
 
     @Override
     public ProfileDto getById(String id) {
         Optional<Profile> profile = profileRepo.findById(id);
-        //here
-        return null;
+        return profile.isPresent()
+                ? profile.map(modelMapper::modelToDto).get()
+                : null;
     }
 
     @Override
     public ProfileDto save(ProfileDto profileDto) {
-        return null;
+        Optional<ProfileDto> optionalProfileDto = Optional.of(profileDto);
+        Optional<Profile> profile = profileRepo.save(optionalProfileDto.map(modelMapper::dtoToModel).get());
+        return profile.isPresent()
+                ? profile.map(modelMapper::modelToDto).get()
+                : null;
     }
 }
