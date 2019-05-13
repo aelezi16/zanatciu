@@ -1,4 +1,9 @@
 package com.zanatciu.backend.domain.publication.service.impl;
 
-public class PublicationServiceImpl {
+import com.zanatciu.backend.domain.publication.service.PublicationService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PublicationServiceImpl implements PublicationService {
+
 }

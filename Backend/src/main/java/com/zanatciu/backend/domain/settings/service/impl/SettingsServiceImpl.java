@@ -1,4 +1,8 @@
 package com.zanatciu.backend.domain.settings.service.impl;
 
-public class SettingsServiceImpl {
+import com.zanatciu.backend.domain.settings.service.SettingsService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class SettingsServiceImpl implements SettingsService {
 }

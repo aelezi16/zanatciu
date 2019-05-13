@@ -1,4 +1,8 @@
 package com.zanatciu.backend.domain.application.service.impl;
 
-public class ApplicationServiceImpl {
+import com.zanatciu.backend.domain.application.service.ApplicationService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ApplicationServiceImpl implements ApplicationService {
 }

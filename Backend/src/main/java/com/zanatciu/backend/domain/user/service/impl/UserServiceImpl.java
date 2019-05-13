@@ -1,4 +1,8 @@
 package com.zanatciu.backend.domain.user.service.impl;
 
-public class UserServiceImpl {
+import com.zanatciu.backend.domain.user.service.UserService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserServiceImpl implements UserService {
 }
