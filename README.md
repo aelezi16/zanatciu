@@ -34,7 +34,7 @@
 <br>
  
 <p>
-Zanatciu aims to create a service that connects potential craftsman to people that require their service, and potential service  
+Zanatciu aims to create a service that connects potential craftsman to people that require their service, and potential jobs to people that demand those jobs. 
 </p>
   </body>
 </html>
