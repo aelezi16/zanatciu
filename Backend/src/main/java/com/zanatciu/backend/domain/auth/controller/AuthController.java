@@ -40,4 +40,9 @@ public class AuthController {
     public ResponseEntity logout(){
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/refresh")
+    public ResponseEntity<String> refresh(){
+        return null;
+    }
 }
