@@ -6,4 +6,6 @@ public interface ProfileService {
 
     ProfileDto getById(String id);
     ProfileDto save(ProfileDto profileDto);
+
+    String subscribe(String packageId, String userId);
 }

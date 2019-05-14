@@ -17,6 +17,7 @@ public class PackageModelMapper implements ModelMapper<Package, PackageDto> {
         dto.setDescription(aPackage.getDescription());
         dto.setPrice(aPackage.getPrice());
         dto.setTitle(aPackage.getTitle());
+        dto.setPubAmount(aPackage.getPubAmount());
 
         return dto;
     }
@@ -30,6 +31,7 @@ public class PackageModelMapper implements ModelMapper<Package, PackageDto> {
         model.setTitle(packageDto.getTitle());
         model.setDescription(packageDto.getDescription());
         model.setPrice(packageDto.getPrice());
+        model.setPubAmount(packageDto.getPubAmount());
 
         return model;
     }

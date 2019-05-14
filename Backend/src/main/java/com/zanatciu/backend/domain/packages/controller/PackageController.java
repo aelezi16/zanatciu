@@ -46,4 +46,9 @@ public class PackageController {
         packageService.delete(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
+
+    @RequestMapping("/subscribe")
+    public ResponseEntity subscribe(@RequestParam String packageId, @RequestParam String userId){
+        return packageService.subscribe(packageId, userId);
+    }
 }

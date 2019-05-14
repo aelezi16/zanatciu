@@ -5,7 +5,11 @@ import com.zanatciu.backend.domain.packages.dto.PackageDto;
 import com.zanatciu.backend.domain.packages.model.Package;
 import com.zanatciu.backend.domain.packages.repo.PackageRepo;
 import com.zanatciu.backend.domain.packages.service.PackageService;
+import com.zanatciu.backend.domain.profile.repo.ProfileRepo;
+import com.zanatciu.backend.domain.profile.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,14 +21,17 @@ public class PackageServiceImpl implements PackageService {
 
     private ModelMapper<Package, PackageDto> modelMapper;
     private PackageRepo packageRepo;
+    private ProfileService profileService;
 
     @Autowired
     public PackageServiceImpl(
             ModelMapper<Package, PackageDto> modelMapper,
-            PackageRepo packageRepo
+            PackageRepo packageRepo,
+            ProfileService profileService
             ){
         this.modelMapper = modelMapper;
         this.packageRepo = packageRepo;
+        this.profileService = profileService;
     }
 
     @Override
@@ -44,5 +51,13 @@ public class PackageServiceImpl implements PackageService {
     @Override
     public void delete(String id) {
             packageRepo.delete(packageRepo.findById(id));
+    }
+
+    @Override
+    public ResponseEntity subscribe(String packageId, String userId) {
+        String status = profileService.subscribe(packageId, userId);
+        return status.equals("OK")
+                ? new ResponseEntity(HttpStatus.OK)
+                : new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 }

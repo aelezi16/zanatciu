@@ -41,4 +41,9 @@ public class ProfileServiceImpl implements ProfileService {
                 ? profile.map(modelMapper::modelToDto).get()
                 : null;
     }
+
+    @Override
+    public String subscribe(String packageId, String userId) {
+        return null;
+    }
 }
