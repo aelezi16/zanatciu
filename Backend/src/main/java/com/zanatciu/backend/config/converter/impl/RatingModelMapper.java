@@ -7,13 +7,35 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RatingModelMapper implements ModelMapper<Rating, RatingDto> {
+
     @Override
     public RatingDto modelToDto(Rating rating) {
-        return new RatingDto();
+
+        RatingDto dto = new RatingDto();
+
+        dto.setId(rating.getId());
+        dto.setUsername(rating.getUsername());
+        dto.setMessage(rating.getMessage());
+        dto.setPublicationId(rating.getPublicationId());
+        dto.setDate(rating.getDate());
+
+        return dto;
     }
 
     @Override
     public Rating dtoToModel(RatingDto ratingDto) {
-        return new Rating();
+
+        Rating model = new Rating();
+
+        if(ratingDto.getId() != null)
+            model.setId(ratingDto.getId());
+
+        model.setId(ratingDto.getId());
+        model.setUsername(ratingDto.getUsername());
+        model.setMessage(ratingDto.getMessage());
+        model.setPublicationId(ratingDto.getPublicationId());
+        model.setDate(ratingDto.getDate());
+
+        return model;
     }
 }
