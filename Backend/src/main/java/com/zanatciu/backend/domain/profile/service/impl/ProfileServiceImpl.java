@@ -5,6 +5,7 @@ import com.zanatciu.backend.domain.profile.dto.ProfileDto;
 import com.zanatciu.backend.domain.profile.model.Profile;
 import com.zanatciu.backend.domain.profile.repo.ProfileRepo;
 import com.zanatciu.backend.domain.profile.service.ProfileService;
+import com.zanatciu.backend.domain.settings.dto.SettingsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,5 +46,10 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public String subscribe(String packageId, String userId) {
         return null;
+    }
+
+    @Override
+    public Optional<SettingsDto> updateSettings(SettingsDto settingsDto, String username) {
+        return Optional.empty();
     }
 }
