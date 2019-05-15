@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
@@ -17,13 +18,11 @@ public class Application {
 
     @Id
     private String id;
-
-    @NotBlank
     private String applicantUsername;
-
-    @NotBlank
     private String publicationId;
-
-    @NotBlank
+    private String message;
     private Date timestamp;
+
+    //EXPIRED ACCEPTED REJECTED ACTIVE
+    private String status;
 }
