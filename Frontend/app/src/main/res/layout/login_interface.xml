@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    tools:context="frontend.zanatciu.com.zanatciu.Funksionalitete.ViewModels.Login">
+
+    <View
+
+        android:id="@+id/logoZanatciu"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/logo2"
+
+        />
+
+
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoZanatciu"
+        android:layout_marginTop="80dp"
+        android:textSize="18sp"
+        android:hint="@string/perdoruesi"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/ic_person_black"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:background="@drawable/whiteovalbackground"/>
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/Username"
+        android:layout_alignStart="@+id/Username"
+        android:layout_below="@id/Username"
+        android:hint="@string/fjalekalimi"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        android:drawableStart="@drawable/ic_lock_black"
+        android:drawableLeft="@drawable/ic_lock_black"
+        android:background="@drawable/whiteovalbackground"
+        />
+
+    <Button
+        android:id="@+id/Hyrje"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/Password"
+        android:layout_alignLeft="@id/Password"
+        android:layout_marginTop="40dp"
+
+        android:layout_marginRight="10dp"
+        android:background="@drawable/buttonsbackground"
+        android:textSize="14sp"
+        android:textColor="#fff"
+
+        android:text="@string/hyrje"
+        />
+
+    <Button
+        android:id="@+id/Regjistrim"
+        android:layout_width="20dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/Hyrje"
+        android:layout_below="@id/Password"
+        android:layout_alignRight="@id/Password"
+        android:layout_marginTop="40dp"
+
+        android:background="@drawable/buttonsbackground"
+        android:textSize="14sp"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:text="@string/regjistrim"
+        />
+
+    <TextView
+        android:id="@+id/txtForgetPassw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Harruat Passwordin?"
+        android:textSize="13sp"
+        android:layout_below="@id/Regjistrim"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/btnRegisterHere"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtForgetPassw"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonsbackground"
+        android:layout_marginTop="15dp"
+        android:text="Rifito Fjalekalimin"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        />
+
+
+</RelativeLayout>

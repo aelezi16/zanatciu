@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Zanatciu</string>
+
+
+    <string name="perdoruesi">Perdoruesi</string>
+    <string name="fjalekalimi">Fjalekalimi</string>
+    <string name="hyrje">Hyrje</string>
+    <string name="regjistrim">Regjistrohu</string>
+
+
+
 </resources>

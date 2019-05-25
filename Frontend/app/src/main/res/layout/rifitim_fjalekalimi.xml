@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture"
+    >
+
+    <View
+
+        android:id="@+id/iconZanatciu"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/logo1"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/firstRegjistrimRow"
+        android:layout_below="@+id/iconZanatciu"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="Email:"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+
+            />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/whiteovalbackground"
+            android:layout_marginRight="20dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <Button
+        android:id="@+id/btnRegisterHere"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/firstRegjistrimRow"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonsbackground"
+        android:layout_marginTop="60dp"
+        android:text="Rifito Fjalekalimin"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        />
+
+
+</RelativeLayout>
