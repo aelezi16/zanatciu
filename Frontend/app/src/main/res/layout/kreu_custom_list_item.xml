@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_oval_background"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo1"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#000000"/>
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/profile_image"
+        android:layout_alignTop="@+id/profile_image"
+        android:text="Pastrim Eventi"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/price_wage"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/profile_image"
+        android:layout_below="@id/title"
+        android:text="Cmimi:"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+
+        />
+
+
+</RelativeLayout>

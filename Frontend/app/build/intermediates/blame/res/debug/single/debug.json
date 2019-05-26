@@ -424,6 +424,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c5a2c22150a2a66c74b5778eb1be2fe\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\drawable_list_item_oval_background.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\src\\main\\res\\drawable\\list_item_oval_background.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c5a2c22150a2a66c74b5778eb1be2fe\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
@@ -932,6 +936,10 @@
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c5a2c22150a2a66c74b5778eb1be2fe\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\layout_test2_interface.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\src\\main\\res\\layout\\test2_interface.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c5a2c22150a2a66c74b5778eb1be2fe\\res\\layout\\abc_list_menu_item_radio.xml"
     },
@@ -1142,6 +1150,10 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\7c5a2c22150a2a66c74b5778eb1be2fe\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\layout_kreu_custom_list_item.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\src\\main\\res\\layout\\kreu_custom_list_item.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\zanatciu\\Frontend\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",

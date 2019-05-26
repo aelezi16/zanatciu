@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/whiteovalbackground"
     xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
     xmlns:andorid="http://schemas.android.com/tools">
 
@@ -26,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:text="One"
+            android:text="Pune"
             style="@style/RadioButton" />
 
         <RadioButton
@@ -34,10 +35,37 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:text="Two"
+            android:text="Sherbime"
             style="@style/RadioButton" />
 
     </info.hoang8f.android.segmented.SegmentedGroup>
 
+
+    <LinearLayout
+
+        android:id="@+id/linearLayoutListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/segmented2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation = "vertical"
+        android:background="@color/listdivider"
+        >
+
+    <ListView
+        android:id="@+id/list_market"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider = "#ffffff"
+        android:dividerHeight = "10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+    </ListView>
+
+    </LinearLayout>
 
 </RelativeLayout>
