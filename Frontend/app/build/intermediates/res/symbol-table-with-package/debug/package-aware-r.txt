@@ -653,6 +653,8 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_lock_black
 drawable ic_person_black
+drawable ic_search_black_24dp
+drawable ic_search_black_36dp
 drawable list_item_oval_background
 drawable logo1
 drawable logo2
@@ -791,6 +793,7 @@ id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id search
 id search_badge
 id search_bar
 id search_button

@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/whiteovalbackground"
     xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
-    xmlns:andorid="http://schemas.android.com/tools">
+    xmlns:andorid="http://schemas.android.com/tools"
+    android:clickable="true">
 
 
 
@@ -40,15 +41,31 @@
 
     </info.hoang8f.android.segmented.SegmentedGroup>
 
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/segmented2"
+        android:background="@drawable/whiteovalbackground"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:layout_alignLeft="@id/segmented2"
+        android:layout_alignRight="@id/segmented2"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        />
+
 
     <LinearLayout
 
         android:id="@+id/linearLayoutListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/segmented2"
+        android:layout_below="@+id/search"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:orientation = "vertical"
         android:background="@color/listdivider"
         >
@@ -61,7 +78,7 @@
         android:dividerHeight = "10dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         >
 
     </ListView>
