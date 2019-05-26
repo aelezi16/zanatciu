@@ -9,13 +9,12 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Data
+@Document
 @NoArgsConstructor
 @AllArgsConstructor
-@Document
 public class Profile {
 
     @Id
@@ -38,5 +37,8 @@ public class Profile {
 
     @Indexed(unique = true)
     private Settings settings;
+
+
+    private String profileImage;
 
 }

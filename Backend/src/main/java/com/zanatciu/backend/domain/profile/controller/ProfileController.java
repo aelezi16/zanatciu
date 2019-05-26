@@ -19,7 +19,7 @@ public class ProfileController {
         this.profileService = profileService;
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ProfileDto> getById(@PathVariable String id){
         ProfileDto dto = profileService.getById(id);
 
@@ -28,8 +28,8 @@ public class ProfileController {
                 : new ResponseEntity<ProfileDto>(dto, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/username/{username}")
-    public ResponseEntity<ProfileDto> getByUsername(@PathVariable String username){
+    @GetMapping("/username")
+    public ResponseEntity<ProfileDto> getByUsername(@RequestParam String usernaem){
         return null;
     }
 
