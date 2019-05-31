@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,6 +28,7 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
     private ArrayList<JobMarketListItem> arrayList;
     private SegmentedGroup segmented2;
     private EditText search;
+    private LinearLayout listLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -37,6 +39,8 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
         listViewMarket=(ListView)findViewById(R.id.list_market);
         segmented2=(SegmentedGroup)findViewById(R.id.segmented2);
         search=(EditText)findViewById(R.id.search);
+        listLinearLayout=(LinearLayout) findViewById(R.id.linearLayoutListView);
+        listLinearLayout.setVisibility(View.INVISIBLE);
 
         segmented2.setOnCheckedChangeListener(Kreu.this);
 
@@ -44,6 +48,8 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
         arrayList.add(new JobMarketListItem("sdsd", "Pastrues Eventi","Cmimi: 50 $"));
         arrayList.add(new JobMarketListItem("sdsd", "Pastrues Eventi","Cmimi: 50 $"));
         arrayList.add(new JobMarketListItem("sdsd", "Pastrues Eventi","Cmimi: 50 $"));
+
+
 
         search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -65,6 +71,8 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
     }
 
 
+
+
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
@@ -76,6 +84,7 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
                 toast.show();
 
+                listLinearLayout.setVisibility(View.VISIBLE);
                 customAdapterKreuPune=new CustomAdapterKreuPune(this,arrayList);
                 listViewMarket.setAdapter(customAdapterKreuPune);
 
@@ -95,6 +104,7 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
                         Toast.LENGTH_SHORT);
 
                 toast1.show();
+                listLinearLayout.setVisibility(View.VISIBLE);
 
                 break;
 
