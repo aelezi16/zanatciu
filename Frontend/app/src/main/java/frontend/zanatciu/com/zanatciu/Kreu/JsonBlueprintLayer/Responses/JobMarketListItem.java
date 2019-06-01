@@ -11,18 +11,37 @@ import java.lang.reflect.Type;
 
 public class JobMarketListItem implements Serializable {
 
+
+    private String jobId;
     private String imageString;
     private String title;
+    private String emriPunedhenesit;
+    private String pershkrimi;
     private String price_wage;
 
 
-    public JobMarketListItem() {
+
+    public JobMarketListItem(){
     }
 
-    public JobMarketListItem(String imageString, String title, String price_wage) {
+
+    public JobMarketListItem(String jobId,String imageString,String title,String pershkrimi,String emriPunedhenesit, String price_wage) {
+
+        this.jobId=jobId;
         this.imageString = imageString;
         this.title = title;
+        this.emriPunedhenesit=emriPunedhenesit;
+        this.pershkrimi=pershkrimi;
         this.price_wage = price_wage;
+    }
+
+
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 
     public String getImageString() {
@@ -41,6 +60,22 @@ public class JobMarketListItem implements Serializable {
         this.title = title;
     }
 
+    public String getEmriPunedhenesit() {
+        return emriPunedhenesit;
+    }
+
+    public void setEmriPunedhenesit(String emriPunedhenesit) {
+        this.emriPunedhenesit = emriPunedhenesit;
+    }
+
+    public String getPershkrimi() {
+        return pershkrimi;
+    }
+
+    public void setPershkrimi(String pershkrimi) {
+        this.pershkrimi = pershkrimi;
+    }
+
     public String getPrice_wage() {
         return price_wage;
     }
@@ -50,20 +85,34 @@ public class JobMarketListItem implements Serializable {
     }
 
 
+
+
     public static class JobMarketListItemDeSerializer implements JsonDeserializer<JobMarketListItem> {
 
         public JobMarketListItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
 
+
             JsonObject jobject = json.getAsJsonObject();
 
+
             JobMarketListItem ret = new JobMarketListItem();
+
+
+            if (jobject.get("jobId").isJsonNull()) {
+                ret.setJobId("");
+
+            } else {
+
+                ret.setJobId(jobject.get("jobId").getAsString());
+            }
+
 
             if (jobject.get("imageString").isJsonNull()) {
                 ret.setImageString("");
 
             } else {
 
-                ret.setImageString(jobject.get("title").getAsString());
+                ret.setImageString(jobject.get("imageString").getAsString());
             }
 
             if (jobject.get("title").isJsonNull()) {
@@ -73,11 +122,25 @@ public class JobMarketListItem implements Serializable {
                 ret.setTitle(jobject.get("title").getAsString());
             }
 
-            if (jobject.get("title").isJsonNull()) {
+            if (jobject.get("emriPunedhenesi").isJsonNull()) {
+                ret.setEmriPunedhenesit("");
+            } else {
+
+                ret.setEmriPunedhenesit(jobject.get("emriPunedhenesi").getAsString());
+            }
+
+            if (jobject.get("pershkrimi").isJsonNull()) {
+                ret.setPershkrimi("");
+            } else {
+
+                ret.setPershkrimi(jobject.get("pershkrimi").getAsString());
+            }
+
+            if (jobject.get("price_wage").isJsonNull()) {
                 ret.setPrice_wage("");
             } else {
 
-                ret.setPrice_wage(jobject.get("title").getAsString());
+                ret.setPrice_wage(jobject.get("price_wage").getAsString());
             }
 
 

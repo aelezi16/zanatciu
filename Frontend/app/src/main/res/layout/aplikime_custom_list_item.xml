@@ -1,5 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_less_oval_background"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/profile_image"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/logo1"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#000000"/>
+
+
+
+    <TextView
+        android:id="@+id/emriLabel"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/profile_image"
+        android:layout_alignTop="@+id/profile_image"
+        android:text="Emri:"
+        android:textColor="#000000"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/emri"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/emriLabel"
+        android:layout_toLeftOf="@id/Aprovo"
+        android:layout_alignTop="@+id/profile_image"
+        android:text="Emri:"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/whiteovalbackground"
+        android:textColor="#000000"
+        android:gravity="center"
+
+        />
+
+    <Button
+        android:id="@+id/Aprovo"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/profile_image"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/buttonsbackground"
+        android:text="Aprovo"
+        android:textColor="#ffffff"
+        android:gravity="center"
+
+        />
+
+
+    <TextView
+        android:id="@+id/countDownValidation"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/emriLabel"
+        android:text="Time Validation"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        />
+
 
 </RelativeLayout>

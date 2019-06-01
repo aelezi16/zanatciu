@@ -12,21 +12,22 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.JobMarketListItem;
+import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.ServiceMarketListItem;
 import frontend.zanatciu.com.zanatciu.R;
 
 public class CustomAdapterKreuSherbim extends BaseAdapter {
 
-    ArrayList<JobMarketListItem> jobMarketList;
+    ArrayList<ServiceMarketListItem> serviceMarketListItems;
     Context context;
     CircleImageView circleImageView;
     TextView title;
     TextView price_wage;
 
 
-    public CustomAdapterKreuSherbim(Context context, ArrayList<JobMarketListItem> jobMarketList) {
+    public CustomAdapterKreuSherbim(Context context, ArrayList<ServiceMarketListItem> serviceMarketListItems) {
 
         this.context=context;
-        this.jobMarketList=jobMarketList;
+        this.serviceMarketListItems=serviceMarketListItems;
 
     }
 
@@ -57,7 +58,7 @@ public class CustomAdapterKreuSherbim extends BaseAdapter {
         title=convertView.findViewById(R.id.title);
         price_wage=convertView.findViewById(R.id.price_wage);
 
-        jobMarketList.get(position);
+        serviceMarketListItems.get(position);
 
 
 

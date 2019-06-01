@@ -879,6 +879,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout aplikime_custom_list_item
+layout aplikime_prenotimi_sherbimi_interface
+layout aplikime_pune_interface
 layout kreu_custom_list_item
 layout kreu_pune_sherbim_interface
 layout login_interface
@@ -888,12 +891,14 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout pune_kerkoj_interface
 layout radio_button_item
 layout regjistrim_interface
 layout rifitim_fjalekalimi
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout sherbim_kerkoj_interface
 layout support_simple_spinner_dropdown_item
 layout test2_interface
 layout test_interface

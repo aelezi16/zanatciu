@@ -15,14 +15,14 @@ import java.util.ArrayList;
 public class ServiceMarketListRes {
 
 
-    private ArrayList<ServiceMarketListItem> serviceMarketListItem;
+    private ArrayList<ServiceMarketListItem> serviceMarketList;
 
     public ArrayList<ServiceMarketListItem> getServiceMarketListItem() {
-        return serviceMarketListItem;
+        return serviceMarketList;
     }
 
     public void setServiceMarketListItem(ArrayList<ServiceMarketListItem> serviceMarketListItem) {
-        this.serviceMarketListItem = serviceMarketListItem;
+        this.serviceMarketList = serviceMarketListItem;
     }
 
     public static class ServiceMarketListResDeSerializer implements JsonDeserializer<ServiceMarketListRes>

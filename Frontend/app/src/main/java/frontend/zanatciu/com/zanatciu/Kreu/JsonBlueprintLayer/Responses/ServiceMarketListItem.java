@@ -10,18 +10,49 @@ import java.lang.reflect.Type;
 
 public class ServiceMarketListItem {
 
+
+    private String serviceId;
     private String imageString;
     private String title;
+    private String emriSherbimOfruesi;
+    private String pershkrimi;
     private String price_wage;
 
 
     public ServiceMarketListItem() {
     }
 
-    public ServiceMarketListItem(String imageString, String title, String price_wage) {
+    public ServiceMarketListItem(String imageString, String title, String price_wage,String emriSherbimOfruesi,String pershkrimi) {
         this.imageString = imageString;
         this.title = title;
+        this.emriSherbimOfruesi=emriSherbimOfruesi;
+        this.pershkrimi=pershkrimi;
         this.price_wage = price_wage;
+    }
+
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public String getEmriSherbimOfruesi() {
+        return emriSherbimOfruesi;
+    }
+
+    public void setEmriSherbimOfruesi(String emriSherbimOfruesi) {
+        this.emriSherbimOfruesi = emriSherbimOfruesi;
+    }
+
+    public String getPershkrimi() {
+        return pershkrimi;
+    }
+
+    public void setPershkrimi(String pershkrimi) {
+        this.pershkrimi = pershkrimi;
     }
 
     public String getImageString() {
@@ -57,12 +88,22 @@ public class ServiceMarketListItem {
 
             ServiceMarketListItem ret = new ServiceMarketListItem();
 
+
+            if (jobject.get("serviceId").isJsonNull()) {
+                ret.setServiceId("");
+
+            } else {
+
+                ret.setServiceId(jobject.get("serviceId").getAsString());
+            }
+
+
             if (jobject.get("imageString").isJsonNull()) {
                 ret.setImageString("");
 
             } else {
 
-                ret.setImageString(jobject.get("title").getAsString());
+                ret.setImageString(jobject.get("imageString").getAsString());
             }
 
             if (jobject.get("title").isJsonNull()) {
@@ -72,15 +113,30 @@ public class ServiceMarketListItem {
                 ret.setTitle(jobject.get("title").getAsString());
             }
 
-            if (jobject.get("title").isJsonNull()) {
+            if (jobject.get("emriSherbimOfruesi").isJsonNull()) {
+                ret.setEmriSherbimOfruesi("");
+            } else {
+
+                ret.setEmriSherbimOfruesi(jobject.get("emriSherbimOfruesi").getAsString());
+            }
+
+            if (jobject.get("pershkrimi").isJsonNull()) {
+                ret.setPershkrimi("");
+            } else {
+
+                ret.setPershkrimi(jobject.get("pershkrimi").getAsString());
+            }
+
+            if (jobject.get("price_wage").isJsonNull()) {
                 ret.setPrice_wage("");
             } else {
 
-                ret.setPrice_wage(jobject.get("title").getAsString());
+                ret.setPrice_wage(jobject.get("price_wage").getAsString());
             }
 
 
             return ret;
+
         }
     }
 

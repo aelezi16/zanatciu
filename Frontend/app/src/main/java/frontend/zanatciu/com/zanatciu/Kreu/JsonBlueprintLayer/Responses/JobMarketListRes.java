@@ -36,6 +36,9 @@ public class JobMarketListRes extends BaseRes implements Serializable {
                 throws JsonParseException {
 
 
+
+            //Mund te kete edhe ndonje atribut tjeter shtese suportues per security ose per requests monitoring
+
             JsonObject jobject = json.getAsJsonObject();
 
             JobMarketListRes ret = new JobMarketListRes();

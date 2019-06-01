@@ -24,13 +24,16 @@ import frontend.zanatciu.com.zanatciu.Kreu.Utilities.UrlUtil;
 
 public class JobListTask extends AsyncTask<String, String, JobMarketListRes> {
 
-    private JobListResponse<JobMarketListRes> delegate;
+    public JobListResponse<JobMarketListRes> delegate;
+
 
     public JobListTask(JobListResponse<JobMarketListRes> jobMarketListResJobListResponse)
     {
         this.delegate=jobMarketListResJobListResponse;
     }
 
+    public JobListTask() {
+    }
 
     protected JobMarketListRes doInBackground(String... params) {
 
@@ -96,6 +99,6 @@ public class JobListTask extends AsyncTask<String, String, JobMarketListRes> {
         super.onPostExecute(result);
 
         if (result != null && delegate != null)
-            delegate.onPostTask(result);
+            delegate.onPostTaskJobs(result);
     }
 }

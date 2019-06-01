@@ -23,13 +23,15 @@ import frontend.zanatciu.com.zanatciu.Kreu.Utilities.UrlUtil;
 
 public class ServiceListTask extends AsyncTask<String, String, ServiceMarketListRes> {
 
-    private ServiceListResponse<ServiceMarketListRes> delegate;
+    public ServiceListResponse<ServiceMarketListRes> delegate;
 
     public ServiceListTask(ServiceListResponse<ServiceMarketListRes> delegate)
     {
         this.delegate=delegate;
     }
 
+    public ServiceListTask() {
+    }
 
     protected ServiceMarketListRes doInBackground(String... params) {
 
@@ -95,6 +97,6 @@ public class ServiceListTask extends AsyncTask<String, String, ServiceMarketList
         super.onPostExecute(result);
 
         if (result != null && delegate != null)
-            delegate.onPostTask(result);
+            delegate.onPostTaskServices(result);
     }
 }

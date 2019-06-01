@@ -7,7 +7,7 @@
     android:background="@drawable/backgroundtexture"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    tools:context="frontend.zanatciu.com.zanatciu.Funksionalitete.ViewModels.Login">
+    tools:context="frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login">
 
     <de.hdodenhof.circleimageview.CircleImageView
 
