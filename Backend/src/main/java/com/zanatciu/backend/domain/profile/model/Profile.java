@@ -39,4 +39,5 @@ public class Profile {
     @Indexed(unique = true)
     private Settings settings;
 
+    private String image;
 }

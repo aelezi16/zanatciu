@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface ProfileRepo extends MongoRepository<Profile, String> {
     Optional<Profile> findById(String id);
-    Optional<Profile> save(Profile profile);
+    Profile save(Profile profile);
 }
