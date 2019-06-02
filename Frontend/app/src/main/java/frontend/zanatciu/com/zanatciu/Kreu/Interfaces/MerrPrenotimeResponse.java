@@ -1,6 +1,10 @@
 package frontend.zanatciu.com.zanatciu.Kreu.Interfaces;
 
 
-public interface MerrPrenotimeResponse {
+import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.PrenotimeSherbimiRes;
+
+public interface MerrPrenotimeResponse<PrenotimeSherbimiRes> {
+
+    void onPostTaskPrenotime(PrenotimeSherbimiRes prenotimeSherbimiRes);
 
 }

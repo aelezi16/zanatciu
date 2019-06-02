@@ -1,4 +1,7 @@
 package frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Requests;
 
-public class ServiceMarketListReq {
+import frontend.zanatciu.com.zanatciu.Utilities.BaseRequests.BaseReq;
+
+public class ServiceMarketListReq extends BaseReq {
+
 }

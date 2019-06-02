@@ -63,9 +63,9 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
         //test arraylist from client
 
         arrayListJobs = new ArrayList<>();
-        arrayListJobs.add(new JobMarketListItem("sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
-        arrayListJobs.add(new JobMarketListItem("sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
-        arrayListJobs.add(new JobMarketListItem("sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
+        arrayListJobs.add(new JobMarketListItem("","sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
+        arrayListJobs.add(new JobMarketListItem("","sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
+        arrayListJobs.add(new JobMarketListItem("","sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
 
 
         arrayListServices=new ArrayList<>();
@@ -155,6 +155,8 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
                 jobListTaskAsync.execute();
 
+
+                //below not here but in the response
                 listLinearLayout.setVisibility(View.VISIBLE);
                 customAdapterKreuPune=new CustomAdapterKreuPune(this,arrayListJobs);
                 listViewMarket.setAdapter(customAdapterKreuPune);

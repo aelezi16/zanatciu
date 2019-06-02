@@ -13,10 +13,16 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import frontend.zanatciu.com.zanatciu.Kreu.Interfaces.AplikoResponse;
+import frontend.zanatciu.com.zanatciu.Kreu.Interfaces.MerrAplikimeResponse;
+import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.AplikimePuneRes;
+import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.AplikoRes;
 import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.JobMarketListItem;
+import frontend.zanatciu.com.zanatciu.Kreu.Tasks.AplikoTask;
+import frontend.zanatciu.com.zanatciu.Kreu.Tasks.MerrAplikimeTask;
 import frontend.zanatciu.com.zanatciu.R;
 
-public class PuneItem extends AppCompatActivity {
+public class PuneItem extends AppCompatActivity implements MerrAplikimeResponse<AplikimePuneRes> , AplikoResponse<AplikoRes> {
 
 
     private CircleImageView profileImage;
@@ -26,6 +32,10 @@ public class PuneItem extends AppCompatActivity {
     private Button aplikime;
     private Button apliko;
     private JobMarketListItem jobMarketListItem;
+
+
+    private AplikoTask aplikoTask=new AplikoTask();
+    private MerrAplikimeTask merrAplikimeTask=new MerrAplikimeTask();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -59,15 +69,15 @@ public class PuneItem extends AppCompatActivity {
         cmimi.setText(jobMarketListItem.getPrice_wage());
 
 
-
+        aplikoTask.delegate=this;
+        merrAplikimeTask.delegate=this;
 
         aplikime.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                      Intent goAplikimePune=new Intent(PuneItem.this,AplikimePune.class);
-                      startActivity(goAplikimePune);
+                merrAplikimeTask.execute();
 
             }
         });
@@ -79,7 +89,7 @@ public class PuneItem extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                //metoda e exekutimit te taskut
+                aplikoTask.execute();
 
 
 
@@ -94,4 +104,26 @@ public class PuneItem extends AppCompatActivity {
 
     }
 
+
+
+    @Override
+    public void onPostTaskMerrAplikime(AplikimePuneRes aplikimePuneRes) {
+
+        Intent goAplikimePune=new Intent(PuneItem.this,AplikimePune.class);
+
+        String serializedAplikimeRes=new Gson().toJson(aplikimePuneRes) ;
+
+        goAplikimePune.putExtra("serializedAplikimeRes",serializedAplikimeRes);
+
+        startActivity(goAplikimePune);
+
+
+    }
+
+    @Override
+    public void onPostTaskApliko(AplikoRes baseRes) {
+
+      //show alert dialog on result ok or not
+
+    }
 }
