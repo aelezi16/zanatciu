@@ -25,7 +25,7 @@ public class MyCacheCleanser {
         this.jwtProvider = jwtProvider;
     }
 
-    @Scheduled(fixedDelay = MyCacheConfig.MAX_DURATION)
+    @Scheduled(fixedDelay = 3600000l)
     public void cleanse(){
         loadCache.forEach((key, val)->{
             val.forEach(tokenVal ->{
