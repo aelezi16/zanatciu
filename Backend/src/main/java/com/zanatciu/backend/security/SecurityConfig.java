@@ -33,10 +33,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.apply(new JwtFilterConfigurer(jwtProvider));
     }
 
-    @Bean
-    public BCryptPasswordEncoder myPasswordEncoder(){
-        return new BCryptPasswordEncoder(13);
-    }
-
 
 }

@@ -1,13 +1,16 @@
 package com.zanatciu.backend.domain.user.service.impl;
 
+import com.zanatciu.backend.config.cache.MyCacheService;
 import com.zanatciu.backend.config.converter.ModelMapper;
 import com.zanatciu.backend.domain.settings.dto.SettingsDto;
 import com.zanatciu.backend.domain.user.dto.UserDto;
 import com.zanatciu.backend.domain.user.model.User;
 import com.zanatciu.backend.domain.user.repo.UserRepo;
 import com.zanatciu.backend.domain.user.service.UserService;
+import com.zanatciu.backend.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,16 +24,22 @@ public class UserServiceImpl implements UserService {
     private UserRepo userRepo;
     private ModelMapper<User, UserDto> modelMapper;
     private BCryptPasswordEncoder myPasswordEncoder;
+    private MyCacheService myCacheService;
+    private JwtProvider jwtProvider;
 
     @Autowired
     public UserServiceImpl(
             UserRepo userRepo,
             ModelMapper<User, UserDto> modelMapper,
-            BCryptPasswordEncoder myPasswordEncoder
+            BCryptPasswordEncoder myPasswordEncoder,
+            JwtProvider jwtProvider,
+            MyCacheService myCacheService
     ){
         this.userRepo = userRepo;
         this.modelMapper = modelMapper;
         this.myPasswordEncoder = myPasswordEncoder;
+        this.jwtProvider = jwtProvider;
+        this.myCacheService = myCacheService;
     }
 
     @Override
@@ -106,6 +115,56 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<SettingsDto> updateSettings(SettingsDto settingsDto, String username) {
         return Optional.empty();
+    }
+
+    @Override
+    public Optional<User> findByUsername(String username) {
+        return userRepo.findByUsername(username);
+    }
+
+    @Override
+    public Optional<User> createBySignUp(UserDto userDto) {
+        return Optional.empty();
+    }
+
+    @Override
+    public String login(String username, String password) {
+        Optional<User> optionalUser = findByUsername(username);
+
+        if(optionalUser.isPresent()){
+
+            if(!myPasswordEncoder.matches(password, optionalUser.get().getPassword()))
+                return null;
+
+            String token = jwtProvider.createToken(username, optionalUser.get().getRoles());
+            Authentication auth = jwtProvider.getAuthentication(token);
+            SecurityContextHolder.getContext().setAuthentication(auth);
+
+            return token;
+        }
+
+        return null;
+    }
+
+    @Override
+    public String signup(UserDto userDto) {
+        Optional<UserDto> createdUser = create(userDto);
+
+        if(createdUser.isPresent()){
+
+            Optional<User> authUser = findByUsername(userDto.getUsername());
+
+            if(!myPasswordEncoder.matches(userDto.getPassword(), authUser.get().getPassword()))
+                return null;
+
+            String token = jwtProvider.createToken(userDto.getUsername(), authUser.get().getRoles());
+            Authentication auth = jwtProvider.getAuthentication(token);
+            SecurityContextHolder.getContext().setAuthentication(auth);
+
+            return token;
+
+        }
+        return null;
     }
 
 }

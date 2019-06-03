@@ -21,17 +21,17 @@ public class ApplicationServiceImpl implements ApplicationService {
     private ApplicationRepo applicationRepo;
     private PublicationService publicationService;
     private ModelMapper<Application, ApplicationDto> modelMapper;
-    private SimpMessagingTemplate simpMessagingTemplate;
+    //private SimpMessagingTemplate simpMessagingTemplate;
 
     @Autowired
     public ApplicationServiceImpl(
         ApplicationRepo applicationRepo,
-        ModelMapper<Application, ApplicationDto> modelMapper,
-        SimpMessagingTemplate simpMessagingTemplate
+        ModelMapper<Application, ApplicationDto> modelMapper//,
+      //  SimpMessagingTemplate simpMessagingTemplate
     ){
         this.applicationRepo = applicationRepo;
         this.modelMapper = modelMapper;
-        this.simpMessagingTemplate = simpMessagingTemplate;
+       // this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
     @Override
