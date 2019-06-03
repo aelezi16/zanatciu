@@ -6,4 +6,6 @@ public interface ModelMapper<Model, Dto> {
 
     Model dtoToModel(Dto dto);
 
+    Model updateModel(Model model1, Model model2);
+
 }

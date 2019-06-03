@@ -77,12 +77,10 @@ public class ApplicationServiceImpl implements ApplicationService {
             return null;
 
         return savedApplication.map(
-                (a)->{
-                    Application app = optionalApplication.get();
-                    a.setMessage(app.getMessage());
-                    return a;
-                }
-        ).map(a -> applicationRepo.save(a)).map(modelMapper::modelToDto).get();
+                (a)-> modelMapper.updateModel(optionalApplication.get(), a)
+        ).map(a -> applicationRepo.save(a))
+         .map(modelMapper::modelToDto)
+         .get();
     }
 
     @Override

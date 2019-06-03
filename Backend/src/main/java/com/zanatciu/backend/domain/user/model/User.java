@@ -43,7 +43,6 @@ public class User {
     private String email;
 
     private Settings settings;
-
     private String image;
 
 }

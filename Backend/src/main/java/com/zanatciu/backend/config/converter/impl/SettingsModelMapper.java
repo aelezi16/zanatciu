@@ -28,4 +28,17 @@ public class SettingsModelMapper implements ModelMapper<Settings, SettingsDto> {
         model.setTheme(settingsDto.getTheme());
         return model;
     }
+
+    @Override
+    public Settings updateModel(Settings model1, Settings model2) {
+
+        if(model1.getColor() != null)
+            model2.setColor(model1.getColor());
+        if(model1.getTheme() != null)
+            model2.setTheme(model1.getTheme());
+        if(model1.getUsername() != null)
+            model2.setUsername(model1.getUsername());
+
+        return model2;
+    }
 }

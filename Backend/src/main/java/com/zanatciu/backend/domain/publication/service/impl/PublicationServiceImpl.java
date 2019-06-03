@@ -80,28 +80,7 @@ public class PublicationServiceImpl implements PublicationService {
 
         if(!publication.isPresent())return null;
 
-        return publication.map((p)->{
-            Publication pub = newPub.get();
-
-            if(pub.getId() != null)
-                p.setId(pub.getId());
-            if(pub.getTitle() != null)
-                p.setTitle(pub.getTitle());
-            if(pub.getDescription() != null)
-                p.setDescription(pub.getDescription());
-            if(pub.getRate() != null)
-                p.setRate(pub.getRate());
-            if(pub.getRatingCount()!= null)
-                p.setRatingCount(pub.getRatingCount());
-            if(pub.getType() != null)
-                p.setType(pub.getType());
-            if(pub.getUsername()!= null)
-                p.setUsername(pub.getUsername());
-            if(pub.getTimestamp() != null)
-                p.setTimestamp(pub.getTimestamp());
-
-            return p;
-        }).map(p -> publicationRepo.save(p)).map(modelMapper::modelToDto).get();
+        return publication.map((p)->modelMapper.updateModel(newPub.get(), p)).map(p -> publicationRepo.save(p)).map(modelMapper::modelToDto).get();
     }
 
     @Override

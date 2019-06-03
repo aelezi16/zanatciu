@@ -29,4 +29,16 @@ public class CardModelMapper  implements ModelMapper<Card, CardDto> {
 
         return model;
     }
+
+    @Override
+    public Card updateModel(Card model1, Card model2) {
+        if(model1.getId() != null)
+            model2.setId(model1.getId());
+        if(model1.getUsername() != null)
+            model2.setUsername(model1.getUsername());
+        if(model1.getCreditCard() != null)
+            model2.setCreditCard(model1.getCreditCard());
+
+        return model2;
+    }
 }

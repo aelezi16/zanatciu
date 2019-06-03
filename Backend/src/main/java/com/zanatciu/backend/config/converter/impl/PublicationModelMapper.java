@@ -49,4 +49,26 @@ public class PublicationModelMapper implements ModelMapper<Publication, Publicat
 
         return model;
     }
+
+    @Override
+    public Publication updateModel(Publication model1, Publication model2) {
+        if(model1.getId() != null)
+            model2.setId(model1.getId());
+        if(model1.getUsername() != null)
+            model2.setUsername(model1.getUsername());
+        if(model1.getType() != null)
+            model2.setType(model1.getType());
+        if(model1.getRatingCount() != null)
+            model2.setRatingCount(model1.getRatingCount());
+        if(model1.getRate() != null)
+            model2.setRate(model1.getRate());
+        if(model1.getTitle() != null)
+            model2.setTitle(model1.getTitle());
+        if(model1.getDescription() != null)
+            model2.setDescription(model1.getDescription());
+        if(model1.getTimestamp() != null)
+            model2.setTimestamp(model1.getTimestamp());
+
+        return model2;
+    }
 }

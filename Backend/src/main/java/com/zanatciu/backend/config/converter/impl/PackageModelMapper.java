@@ -35,4 +35,20 @@ public class PackageModelMapper implements ModelMapper<Package, PackageDto> {
 
         return model;
     }
+
+    @Override
+    public Package updateModel(Package model1, Package model2) {
+        if(model1.getId() != null)
+            model2.setId(model1.getId());
+        if(model1.getPrice() != null)
+            model2.setPrice(model1.getPrice());
+        if(model1.getPubAmount() != null)
+            model2.setPubAmount(model1.getPubAmount());
+        if(model1.getDescription() != null)
+            model2.setDescription(model1.getDescription());
+        if(model1.getTitle() != null)
+            model2.setTitle(model1.getTitle());
+
+        return model2;
+    }
 }

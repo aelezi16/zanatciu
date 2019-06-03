@@ -1,5 +1,6 @@
 package com.zanatciu.backend.domain.user.service;
 
+import com.zanatciu.backend.domain.settings.dto.SettingsDto;
 import com.zanatciu.backend.domain.user.dto.UserDto;
 
 import java.util.List;
@@ -12,4 +13,8 @@ public interface UserService {
     Optional<UserDto> create(UserDto userDto);
     Optional<UserDto> update(UserDto userDto, String id);
     void delete(String id);
+
+    String subscribe(String packageId, String userId);
+
+    Optional<SettingsDto> updateSettings(SettingsDto settingsDto, String username);
 }

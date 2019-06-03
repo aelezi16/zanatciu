@@ -5,8 +5,7 @@ import com.zanatciu.backend.domain.packages.dto.PackageDto;
 import com.zanatciu.backend.domain.packages.model.Package;
 import com.zanatciu.backend.domain.packages.repo.PackageRepo;
 import com.zanatciu.backend.domain.packages.service.PackageService;
-import com.zanatciu.backend.domain.profile.repo.ProfileRepo;
-import com.zanatciu.backend.domain.profile.service.ProfileService;
+import com.zanatciu.backend.domain.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,17 +20,17 @@ public class PackageServiceImpl implements PackageService {
 
     private ModelMapper<Package, PackageDto> modelMapper;
     private PackageRepo packageRepo;
-    private ProfileService profileService;
+    private UserService userService;
 
     @Autowired
     public PackageServiceImpl(
             ModelMapper<Package, PackageDto> modelMapper,
             PackageRepo packageRepo,
-            ProfileService profileService
+            UserService userService
             ){
         this.modelMapper = modelMapper;
         this.packageRepo = packageRepo;
-        this.profileService = profileService;
+        this.userService = userService;
     }
 
     @Override
@@ -55,7 +54,7 @@ public class PackageServiceImpl implements PackageService {
 
     @Override
     public ResponseEntity subscribe(String packageId, String userId) {
-        String status = profileService.subscribe(packageId, userId);
+        String status = userService.subscribe(packageId, userId);
         return status.equals("OK")
                 ? new ResponseEntity(HttpStatus.OK)
                 : new ResponseEntity(HttpStatus.BAD_REQUEST);

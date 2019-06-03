@@ -38,4 +38,24 @@ public class ApplicationModelMapper implements ModelMapper<Application, Applicat
 
         return model;
     }
+
+    @Override
+    public Application updateModel(Application model1, Application model2) {
+
+        if(model1.getId() != null)
+            model2.setId(model1.getId());
+        if(model1.getApplicantUsername() != null)
+            model2.setApplicantUsername(model1.getApplicantUsername());
+        if(model1.getMessage() != null)
+            model2.setMessage(model1.getMessage());
+        if(model1.getPublicationId() != null)
+            model2.setPublicationId(model1.getPublicationId());
+        if(model1.getStatus() != null)
+            model2.setStatus(model1.getStatus());
+        if(model1.getTimestamp() != null)
+            model2.setTimestamp(model1.getTimestamp());
+
+        return model2;
+    }
+
 }
