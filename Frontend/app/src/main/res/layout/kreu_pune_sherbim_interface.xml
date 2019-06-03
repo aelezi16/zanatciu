@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/whiteovalbackground"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    xmlns:andorid="http://schemas.android.com/tools"
+    android:clickable="true">
+
+
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:id="@+id/segmented2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp"
+        segmentedgroup:sc_border_width="3dp"
+        segmentedgroup:sc_corner_radius="5dp"
+        segmentedgroup:sc_tint_color="#CBC079"
+        segmentedgroup:sc_unchecked_tint_color="#ff0000"
+        segmentedgroup:sc_checked_text_color="#ffffff"
+        >
+
+        <RadioButton
+            android:id="@+id/button21"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="Pune"
+            style="@style/RadioButton" />
+
+        <RadioButton
+            android:id="@+id/button22"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="Sherbime"
+            style="@style/RadioButton" />
+
+    </info.hoang8f.android.segmented.SegmentedGroup>
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/segmented2"
+        android:background="@drawable/whiteovalbackground"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:layout_alignLeft="@id/segmented2"
+        android:layout_alignRight="@id/segmented2"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        />
+
+
+    <LinearLayout
+
+        android:id="@+id/linearLayoutListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation = "vertical"
+        android:background="@color/listdivider"
+        >
+
+    <ListView
+        android:id="@+id/list_market"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider = "#ffffff"
+        android:dividerHeight = "10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+    </ListView>
+
+    </LinearLayout>
+
+</RelativeLayout>

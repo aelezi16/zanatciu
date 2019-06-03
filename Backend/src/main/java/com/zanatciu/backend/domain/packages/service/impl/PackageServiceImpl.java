@@ -50,7 +50,7 @@ public class PackageServiceImpl implements PackageService {
 
     @Override
     public void delete(String id) {
-            packageRepo.delete(packageRepo.findById(id));
+            packageRepo.delete(packageRepo.findById(id).get());
     }
 
     @Override

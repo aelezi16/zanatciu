@@ -60,6 +60,7 @@ attr autoSizeMinTextSize
 attr autoSizePresetSizes
 attr autoSizeStepGranularity
 attr autoSizeTextType
+attr awesome_text
 attr background
 attr backgroundSplit
 attr backgroundStacked
@@ -84,6 +85,10 @@ attr buttonTintMode
 attr chainUseRtl
 attr checkboxStyle
 attr checkedTextViewStyle
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr closeIcon
 attr closeItemLayout
 attr collapseContentDescription
@@ -259,6 +264,11 @@ attr radioButtonStyle
 attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
+attr sc_border_width
+attr sc_checked_text_color
+attr sc_corner_radius
+attr sc_tint_color
+attr sc_unchecked_tint_color
 attr searchHintIcon
 attr searchIcon
 attr searchViewStyle
@@ -392,8 +402,10 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color listdivider
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -416,6 +428,8 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color radio_button_selected_color
+color radio_button_unselected_color
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -430,6 +444,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -536,6 +551,8 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen radio_button_conner_radius
+dimen radio_button_stroke_border
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -628,8 +645,19 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable backgroundtexture
+drawable blueovalbackground
+drawable button_text_color
+drawable buttonsbackground
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_lock_black
+drawable ic_person_black
+drawable ic_search_black_24dp
+drawable ic_search_black_36dp
+drawable list_item_oval_background
+drawable logo1
+drawable logo2
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -642,14 +670,21 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable radio_checked
+drawable radio_unchecked
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable whiteovalbackground
 id ALT
 id CTRL
 id FUNCTION
+id Hyrje
 id META
+id Password
+id Regjistrim
 id SHIFT
 id SYM
+id Username
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -678,6 +713,9 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnRegisterHere
+id button21
+id button22
 id buttonPanel
 id center
 id center_horizontal
@@ -701,16 +739,20 @@ id edit_query
 id end
 id expand_activities_button
 id expanded_menu
+id fifthRegjistrimRow
 id fill
 id fill_horizontal
 id fill_vertical
+id firstRegjistrimRow
 id forever
+id forthRegjistrimRow
 id gone
 id group_divider
 id groups
 id home
 id homeAsUp
 id icon
+id iconZanatciu
 id icon_group
 id ifRoom
 id image
@@ -720,8 +762,11 @@ id italic
 id left
 id line1
 id line3
+id linearLayoutListView
 id listMode
 id list_item
+id list_market
+id logoZanatciu
 id message
 id middle
 id multiply
@@ -735,9 +780,12 @@ id packed
 id parent
 id parentPanel
 id percent
+id price_wage
+id profile_image
 id progress_circular
 id progress_horizontal
 id radio
+id relativeLayout
 id right
 id right_icon
 id right_side
@@ -745,6 +793,7 @@ id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id search
 id search_badge
 id search_bar
 id search_button
@@ -755,11 +804,15 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id secondRegjistrimRow
+id segmented2
 id select_dialog_listview
+id seventhRegjistrimRow
 id shortcut
 id showCustom
 id showHome
 id showTitle
+id sixthRegjistrimRow
 id spacer
 id split_action_bar
 id spread
@@ -779,12 +832,14 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id thirdRegjistrimRow
 id time
 id title
 id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id txtForgetPassw
 id uniform
 id up
 id useLogo
@@ -824,16 +879,29 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout aplikime_custom_list_item
+layout aplikime_prenotimi_sherbimi_interface
+layout aplikime_pune_interface
+layout kreu_custom_list_item
+layout kreu_pune_sherbim_interface
+layout login_interface
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout pune_kerkoj_interface
+layout radio_button_item
+layout regjistrim_interface
+layout rifitim_fjalekalimi
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout sherbim_kerkoj_interface
 layout support_simple_spinner_dropdown_item
+layout test2_interface
+layout test_interface
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -876,6 +944,10 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string fjalekalimi
+string hyrje
+string perdoruesi
+string regjistrim
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
@@ -1049,6 +1121,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style RadioButton
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon
@@ -1240,7 +1313,9 @@ styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
 styleable AppCompatTextHelper android_textAppearance android_drawableTop android_drawableBottom android_drawableLeft android_drawableRight android_drawableStart android_drawableEnd
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
+styleable AwesomeRadioButton awesome_text
 styleable ButtonBarLayout allowStacking
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonTint buttonTintMode
 styleable ConstraintLayout_Layout android_orientation android_maxWidth android_maxHeight android_minWidth android_minHeight barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
@@ -1264,6 +1339,7 @@ styleable PopupWindow android_popupBackground android_popupAnimationStyle overla
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
+styleable SegmentedGroup sc_border_width sc_checked_text_color sc_corner_radius sc_tint_color sc_unchecked_tint_color
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable

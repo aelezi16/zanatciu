@@ -36,8 +36,12 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public ProfileDto save(ProfileDto profileDto) {
+
         Optional<ProfileDto> optionalProfileDto = Optional.of(profileDto);
-        Optional<Profile> profile = profileRepo.save(optionalProfileDto.map(modelMapper::dtoToModel).get());
+        Optional<Profile> profile = Optional.of(
+                profileRepo.save(optionalProfileDto.map(modelMapper::dtoToModel).get())
+        );
+
         return profile.isPresent()
                 ? profile.map(modelMapper::modelToDto).get()
                 : null;
