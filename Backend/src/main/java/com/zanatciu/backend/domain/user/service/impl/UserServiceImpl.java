@@ -137,6 +137,7 @@ public class UserServiceImpl implements UserService {
                 return null;
 
             String token = jwtProvider.createToken(username, optionalUser.get().getRoles());
+            myCacheService.logUserIn(token, username);
             Authentication auth = jwtProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(auth);
 
@@ -158,6 +159,7 @@ public class UserServiceImpl implements UserService {
                 return null;
 
             String token = jwtProvider.createToken(userDto.getUsername(), authUser.get().getRoles());
+            myCacheService.logUserIn(token, userDto.getUsername());
             Authentication auth = jwtProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(auth);
 

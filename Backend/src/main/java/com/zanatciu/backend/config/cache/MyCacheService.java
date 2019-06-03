@@ -14,8 +14,7 @@ public class MyCacheService {
 
     @Autowired
     public MyCacheService(
-            ConcurrentHashMap<String, HashSet<String> > cacheLoad,
-            JwtProvider jwtProvider
+            ConcurrentHashMap<String, HashSet<String> > cacheLoad
     ){
         this.cacheLoad = cacheLoad;
     }

@@ -1,5 +1,6 @@
 package com.zanatciu.backend.security;
 
+import com.zanatciu.backend.config.cache.MyCacheService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -13,9 +14,15 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     private JwtProvider jwtProvider;
+    private MyCacheService myCacheService;
 
-    public JwtFilter(JwtProvider jwtProvider){
+    public JwtFilter(
+            JwtProvider jwtProvider,
+            MyCacheService myCacheService
+    ){
+
         this.jwtProvider = jwtProvider;
+        this.myCacheService  = myCacheService;
     }
 
 
@@ -24,8 +31,15 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = jwtProvider.resolveToken(httpServletRequest);
         try {
             if (token != null && jwtProvider.validateToken(token)) {
-                Authentication auth = jwtProvider.getAuthentication(token);
-                SecurityContextHolder.getContext().setAuthentication(auth);
+                String user = jwtProvider.getUsername(token);
+
+                if(myCacheService.isUserValid(user, token)) {
+                    Authentication auth = jwtProvider.getAuthentication(token);
+                    SecurityContextHolder.getContext().setAuthentication(auth);
+                }else{
+                    SecurityContextHolder.clearContext();
+                    return;
+                }
             }
         }catch (Exception e){
             SecurityContextHolder.clearContext();
