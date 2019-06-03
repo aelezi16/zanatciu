@@ -12,5 +12,6 @@ public interface ApplicationService {
     ApplicationDto save(ApplicationDto applicationDto);
     ApplicationDto save(ApplicationDto applicationDto, String id);
     void delete(String id);
+    void evaluate(String applicationId, String verdict);
 
 }

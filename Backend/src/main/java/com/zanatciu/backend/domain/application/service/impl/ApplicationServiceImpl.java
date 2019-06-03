@@ -5,10 +5,8 @@ import com.zanatciu.backend.domain.application.dto.ApplicationDto;
 import com.zanatciu.backend.domain.application.model.Application;
 import com.zanatciu.backend.domain.application.repo.ApplicationRepo;
 import com.zanatciu.backend.domain.application.service.ApplicationService;
-import com.zanatciu.backend.domain.publication.service.PublicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,19 +17,15 @@ import java.util.stream.Collectors;
 public class ApplicationServiceImpl implements ApplicationService {
 
     private ApplicationRepo applicationRepo;
-    private PublicationService publicationService;
     private ModelMapper<Application, ApplicationDto> modelMapper;
-    //private SimpMessagingTemplate simpMessagingTemplate;
 
     @Autowired
     public ApplicationServiceImpl(
         ApplicationRepo applicationRepo,
         ModelMapper<Application, ApplicationDto> modelMapper//,
-      //  SimpMessagingTemplate simpMessagingTemplate
     ){
         this.applicationRepo = applicationRepo;
         this.modelMapper = modelMapper;
-       // this.simpMessagingTemplate = simpMessagingTemplate;
     }
 
     @Override
@@ -91,5 +85,21 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public void delete(String id) {
         applicationRepo.deleteById(id);
+    }
+
+    @Override
+    public void evaluate(String applicationId, String verdict) {
+        Optional<Application> optionalApplication = applicationRepo.findById(applicationId);
+
+        if(optionalApplication.isPresent()){
+
+            Application app = optionalApplication.get();
+
+            if(!app.getStatus().equals("EXPIRED")){
+                app.setStatus(verdict);
+                applicationRepo.save(app);
+                //Here send the notification
+            }
+        }
     }
 }

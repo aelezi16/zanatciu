@@ -62,6 +62,15 @@ public class ApplicationController {
                 : new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
     }
 
+    @GetMapping("/eval/{applicationId}")
+    public ResponseEntity evaluate(@PathVariable  String applicationId,@RequestParam String verdict){
+
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable String id){
         applicationService.delete(id);

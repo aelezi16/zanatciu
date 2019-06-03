@@ -15,7 +15,10 @@ public class ApplicationDto {
     private String id;
     private String applicantUsername;
     private String publicationId;
+    private String publicationTitle;
+    private String publicationOwnerUsername;
     private String message;
     private Date timestamp;
+
     private String status;
 }
