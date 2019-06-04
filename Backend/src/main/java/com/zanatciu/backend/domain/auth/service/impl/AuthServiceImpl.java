@@ -12,7 +12,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class AuthServiceImpl implements AuthService {
@@ -37,5 +36,10 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public String signup(UserDto userDto) {
         return userService.signup(userDto);
+    }
+
+    @Override
+    public void logout(String token, String username) {
+        userService.loguot(token, username);
     }
 }

@@ -23,4 +23,5 @@ public interface UserService {
     Optional<User> createBySignUp(UserDto userDto);
     String login(String username, String password);
     String signup(UserDto userDto);
+    void loguot(String token, String username);
 }

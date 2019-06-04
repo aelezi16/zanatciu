@@ -38,7 +38,11 @@ public class AuthController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/logout")
-    public ResponseEntity logout(){
+    public ResponseEntity logout(
+            @RequestParam String token, @RequestParam String username
+    ){
+
+
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 

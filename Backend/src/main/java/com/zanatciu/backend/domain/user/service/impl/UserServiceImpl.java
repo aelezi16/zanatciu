@@ -170,4 +170,10 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public void loguot(String token, String username) {
+        SecurityContextHolder.clearContext();
+        myCacheService.logUserOut(token, username);
+    }
+
 }

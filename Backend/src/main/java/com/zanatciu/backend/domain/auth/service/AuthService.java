@@ -7,4 +7,6 @@ public interface AuthService {
     String login(String username, String password);
 
     String signup(UserDto userDto);
+
+    void logout(String token, String username);
 }
