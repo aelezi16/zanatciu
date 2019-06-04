@@ -2,10 +2,7 @@ package com.zanatciu.backend.security;
 
 import com.zanatciu.backend.domain.user.model.Role;
 import com.zanatciu.backend.domain.user.service.impl.MyUserDetails;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -72,16 +69,19 @@ public class JwtProvider {
     }
 
     public boolean validateToken(String token) {
-        try{
-            Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+        try {
+            Jws<Claims> claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
+            if (claims.getBody().getExpiration().before(new Date())) {
+                return false;
+            }
             return true;
-        }catch (JwtException | IllegalArgumentException e){
-            return false;
+        } catch (JwtException | IllegalArgumentException e) {
+            throw new JwtException("Expired or invalid JWT token");
         }
     }
 
     public Authentication getAuthentication(String token) {
-        UserDetails userDetails = myUserDetails.loadUserByUsername(getUsername(token));
+        UserDetails userDetails = this.myUserDetails.loadUserByUsername(getUsername(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 

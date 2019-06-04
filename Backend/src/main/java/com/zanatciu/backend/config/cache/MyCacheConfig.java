@@ -9,8 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MyCacheConfig {
 
     @Bean
-    public ConcurrentHashMap<String, HashSet<String> > cacheLoad(){
-        return new ConcurrentHashMap<String, HashSet<String> >();
+    public ConcurrentHashMap<String, String> cacheLoad(){
+        return new ConcurrentHashMap<String, String>();
     }
 
 }

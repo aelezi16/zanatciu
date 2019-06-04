@@ -42,4 +42,8 @@ public class MyUserDetails implements UserDetailsService {
                 .disabled(false)
                 .build();
     }
+
+    public boolean findByUsername(String username){
+       return userRepo.findByUsername(username).isPresent();
+    }
 }

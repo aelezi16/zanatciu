@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("/username/{username}")
-    public ResponseEntity<UserDto> getByUsername(@PathVariable String username ){
+    public ResponseEntity<UserDto> getByUsername(@PathVariable String username){
         Optional<UserDto> userDtoOptional = userService.getByUsername(username);
 
         return userDtoOptional.isPresent()
