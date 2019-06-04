@@ -12,5 +12,4 @@ public interface PackageRepo extends MongoRepository<Package, String> {
 
     List<Package> findAll();
 
-    void delete(Optional<Package> byId);
 }
