@@ -24,6 +24,5 @@ public class Login extends AppCompatActivity {
         actionBar.hide();
 
 
-
     }
 }
