@@ -1,30 +1,22 @@
 package com.zanatciu.backend.domain.auth.service.impl;
 
-import com.zanatciu.backend.config.cache.MyCacheService;
 import com.zanatciu.backend.domain.auth.service.AuthService;
 import com.zanatciu.backend.domain.user.dto.UserDto;
-import com.zanatciu.backend.domain.user.model.User;
-import com.zanatciu.backend.domain.user.repo.UserRepo;
 import com.zanatciu.backend.domain.user.service.UserService;
-import com.zanatciu.backend.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class AuthServiceImpl implements AuthService {
 
-    private MyCacheService myCacheService;
+
     private UserService userService;
 
     @Autowired
     public AuthServiceImpl(
-        MyCacheService myCacheService,
-        UserRepo userRepo
+        UserService userService
     ){
-        this.myCacheService = myCacheService;
         this.userService = userService;
     }
 
@@ -40,6 +32,11 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void logout(String token, String username) {
-        userService.loguot(token, username);
+        userService.logout(token, username);
+    }
+
+    @Override
+    public String refresh(String token, String username) {
+        return userService.refresh(token, username);
     }
 }

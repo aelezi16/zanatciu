@@ -164,16 +164,26 @@ public class UserServiceImpl implements UserService {
             SecurityContextHolder.getContext().setAuthentication(auth);
 
             return token;
-
         }
 
         return null;
     }
 
     @Override
-    public void loguot(String token, String username) {
+    public void logout(String token, String username) {
         SecurityContextHolder.clearContext();
         myCacheService.logUserOut(token, username);
+    }
+
+    @Override
+    public String refresh(String token, String username) {
+        logout(token, username);
+
+        Optional<User> optionalUser = userRepo.findByUsername(username);
+
+        if(!optionalUser.isPresent())return null;
+
+        return login(username, optionalUser.get().getPassword());
     }
 
 }
