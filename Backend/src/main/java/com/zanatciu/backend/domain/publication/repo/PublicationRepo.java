@@ -10,6 +10,7 @@ import java.util.Optional;
 @Repository
 public interface PublicationRepo extends MongoRepository<Publication, String> {
     Optional<Publication> findById(String id);
+    Optional<Publication> findByTitle(String title);
     List<Publication> findAllByUsernameAndType(String username, String type);
     List<Publication> findAllByType(String type);
     void deleteById(String id);

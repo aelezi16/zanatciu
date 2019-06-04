@@ -22,7 +22,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Autowired
     public ApplicationServiceImpl(
         ApplicationRepo applicationRepo,
-        ModelMapper<Application, ApplicationDto> modelMapper
+        ModelMapper<Application, ApplicationDto> modelMapper//,
     ){
         this.applicationRepo = applicationRepo;
         this.modelMapper = modelMapper;
@@ -75,18 +75,31 @@ public class ApplicationServiceImpl implements ApplicationService {
 
         if(!savedApplication.isPresent())
             return null;
-
         return savedApplication.map(
-                (a)->{
-                    Application app = optionalApplication.get();
-                    a.setMessage(app.getMessage());
-                    return a;
-                }
-        ).map(a -> applicationRepo.save(a)).map(modelMapper::modelToDto).get();
+                (a)-> modelMapper.updateModel(optionalApplication.get(), a)
+        ).map(a -> applicationRepo.save(a))
+         .map(modelMapper::modelToDto)
+         .get();
     }
 
     @Override
     public void delete(String id) {
         applicationRepo.deleteById(id);
+    }
+
+    @Override
+    public void evaluate(String applicationId, String verdict) {
+        Optional<Application> optionalApplication = applicationRepo.findById(applicationId);
+
+        if(optionalApplication.isPresent()){
+
+            Application app = optionalApplication.get();
+
+            if(!app.getStatus().equals("EXPIRED")){
+                app.setStatus(verdict);
+                applicationRepo.save(app);
+                //Here send the notification
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@ public class Rating {
     private String id;
     private String username;
     private String publicationId;
+    private String publicationOwnerUsername;
 
     @Max(5)
     @Min(0)
