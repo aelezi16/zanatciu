@@ -11,24 +11,41 @@ public class UserModelMapper implements ModelMapper<User, UserDto> {
     public UserDto modelToDto(User user) {
 
         UserDto dto = new UserDto();
+        if(user.getId() != null)
+            dto.setId(user.getId());
+        if(user.getRoles() != null)
+            dto.setRoles(user.getRoles());
+        if(user.getUsername() != null)
+            dto.setUsername(user.getUsername());
+        if(user.getPassword() != null)
+            dto.setPassword("password");
+        if(user.isStatus())
+            dto.setStatus(user.isStatus());
+        if(user.getBirthday() != null)
+            dto.setBirthday(user.getBirthday());
 
-        dto.setId(user.getId());
-        dto.setRoles(user.getRoles());
-        dto.setUsername(user.getUsername());
-        dto.setPassword("password");
-        dto.setStatus(user.isStatus());
-
-        dto.setBirthday(user.getBirthday());
-        dto.setDescription(user.getDescription());
-        dto.setGender(user.getGender());
-        dto.setImage(user.getImage());
-        dto.setFirstName(user.getFirstName());
-        dto.setLastName(user.getLastName());
-        dto.setPersonalNo(user.getPersonalNo());
-        dto.setEmail(user.getEmail());
-        dto.setDescription(user.getDescription());
-        dto.setSettings(user.getSettings());
-        dto.setRating(user.getRating());
+        if(user.getDescription() != null)
+            dto.setDescription(user.getDescription());
+        if(user.getGender() != null)
+            dto.setGender(user.getGender());
+        if(user.getImage() != null)
+            dto.setImage(user.getImage());
+        if(user.getFirstName() != null)
+            dto.setFirstName(user.getFirstName());
+        if(user.getLastName() != null)
+            dto.setLastName(user.getLastName());
+        if(user.getPersonalNo() != null)
+            dto.setPersonalNo(user.getPersonalNo());
+        if(user.getPhoneNo() != null)
+            dto.setPhoneNo(user.getPhoneNo());
+        if(user.getEmail() != null)
+            dto.setEmail(user.getEmail());
+        if(user.getDescription() != null)
+            dto.setDescription(user.getDescription());
+        if(user.getSettings() != null)
+            dto.setSettings(user.getSettings());
+        if(user.getRating() != null)
+            dto.setRating(user.getRating());
 
         return dto;
     }
@@ -36,25 +53,44 @@ public class UserModelMapper implements ModelMapper<User, UserDto> {
     @Override
     public User dtoToModel(UserDto userDto) {
         User user = new User();
+
         if(userDto.getId() != null)
             user.setId(userDto.getId());
-        user.setPassword(userDto.getPassword());
-        user.setRoles(userDto.getRoles());
+        if(userDto.getPassword() != null)
+            user.setPassword(userDto.getPassword());
+        if(userDto.getRoles() != null)
+            user.setRoles(userDto.getRoles());
         user.setStatus(userDto.isStatus());
-        user.setUsername(userDto.getUsername());
+
+        if(userDto.getUsername()!=null)
+            user.setUsername(userDto.getUsername());
 
 
-        user.setBirthday(userDto.getBirthday());
-        user.setDescription(userDto.getDescription());
-        user.setGender(userDto.getGender());
-        user.setImage(userDto.getImage());
-        user.setFirstName(userDto.getFirstName());
-        user.setLastName(userDto.getLastName());
-        user.setEmail(userDto.getEmail());
-        user.setPersonalNo(userDto.getPersonalNo());
-        user.setDescription(userDto.getDescription());
-        user.setSettings(userDto.getSettings());
-        user.setRating(userDto.getRating());
+        if(userDto.getBirthday() != null)
+            user.setBirthday(userDto.getBirthday());
+
+        if(userDto.getDescription() != null)
+            user.setDescription(userDto.getDescription());
+        if(userDto.getGender() != null)
+            user.setGender(userDto.getGender());
+        if(userDto.getImage() != null)
+            user.setImage(userDto.getImage());
+        if(userDto.getFirstName() != null)
+            user.setFirstName(userDto.getFirstName());
+        if(userDto.getLastName() != null)
+            user.setLastName(userDto.getLastName());
+        if(userDto.getEmail() != null)
+            user.setEmail(userDto.getEmail());
+        if(userDto.getPersonalNo() != null)
+            user.setPersonalNo(userDto.getPersonalNo());
+        if(userDto.getPhoneNo() != null)
+            user.setPhoneNo(userDto.getPhoneNo());
+        if(userDto.getDescription() != null)
+            user.setDescription(userDto.getDescription());
+        if(userDto.getSettings() != null)
+            user.setSettings(userDto.getSettings());
+        if(userDto.getRating() != null)
+            user.setRating(userDto.getRating());
 
         return user;
     }
@@ -92,6 +128,9 @@ public class UserModelMapper implements ModelMapper<User, UserDto> {
             model2.setSettings(model1.getSettings());
         if(model1.getRating() != null)
             model2.setRating(model1.getRating());
+
+        if(model1.getPhoneNo() != null)
+            model2.setPhoneNo(model1.getPhoneNo());
 
         return model2;
     }

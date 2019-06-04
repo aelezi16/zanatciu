@@ -57,10 +57,6 @@ public class RatingServiceImpl implements RatingService {
     @Override
     public RatingDto save(RatingDto ratingDto) {
         Optional<Rating> rating = Optional.of(ratingDto).map(modelMapper::dtoToModel);
-
-        if(ratingRepo.exists(Example.of(rating.get())))
-            return null;
-
         return Optional.of(ratingRepo.save(rating.get())).map(modelMapper::modelToDto).get();
     }
 

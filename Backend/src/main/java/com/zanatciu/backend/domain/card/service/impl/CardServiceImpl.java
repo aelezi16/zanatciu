@@ -51,7 +51,7 @@ public class CardServiceImpl implements CardService {
     public CardDto save(CardDto cardDto) {
         Optional<Card> optionalCard = Optional.of(cardDto).map(modelMapper::dtoToModel);
 
-        if(cardRepo.exists(Example.of(optionalCard.get())))
+        if(cardRepo.findById(cardDto.getId()).isPresent())
             return null;
 
         return Optional.of(cardRepo.save(optionalCard.get())).map(modelMapper::modelToDto).get();

@@ -65,7 +65,7 @@ public class PublicationServiceImpl implements PublicationService {
     public PublicationDto save(PublicationDto publicationDto) {
 
         Optional<Publication> publication = Optional.of(publicationDto).map(modelMapper::dtoToModel);
-        if(publicationRepo.exists(Example.of(publication.get())))
+        if(publicationRepo.findByTitle(publicationDto.getTitle()).isPresent())
             return null;
 
         return Optional.of(publicationRepo.save(publication.get())).map(modelMapper::modelToDto).get();

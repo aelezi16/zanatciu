@@ -28,12 +28,14 @@ public class UserDto {
     private String lastName;
     private String gender;
     private String personalNo;
+    private String phoneNo;
     private String description;
     private Date birthday;
-    private Double rating;
+    private Double rating; //
+
     private String email;
 
-    private Settings settings;
+    private Settings settings;//
 
     private String image;
 

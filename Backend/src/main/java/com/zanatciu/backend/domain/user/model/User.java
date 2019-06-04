@@ -19,6 +19,7 @@ public class User {
 
     //sensitive
     @Id
+    @Indexed
     private String id;
 
     @Indexed(unique = true)
@@ -31,6 +32,7 @@ public class User {
 
     //insensitive
     private String firstName;
+    private String phoneNo;
     private String lastName;
     private String gender;
 
@@ -40,6 +42,7 @@ public class User {
     private String description;
     private Date birthday;
     private Double rating;
+    @Indexed(unique = true)
     private String email;
 
     private Settings settings;

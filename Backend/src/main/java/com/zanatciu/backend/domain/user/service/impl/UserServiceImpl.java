@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserDto> create(UserDto userDto) {
-        if(!userRepo.existsById(userDto.getId()))
+        if(!userRepo.findByUsername(userDto.getUsername()).isPresent())
             return Optional.of(userRepo.save(
                     Optional.of(userDto).map(modelMapper::dtoToModel)
                             .map(u-> {
