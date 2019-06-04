@@ -32,14 +32,13 @@ public class AuthController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/logout")
-    public ResponseEntity logout(
-            @RequestParam String token, @RequestParam String username
-    ){
+    public ResponseEntity logout(){
+        authService.logout();
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/refresh")
-    public String refresh(@RequestParam String token, @RequestParam String username){
-        return authService.refresh(token, username);
+    public String refresh(){
+        return authService.refresh();
     }
 }

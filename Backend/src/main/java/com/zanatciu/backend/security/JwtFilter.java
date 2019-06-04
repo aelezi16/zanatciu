@@ -35,7 +35,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 String user = jwtProvider.getUsername(token);
                 Authentication auth = null;
 
-                if(myCacheService.isUserValid(user, token)) {
+                if(myCacheService.isUserValid(user)) {
                     auth = jwtProvider.getAuthentication(token);
                 }else{
                     SecurityContextHolder.clearContext();

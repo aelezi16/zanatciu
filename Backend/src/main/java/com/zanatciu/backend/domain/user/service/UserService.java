@@ -23,6 +23,6 @@ public interface UserService {
     Optional<User> createBySignUp(UserDto userDto);
     String login(String username, String password);
     String signup(UserDto userDto);
-    void logout(String token, String username);
-    String refresh(String token, String username);
+    void logout();
+    String refresh();
 }

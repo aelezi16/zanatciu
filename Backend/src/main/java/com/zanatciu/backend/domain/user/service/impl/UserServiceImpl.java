@@ -11,9 +11,11 @@ import com.zanatciu.backend.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -174,20 +176,35 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void logout(String token, String username) {
-        SecurityContextHolder.clearContext();
-        myCacheService.logUserOut(token, username);
+    public void logout() {
+        org.springframework.security.core.userdetails.User details = (org.springframework.security.core.userdetails.User)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = details.getUsername();
+
+        System.out.println("this" + username);
+
+        myCacheService.logUserOut(username);
     }
 
     @Override
-    public String refresh(String token, String username) {
-        logout(token, username);
+    public String refresh() {
+
+
+        org.springframework.security.core.userdetails.User details = (org.springframework.security.core.userdetails.User)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = details.getUsername();
+
+        logout();
 
         Optional<User> optionalUser = userRepo.findByUsername(username);
 
         if(!optionalUser.isPresent())return null;
+        String token = jwtProvider.createToken(username, optionalUser.get().getRoles());
+        myCacheService.logUserIn(token, username);
+        Authentication auth = jwtProvider.getAuthentication(token);
+        SecurityContextHolder.getContext().setAuthentication(auth);
 
-        return login(username, optionalUser.get().getPassword());
+        return token;
     }
 
 }
