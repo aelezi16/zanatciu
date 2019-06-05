@@ -2,11 +2,16 @@ package com.zanatciu.backend.config.converter.impl;
 
 import com.zanatciu.backend.config.converter.ModelMapper;
 import com.zanatciu.backend.domain.user.dto.UserDto;
+import com.zanatciu.backend.domain.user.model.Role;
 import com.zanatciu.backend.domain.user.model.User;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class UserModelMapper implements ModelMapper<User, UserDto> {
+
     @Override
     public UserDto modelToDto(User user) {
 
@@ -58,8 +63,20 @@ public class UserModelMapper implements ModelMapper<User, UserDto> {
             user.setId(userDto.getId());
         if(userDto.getPassword() != null)
             user.setPassword(userDto.getPassword());
-        if(userDto.getRoles() != null)
+        if(userDto.getRoles() != null){
             user.setRoles(userDto.getRoles());
+        }else{
+
+            List<Role> roles = new ArrayList<>();
+            roles.add(Role.JOB_PROVIDER);
+            roles.add(Role.JOB_SEEKER);
+            roles.add(Role.SERVICE_PROVIDER);
+            roles.add(Role.SERVICE_SEEKER);
+
+            user.setRoles(roles);
+
+        }
+
         user.setStatus(userDto.isStatus());
 
         if(userDto.getUsername()!=null)
@@ -101,8 +118,19 @@ public class UserModelMapper implements ModelMapper<User, UserDto> {
             model2.setId(model1.getId());
         if(model1.getPassword() != null)
             model2.setPassword(model1.getPassword());
-        if(model1.getRoles() != null)
+        if(model1.getRoles() != null){
             model2.setRoles(model1.getRoles());
+        }
+        else{
+            List<Role> roles = new ArrayList<>();
+            roles.add(Role.JOB_SEEKER);
+            roles.add(Role.SERVICE_PROVIDER);
+            roles.add(Role.SERVICE_SEEKER);
+            roles.add(Role.JOB_PROVIDER);
+
+            model2.setRoles(roles);
+        }
+
 
         model2.setStatus(model1.isStatus());
 

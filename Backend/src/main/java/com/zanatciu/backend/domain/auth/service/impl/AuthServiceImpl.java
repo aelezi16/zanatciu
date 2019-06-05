@@ -31,12 +31,22 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public void logout(String token, String username) {
-        userService.logout(token, username);
+    public void logout() {
+        userService.logout();
     }
 
     @Override
-    public String refresh(String token, String username) {
-        return userService.refresh(token, username);
+    public String refresh() {
+        return userService.refresh();
+    }
+
+    @Override
+    public void reset(String email) {
+        userService.reset(email);
+    }
+
+    @Override
+    public void resetByToken(String token) {
+        userService.resetByToken(token);
     }
 }

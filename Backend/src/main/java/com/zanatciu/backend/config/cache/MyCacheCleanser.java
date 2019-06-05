@@ -13,12 +13,12 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class MyCacheCleanser {
 
-    private ConcurrentHashMap<String, HashSet<String> > loadCache;
+    private ConcurrentHashMap<String, String > loadCache;
     private JwtProvider jwtProvider;
 
     @Autowired
     public MyCacheCleanser(
-            ConcurrentHashMap<String, HashSet<String> > loadCache,
+            ConcurrentHashMap<String, String> loadCache,
             JwtProvider jwtProvider
     ){
         this.loadCache = loadCache;
@@ -28,11 +28,9 @@ public class MyCacheCleanser {
     @Scheduled(fixedDelay = 3600000l)
     public void cleanse(){
         loadCache.forEach((key, val)->{
-            val.forEach(tokenVal ->{
-                if(jwtProvider.getExpiration(tokenVal).getTime() < new Date().getTime()){
-                    loadCache.get(key).remove(tokenVal);
+                if(jwtProvider.getExpiration(val).getTime() < new Date().getTime()){
+                    loadCache.remove(key);
                 }
-            });
         });
     }
 

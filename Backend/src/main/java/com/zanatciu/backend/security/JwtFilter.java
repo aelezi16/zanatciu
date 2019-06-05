@@ -31,15 +31,17 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = jwtProvider.resolveToken(httpServletRequest);
         try {
             if (token != null && jwtProvider.validateToken(token)) {
-                String user = jwtProvider.getUsername(token);
 
-                if(myCacheService.isUserValid(user, token)) {
-                    Authentication auth = jwtProvider.getAuthentication(token);
-                    SecurityContextHolder.getContext().setAuthentication(auth);
+                String user = jwtProvider.getUsername(token);
+                Authentication auth = null;
+
+                if(myCacheService.isUserValid(user)) {
+                    auth = jwtProvider.getAuthentication(token);
                 }else{
                     SecurityContextHolder.clearContext();
-                    return;
                 }
+
+                SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }catch (Exception e){
             SecurityContextHolder.clearContext();

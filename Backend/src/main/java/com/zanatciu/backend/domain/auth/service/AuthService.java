@@ -8,7 +8,11 @@ public interface AuthService {
 
     String signup(UserDto userDto);
 
-    void logout(String token, String username);
+    void logout();
 
-    String refresh(String token, String username);
+    String refresh();
+
+    void reset(String email);
+
+    void resetByToken(String token);
 }

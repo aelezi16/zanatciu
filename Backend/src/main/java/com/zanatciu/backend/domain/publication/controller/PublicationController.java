@@ -50,8 +50,8 @@ public class PublicationController {
     }
 
     @GetMapping("/type")
-    public ResponseEntity<List<PublicationDto>> getByType(@RequestParam String type, @RequestParam Integer max){
-        List<PublicationDto> list = publicationService.getByType(type);
+    public ResponseEntity<List<PublicationDto>> getByType(@RequestParam String type, @RequestParam Integer page, @RequestParam Integer size){
+        List<PublicationDto> list = publicationService.getByType(type, page, size);
 
         return !list.isEmpty()
                 ? new ResponseEntity<>(list, HttpStatus.OK)

@@ -2,6 +2,7 @@ package com.zanatciu.backend.domain.user.service.impl;
 
 import com.zanatciu.backend.config.cache.MyCacheService;
 import com.zanatciu.backend.config.converter.ModelMapper;
+import com.zanatciu.backend.config.mail.service.SimpMailService;
 import com.zanatciu.backend.domain.settings.dto.SettingsDto;
 import com.zanatciu.backend.domain.user.dto.UserDto;
 import com.zanatciu.backend.domain.user.model.User;
@@ -11,11 +12,14 @@ import com.zanatciu.backend.security.JwtProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,6 +30,7 @@ public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder myPasswordEncoder;
     private MyCacheService myCacheService;
     private JwtProvider jwtProvider;
+    private SimpMailService simpMailService;
 
     @Autowired
     public UserServiceImpl(
@@ -33,13 +38,15 @@ public class UserServiceImpl implements UserService {
             ModelMapper<User, UserDto> modelMapper,
             BCryptPasswordEncoder myPasswordEncoder,
             JwtProvider jwtProvider,
-            MyCacheService myCacheService
+            MyCacheService myCacheService,
+            SimpMailService simpMailService
     ){
         this.userRepo = userRepo;
         this.modelMapper = modelMapper;
         this.myPasswordEncoder = myPasswordEncoder;
         this.jwtProvider = jwtProvider;
         this.myCacheService = myCacheService;
+        this.simpMailService = simpMailService;
     }
 
     @Override
@@ -61,8 +68,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<UserDto> getByUsername(String username) {
         Optional<User> optionalUser = userRepo.findByUsername(username);
+
+
+
         if(optionalUser.isPresent())
             return optionalUser.map(modelMapper::modelToDto);
+
         return Optional.empty();
     }
 
@@ -170,20 +181,94 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void logout(String token, String username) {
-        SecurityContextHolder.clearContext();
-        myCacheService.logUserOut(token, username);
+    public void logout() {
+        org.springframework.security.core.userdetails.User details = (org.springframework.security.core.userdetails.User)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = details.getUsername();
+
+        System.out.println("this" + username);
+
+        myCacheService.logUserOut(username);
     }
 
     @Override
-    public String refresh(String token, String username) {
-        logout(token, username);
+    public String refresh() {
+
+
+        org.springframework.security.core.userdetails.User details = (org.springframework.security.core.userdetails.User)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username = details.getUsername();
+
+        logout();
 
         Optional<User> optionalUser = userRepo.findByUsername(username);
 
         if(!optionalUser.isPresent())return null;
+        String token = jwtProvider.createToken(username, optionalUser.get().getRoles());
+        myCacheService.logUserIn(token, username);
+        Authentication auth = jwtProvider.getAuthentication(token);
+        SecurityContextHolder.getContext().setAuthentication(auth);
 
-        return login(username, optionalUser.get().getPassword());
+        return token;
+    }
+
+    @Override
+    public void reset(String email) {
+        Optional<User>  optionalUser = userRepo.findByEmail(email);
+
+        if(optionalUser.isPresent()){
+
+            String token = jwtProvider.createToken(optionalUser.get().getUsername(), optionalUser.get().getRoles());
+
+            simpMailService.passwordResetMessage(email, token);
+
+        }else {
+            simpMailService.emailNotFoundMessage(email);
+        }
+    }
+
+    @Override
+    public void resetByToken(String token) {
+        boolean flag = jwtProvider.validateToken(token);
+
+        if(flag){
+            String username = jwtProvider.getUsername(token);
+
+            Optional<User> optionalUser = userRepo.findByUsername(username);
+
+            if(optionalUser.isPresent()){
+
+                String newPassword = generatePassword();
+
+                String hashedPassword = myPasswordEncoder.encode(newPassword);
+
+                User user = optionalUser.get();
+                user.setPassword(hashedPassword);
+
+                userRepo.save(user);
+
+                simpMailService.passwordResetFinishedMessage(user.getEmail(), newPassword);
+
+            }
+
+
+        }
+    }
+
+    private String generatePassword(){
+        String pswd = "";
+
+        Random random = new Random();
+
+        for(int i = 0; i < 10; i++){
+            pswd += new Character((char)(random.nextInt(25) + 'a'));
+        }
+
+        for(int i = 0; i < 5; i++){
+            pswd += random.nextInt(10);
+        }
+
+        return pswd;
     }
 
 }
