@@ -1,6 +1,6 @@
 package com.zanatciu.backend.domain.publication.model;
 
-import com.zanatciu.backend.domain.rating.model.Rating;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +19,6 @@ public class Publication {
     @Id
     private String id;
 
-    @Indexed(unique = true)
     private String username;
 
     @Indexed(unique = true)

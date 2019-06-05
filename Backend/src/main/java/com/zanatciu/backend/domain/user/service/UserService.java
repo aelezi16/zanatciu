@@ -25,4 +25,6 @@ public interface UserService {
     String signup(UserDto userDto);
     void logout();
     String refresh();
+    void reset(String email);
+    void resetByToken(String token);
 }

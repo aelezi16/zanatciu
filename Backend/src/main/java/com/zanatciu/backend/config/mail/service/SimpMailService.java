@@ -46,7 +46,7 @@ public class SimpMailService{
 
         String text = "Ju lutem klikoni linkun e meposhtem per te rivendosur fjalekalimin"
                 + "\n\n\n"
-                + EnvironmentVariables.APP_IP + ":8080/auth/reset/tkn/" + token;
+                + EnvironmentVariables.APP_IP + ":8080/auth/reset/" + token;
         sendSimpleMessage(to, subject, text);
 
     }

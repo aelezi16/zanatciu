@@ -39,4 +39,14 @@ public class AuthServiceImpl implements AuthService {
     public String refresh() {
         return userService.refresh();
     }
+
+    @Override
+    public void reset(String email) {
+        userService.reset(email);
+    }
+
+    @Override
+    public void resetByToken(String token) {
+        userService.resetByToken(token);
+    }
 }

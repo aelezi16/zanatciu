@@ -43,4 +43,14 @@ public class AuthController {
     public String refresh(){
         return authService.refresh();
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/reset")
+    public void  reset(@RequestParam String email){
+        authService.reset(email);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/reset/{token}")
+    public void resetByToken(@PathVariable String token){
+        authService.resetByToken(token);
+    }
 }

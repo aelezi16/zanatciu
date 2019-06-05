@@ -7,6 +7,8 @@ import com.zanatciu.backend.domain.publication.repo.PublicationRepo;
 import com.zanatciu.backend.domain.publication.service.PublicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,8 +56,10 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     @Override
-    public List<PublicationDto> getByType(String type) {
-        return publicationRepo.findAllByType(type)
+    public List<PublicationDto> getByType(String type, Integer page, Integer size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        return publicationRepo.findAllByType(type, pageable)
                                 .stream()
                                 .map(modelMapper::modelToDto)
                                 .collect(Collectors.toList());
