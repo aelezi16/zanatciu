@@ -28,6 +28,8 @@ public class AuthController {
     @RequestMapping(method = RequestMethod.POST, value = "/signup")
     public String signup(@RequestBody UserDto userDto){
 
+        //
+        System.out.println(userDto.toString());
         return authService.signup(userDto);
     }
 
