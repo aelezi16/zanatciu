@@ -30,4 +30,7 @@ public class Publication {
     private Integer ratingCount;
     private Date timestamp;
 
+    private String image;
+    private Double price;
+
 }

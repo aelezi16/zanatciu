@@ -261,7 +261,7 @@ public class UserServiceImpl implements UserService {
         Random random = new Random();
 
         for(int i = 0; i < 10; i++){
-            pswd += (char)random.nextInt(25) + 'a';
+            pswd += new Character((char)(random.nextInt(25) + 'a'));
         }
 
         for(int i = 0; i < 5; i++){
