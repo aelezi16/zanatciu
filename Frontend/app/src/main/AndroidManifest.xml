@@ -34,6 +34,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".Funksionalitete.ActivityClasses.Regjistro"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".Funksionalitete.ActivityClasses.RifitoFjalekalim"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".Kreu.ActivityClasses.Kreu"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
+
+
+
+
+
+
+
     </application>
+
+
+
+
 
 </manifest>

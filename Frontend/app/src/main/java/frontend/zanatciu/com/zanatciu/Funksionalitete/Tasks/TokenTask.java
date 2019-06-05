@@ -21,7 +21,7 @@ import java.net.URL;
 import frontend.zanatciu.com.zanatciu.Funksionalitete.Interfaces.TokenResponse;
 import frontend.zanatciu.com.zanatciu.Funksionalitete.JsonBlueprintLayer.Responses.TokenRes;
 import frontend.zanatciu.com.zanatciu.Funksionalitete.Utilities.LoginUtility;
-
+import frontend.zanatciu.com.zanatciu.Kreu.Utilities.UrlUtil;
 
 
 public class TokenTask extends AsyncTask<LoginUtility, String, String> {
@@ -52,7 +52,7 @@ public class TokenTask extends AsyncTask<LoginUtility, String, String> {
 
 
             HttpClient client = new DefaultHttpClient();
-            String urlPost ="http://192.168.0.205:8080/auth/login?username="+params[0].getUsername()+"&password="+params[0].getPassword();
+            String urlPost = UrlUtil.BaseUrl+"auth/login?username="+params[0].getUsername()+"&password="+params[0].getPassword();
             URI website = new URI(urlPost);
             HttpGet request = new HttpGet(website);
 

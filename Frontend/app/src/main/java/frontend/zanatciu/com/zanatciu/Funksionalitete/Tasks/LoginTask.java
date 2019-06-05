@@ -48,7 +48,7 @@ public class LoginTask extends AsyncTask<String, String, LoginRes> {
         try {
 
             HttpClient client = new DefaultHttpClient();
-            String urlPost = "http://192.168.0.205:8080/user/username/"+ UserProfile.getInstance().getUsername();
+            String urlPost = UrlUtil.BaseUrl+"user/username/"+ UserProfile.getInstance().getUsername();
 
             URI website = new URI(urlPost);
             HttpGet request = new HttpGet(website);

@@ -153,7 +153,7 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
                 toast.show();
 
-                jobListTaskAsync.execute();
+                //jobListTaskAsync.execute();
 
 
                 //below not here but in the response
@@ -172,7 +172,7 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
                 toast1.show();
 
 
-                serviceListTaskAsync.execute();
+                //serviceListTaskAsync.execute();
 
                 listLinearLayout.setVisibility(View.VISIBLE);
                 customAdapterKreuSherbim=new CustomAdapterKreuSherbim(this,arrayListServices);

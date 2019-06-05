@@ -383,6 +383,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -659,6 +660,7 @@ drawable list_item_less_oval_background
 drawable list_item_oval_background
 drawable logo1
 drawable logo2
+drawable logo_shape
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -742,6 +744,7 @@ id dimensions
 id direct
 id disableHome
 id edit_query
+id email
 id emri
 id emriLabel
 id emriTextView
@@ -753,6 +756,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id firstRegjistrimRow
+id fjalekalim
 id forever
 id forthRegjistrimRow
 id gone
@@ -778,6 +782,7 @@ id list_aplikime_pune
 id list_item
 id list_market
 id logoZanatciu
+id mbiemri
 id message
 id middle
 id multiply
@@ -787,10 +792,14 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id nrTel
 id packed
 id parent
 id parentPanel
 id percent
+id perdoruesi
+id perseritFjalekalim
+id personalNr
 id prenotimeButton
 id price_wage
 id profile_image
@@ -850,6 +859,7 @@ id textArea
 id textSpacerNoButtons
 id textSpacerNoTitle
 id thirdRegjistrimRow
+id thirdRegjistrimRow1
 id time
 id title
 id titleDividerNoCustom

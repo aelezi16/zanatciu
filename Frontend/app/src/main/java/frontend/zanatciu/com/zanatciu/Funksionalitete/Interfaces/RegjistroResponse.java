@@ -1,7 +1,7 @@
 package frontend.zanatciu.com.zanatciu.Funksionalitete.Interfaces;
 
-public interface RegjistroResponse <RegjistroRes>{
+public interface RegjistroResponse <String>{
 
-    void onPostTaskRegjistro(RegjistroRes regjstro);
+    void onPostTaskRegjistro(String regjstro);
 
 }

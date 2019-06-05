@@ -1,5 +1,6 @@
 package frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import frontend.zanatciu.com.zanatciu.Funksionalitete.Tasks.TokenTask;
 import frontend.zanatciu.com.zanatciu.Funksionalitete.TokenCache;
 import frontend.zanatciu.com.zanatciu.Funksionalitete.UserProfile;
 import frontend.zanatciu.com.zanatciu.Funksionalitete.Utilities.LoginUtility;
+import frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.Kreu;
 import frontend.zanatciu.com.zanatciu.Kreu.Tasks.JobListTask;
 import frontend.zanatciu.com.zanatciu.R;
 
@@ -30,6 +32,7 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
     private EditText username;
     private EditText password;
     private Button hyrje;
+    private Button regjistrohu;
 
     private String result;
     private TextView test;
@@ -50,6 +53,8 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
         password=(EditText)findViewById(R.id.Password);
         hyrje=(Button)findViewById(R.id.Hyrje);
         test=(TextView)findViewById(R.id.test);
+        regjistrohu=(Button)findViewById(R.id.Regjistrim);
+
 
         loginTaskAsync.delegate=this;
         tokenTaskAsync.delegate=this;
@@ -66,6 +71,15 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
 
                 tokenTaskAsync.execute(loginUtility);
 
+            }
+        });
+
+        regjistrohu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                  Intent goRegjistrim=new Intent(Login.this,Regjistro.class);
+                  startActivity(goRegjistrim);
             }
         });
 
@@ -98,6 +112,8 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
     public void onPostTaskLogin(LoginRes loginRes) {
         result+=loginRes.getUsername();
         test.setText(result);
+        Intent goKreu=new Intent(Login.this, Kreu.class);
+        startActivity(goKreu);
     }
 
 
@@ -108,7 +124,7 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
     public void onPostTaskToken(String token) {
 
        //String requestContent= serializeLoginReq(username.getText().toString(),password.getText().toString());
-        TokenCache.getInstance().setToken(token);
+       TokenCache.getInstance().setToken(token);
        result=token;
        loginTaskAsync.execute();
 
