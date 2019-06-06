@@ -1,18 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
-INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
-INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
-INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
+MERGED from [com.android.support:design:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/b6b82b99f4ef2847c203ff137cb99e66/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/03d5ca635802f3e77e9764ab07686975/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/gerild/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/26347cfe297f9f8cbde4753c9f9c6863/AndroidManifest.xml:2:1-11:12
 MERGED from [info.hoang8f:android-segmented:1.0.6] /home/gerild/.gradle/caches/transforms-1/files-1.1/android-segmented-1.0.6.aar/d74aa8325c37bbb6f815950032f88c95/AndroidManifest.xml:2:1-11:12
 MERGED from [de.hdodenhof:circleimageview:3.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/0a41c4eefbb71c3fe22aa31707acb79f/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-fragment:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/eb85c965199fabc5cc0c28316a3fe2d0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/e8880c0e1d8510b75d5d04a2b5e6eecb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/918531a96df08e2a95b06a0e44cfbd2c/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a810c77c3c8055fbf4bbdaf2ace29cf5/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/7f08ab9e64dab97b4a4abbecab622386/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/eb0cefd1c6809ee40cc36495e0fba702/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/ce9d6a1c7c106297b5987061369c4c4a/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/a404697cac4748d5bd0961f99bf286b7/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/32ce1dc98978c19ef99f610d12893402/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/ccaadaca3bf3fe083199611cdcd167d3/AndroidManifest.xml:17:1-22:12
@@ -24,29 +27,30 @@ MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/gerild/.gradl
 MERGED from [com.android.support:support-compat:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/7a69377f6ec71a88c122a1c5284c44e6/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/426f653dea75d7e5d47be9bbee6eec42/AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/feaedf4a00fe35cfb43c8493b89d164b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/00d224ec7d0139a5106aef919698a564/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/4478f4d191787dd2111591a181841856/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/726d0b8bd993c670b483c5e12b32fc5f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/65e10ab71ec16ee681e666cef47bd186/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/5356112ee904b4d59b2ddcc45b12383e/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/e2f8b80e2e32ad7fa439b88dc4a2eca2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8b08a783738f228f1ee963d92a4b3c19/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8215939773d3049bd0271593ffe50e0/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/2db548c62b876ae7a1e2308a4521ca8d/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0b2ca449c281671878a4c0f2bb3084fe/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8b08a783738f228f1ee963d92a4b3c19/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
-INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
-INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
+INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
+INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
 	package
 		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:3:5-45
 		INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 		INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
 		INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-86:12
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:1-90:12
 		INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:2:11-69
@@ -83,7 +87,9 @@ ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.x
 	android:name
 		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:15:22-78
 application
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:22:5-80:19
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:22:5-84:19
+MERGED from [com.android.support:design:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/b6b82b99f4ef2847c203ff137cb99e66/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/b6b82b99f4ef2847c203ff137cb99e66/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/gerild/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/26347cfe297f9f8cbde4753c9f9c6863/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/gerild/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/26347cfe297f9f8cbde4753c9f9c6863/AndroidManifest.xml:9:5-20
 MERGED from [de.hdodenhof:circleimageview:3.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/0a41c4eefbb71c3fe22aa31707acb79f/AndroidManifest.xml:9:5-20
@@ -106,48 +112,52 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/gerild/.gradl
 		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:23:9-35
 	android:theme
 		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:28:9-40
-activity#frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:30:9-36:20
-	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:30:19-72
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:31:13-35:29
-action#android.intent.action.MAIN
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:32:17-69
-	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:32:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:34:17-77
-	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:34:27-74
-activity#frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Regjistro
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:39:9-43:20
-	android:screenOrientation
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:41:13-49
-	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:40:13-70
-activity#frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.RifitoFjalekalim
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:45:9-49:20
-	android:screenOrientation
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:47:13-49
-	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:46:13-77
 activity#frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.Kreu
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:52:9-56:20
-	android:screenOrientation
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:54:13-49
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:31:9-40:20
+	android:theme
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:33:13-56
 	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:53:13-54
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:31:19-60
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:35:13-39:29
+action#android.intent.action.MAIN
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:36:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:38:17-77
+	android:name
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:38:27-74
+activity#frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Regjistro
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:43:9-47:20
+	android:screenOrientation
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:45:13-49
+	android:name
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:44:13-70
+activity#frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.RifitoFjalekalim
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:49:9-53:20
+	android:screenOrientation
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:51:13-49
+	android:name
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:50:13-77
+activity#frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:56:9-60:20
+	android:screenOrientation
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:58:13-49
+	android:name
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:57:13-66
 activity#frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.PuneItem
-ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:58:9-62:20
+ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:62:9-66:20
 	android:screenOrientation
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:60:13-49
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:64:13-49
 	android:name
-		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:59:13-58
+		ADDED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml:63:13-58
 uses-sdk
 INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/b6b82b99f4ef2847c203ff137cb99e66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/b6b82b99f4ef2847c203ff137cb99e66/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/03d5ca635802f3e77e9764ab07686975/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/03d5ca635802f3e77e9764ab07686975/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/gerild/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/26347cfe297f9f8cbde4753c9f9c6863/AndroidManifest.xml:5:5-7:41
@@ -160,12 +170,16 @@ MERGED from [com.android.support:support-fragment:28.0.0] /home/gerild/.gradle/c
 MERGED from [com.android.support:support-fragment:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/eb85c965199fabc5cc0c28316a3fe2d0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/e8880c0e1d8510b75d5d04a2b5e6eecb/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/e8880c0e1d8510b75d5d04a2b5e6eecb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/918531a96df08e2a95b06a0e44cfbd2c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/918531a96df08e2a95b06a0e44cfbd2c/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a810c77c3c8055fbf4bbdaf2ace29cf5/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/a810c77c3c8055fbf4bbdaf2ace29cf5/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/7f08ab9e64dab97b4a4abbecab622386/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/7f08ab9e64dab97b4a4abbecab622386/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/eb0cefd1c6809ee40cc36495e0fba702/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/eb0cefd1c6809ee40cc36495e0fba702/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/ce9d6a1c7c106297b5987061369c4c4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/ce9d6a1c7c106297b5987061369c4c4a/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/a404697cac4748d5bd0961f99bf286b7/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/a404697cac4748d5bd0961f99bf286b7/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:viewpager:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/32ce1dc98978c19ef99f610d12893402/AndroidManifest.xml:20:5-44
@@ -188,6 +202,8 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /home/gerild/.gradl
 MERGED from [com.android.support:versionedparcelable:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/426f653dea75d7e5d47be9bbee6eec42/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/feaedf4a00fe35cfb43c8493b89d164b/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cursoradapter:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/feaedf4a00fe35cfb43c8493b89d164b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/00d224ec7d0139a5106aef919698a564/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/00d224ec7d0139a5106aef919698a564/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/4478f4d191787dd2111591a181841856/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/4478f4d191787dd2111591a181841856/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:documentfile:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/726d0b8bd993c670b483c5e12b32fc5f/AndroidManifest.xml:20:5-44
@@ -198,14 +214,14 @@ MERGED from [com.android.support:print:28.0.0] /home/gerild/.gradle/caches/trans
 MERGED from [com.android.support:print:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/5356112ee904b4d59b2ddcc45b12383e/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/e2f8b80e2e32ad7fa439b88dc4a2eca2/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/e2f8b80e2e32ad7fa439b88dc4a2eca2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8b08a783738f228f1ee963d92a4b3c19/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8b08a783738f228f1ee963d92a4b3c19/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8215939773d3049bd0271593ffe50e0/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8215939773d3049bd0271593ffe50e0/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/2db548c62b876ae7a1e2308a4521ca8d/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/2db548c62b876ae7a1e2308a4521ca8d/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0b2ca449c281671878a4c0f2bb3084fe/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] /home/gerild/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0b2ca449c281671878a4c0f2bb3084fe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8b08a783738f228f1ee963d92a4b3c19/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /home/gerild/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8b08a783738f228f1ee963d92a4b3c19/AndroidManifest.xml:20:5-44
 INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 INJECTED from /home/gerild/Desktop/zanatciu/Frontend/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

@@ -11,6 +11,13 @@
 
     >
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        />
 
 
     <info.hoang8f.android.segmented.SegmentedGroup
@@ -20,6 +27,7 @@
         android:layout_margin="0dp"
         android:orientation="horizontal"
         android:layout_marginTop="40dp"
+        android:layout_below="@id/toolbar"
         segmentedgroup:sc_border_width="3dp"
         segmentedgroup:sc_corner_radius="5dp"
         segmentedgroup:sc_tint_color="#CBC079"

@@ -27,7 +27,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Funksionalitete.ActivityClasses.Login">
+
+        <activity android:name=".Kreu.ActivityClasses.Kreu"
+
+            android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,13 +54,19 @@
 
 
         <activity
-            android:name=".Kreu.ActivityClasses.Kreu"
+            android:name=".Funksionalitete.ActivityClasses.Login"
             android:screenOrientation="portrait"
             >
         </activity>
 
         <activity
             android:name=".Kreu.ActivityClasses.PuneItem"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".Kreu.ActivityClasses.SherbimItem"
             android:screenOrientation="portrait"
             >
         </activity>

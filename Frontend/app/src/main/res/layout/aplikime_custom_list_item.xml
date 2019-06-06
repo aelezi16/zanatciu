@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/relativeLayout"
+    android:id="@+id/relativeLayoutAplikimeListItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +11,7 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
 
-        android:id="@+id/profile_image"
+        android:id="@+id/profile_image_aplikime"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -26,7 +26,7 @@
         android:id="@+id/emriLabel"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_toRightOf="@id/profile_image"
+        android:layout_toRightOf="@id/profile_image_aplikime"
         android:layout_alignTop="@+id/profile_image"
         android:text="Emri:"
         android:textColor="#000000"

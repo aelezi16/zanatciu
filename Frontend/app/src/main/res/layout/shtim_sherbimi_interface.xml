@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture">
+
+    <ImageView
+        android:id="@+id/shtimSherbimiLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_shape"/>
+
+
+    <TextView
+        android:id="@+id/titulliShtoSherbimLabel"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:text="Titulli:"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/shtimSherbimiLogo"/>
+
+    <EditText
+        android:id="@+id/titulliShtoSherbimFushe"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@+id/titulliShtoSherbimLabel"
+        android:layout_toRightOf="@id/titulliShtoSherbimLabel"
+        android:background="@drawable/whiteovalbackground"/>
+
+    <TextView
+        android:id="@+id/pershkrimShtoSherbimLabel"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:text="Pershkrimi:"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@+id/titulliShtoSherbimLabel"/>
+
+    <EditText
+        android:id="@+id/pershkrimShtoSherbimFushe"
+        android:layout_width="200dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/titulliShtoSherbimFushe"
+        android:layout_below="@+id/titulliShtoSherbimFushe"
+        android:background="@drawable/whiteovalbackground"/>
+
+    <TextView
+        android:id="@+id/cmimiShtoSherbimLabel"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="Cmimi:"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_alignTop="@id/cmimiShtoSherbimFushe"
+        />
+
+    <EditText
+        android:id="@+id/cmimiShtoSherbimFushe"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/titulliShtoSherbimFushe"
+        android:layout_below="@+id/pershkrimShtoSherbimFushe"
+        android:background="@drawable/whiteovalbackground"/>
+
+
+    <LinearLayout
+        android:id="@+id/shtoSherbimButtons"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cmimiShtoSherbimFushe"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/shtoSherbim"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonsbackground"
+            android:text="Shto"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/anulloShtoSherbim"
+            android:layout_width="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonsbackground"
+            android:text="Anullo"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

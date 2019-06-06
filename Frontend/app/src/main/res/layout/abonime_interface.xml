@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarPunetEMia"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        />
+
+
+    <Button
+        android:id="@+id/shtoSherbimButton"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolbarPunetEMia"
+
+        android:text="Karta Credit/Debit"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonsbackground"/>
+
+
+    <LinearLayout
+
+        android:id="@+id/linearLayoutListViewAbonime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shtoSherbimButton"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation = "vertical"
+        android:background="@color/listdivider"
+        >
+
+
+
+        <ListView
+            android:id="@+id/list_market"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider = "@color/listdivider"
+            android:dividerHeight = "10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+
+            >
+
+        </ListView>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

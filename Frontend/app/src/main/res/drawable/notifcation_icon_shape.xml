@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <bitmap android:gravity="center" android:src="@drawable/ic_done_all_black_24dp"  />
+            </item>
+            <item>
+                <shape>
+
+                    <gradient
+                        android:startColor="#CBC079"
+                        android:endColor="#CBC079"
+                        android:angle="270" />
+                    <stroke android:width="1dp" android:color="#CBC079" />
+                    <corners android:radius="30dp" />
+                    <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:state_enabled="true">
+        <layer-list>
+            <item>
+                <bitmap android:gravity="center" android:src="@drawable/ic_notifications_black_24dp"  />
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+
+                    <stroke android:width="1dp" android:color="#CBC079" />
+                    <corners android:radius="30dp" />
+                    <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>

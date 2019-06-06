@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarPunetEMia"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        />
+
+
+    <Button
+        android:id="@+id/shtoPuneButton"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/toolbarPunetEMia"
+        android:layout_alignLeft="@id/list_punet_e_mia"
+        android:text="Shto Pune"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonsbackground"/>
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:textColor="@color/white"
+        android:text="0/5"
+        android:gravity="center"
+
+        android:background="@drawable/buttonsbackground"
+        android:layout_alignTop="@id/shtoPuneButton"
+        android:layout_alignRight="@+id/list_punet_e_mia"/>
+
+    <ListView
+        android:id="@+id/list_punet_e_mia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shtoPuneButton"
+        android:divider = "#ffffff"
+        android:dividerHeight = "10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        >
+
+    </ListView>
+
+</RelativeLayout>
