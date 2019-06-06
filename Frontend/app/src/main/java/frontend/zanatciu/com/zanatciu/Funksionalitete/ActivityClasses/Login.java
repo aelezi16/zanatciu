@@ -33,15 +33,18 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
     private EditText password;
     private Button hyrje;
     private Button regjistrohu;
-
+    private Button rifitoFjalekalim;
     private String result;
     private TextView test;
 
     private LoginTask loginTaskAsync=new LoginTask();
     private TokenTask tokenTaskAsync=new TokenTask();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_interface);
 
@@ -54,6 +57,7 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
         hyrje=(Button)findViewById(R.id.Hyrje);
         test=(TextView)findViewById(R.id.test);
         regjistrohu=(Button)findViewById(R.id.Regjistrim);
+        rifitoFjalekalim=(Button)findViewById(R.id.buttonRifitoFjalekalim);
 
 
         loginTaskAsync.delegate=this;
@@ -85,6 +89,16 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
 
 
 
+        rifitoFjalekalim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent goMerrFjalekalim=new Intent(Login.this,RifitoFjalekalim.class);
+                startActivity(goMerrFjalekalim);
+
+            }
+        });
+
     }
 
 
@@ -111,7 +125,7 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
     @Override
     public void onPostTaskLogin(LoginRes loginRes) {
         result+=loginRes.getUsername();
-        test.setText(result);
+
         Intent goKreu=new Intent(Login.this, Kreu.class);
         startActivity(goKreu);
     }
@@ -124,9 +138,10 @@ public class Login extends AppCompatActivity implements LoginResponse<LoginRes>,
     public void onPostTaskToken(String token) {
 
        //String requestContent= serializeLoginReq(username.getText().toString(),password.getText().toString());
-       TokenCache.getInstance().setToken(token);
-       result=token;
-       loginTaskAsync.execute();
-
+        if(token!=null){
+           TokenCache.getInstance().setToken(token);
+           result=token;
+           loginTaskAsync.execute();
+        }
     }
 }

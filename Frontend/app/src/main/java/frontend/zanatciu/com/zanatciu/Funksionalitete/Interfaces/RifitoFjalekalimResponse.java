@@ -1,7 +1,7 @@
 package frontend.zanatciu.com.zanatciu.Funksionalitete.Interfaces;
 
-public interface RifitoFjalekalimResponse <RifitoFjalekalimRes> {
+public interface RifitoFjalekalimResponse <Integer> {
 
-    void onPostTaskLogin(RifitoFjalekalimRes rifitoFjalekalimRes);
+    void onPostTaskRifitoFjalekalim(Integer result);
 
 }

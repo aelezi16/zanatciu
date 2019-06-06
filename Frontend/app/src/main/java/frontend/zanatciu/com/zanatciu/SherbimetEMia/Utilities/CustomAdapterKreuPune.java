@@ -99,7 +99,7 @@ public class CustomAdapterKreuPune implements ListAdapter {
 
         circleImageView.setImageResource(R.drawable.logo2);
         title.setText(jobMarketListItem.getTitle());
-        price_wage.setText(jobMarketListItem.getPrice_wage());
+        price_wage.setText(jobMarketListItem.getPrice().toString());
 
         return convertView;
     }

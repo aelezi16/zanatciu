@@ -661,6 +661,8 @@ drawable list_item_oval_background
 drawable logo1
 drawable logo2
 drawable logo_shape
+drawable next
+drawable next_shape
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -673,6 +675,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable previous
+drawable previous_shape
 drawable radio_checked
 drawable radio_unchecked
 drawable tooltip_frame_dark
@@ -684,6 +688,7 @@ id CTRL
 id FUNCTION
 id Hyrje
 id META
+id PageNumberControllers
 id Password
 id Regjistrim
 id SHIFT
@@ -720,9 +725,11 @@ id beginning
 id blocking
 id bottom
 id btnRegisterHere
+id btnRifitoFjalekalim
 id button21
 id button22
 id buttonPanel
+id buttonRifitoFjalekalim
 id center
 id center_horizontal
 id center_vertical
@@ -745,6 +752,7 @@ id direct
 id disableHome
 id edit_query
 id email
+id emailRifitoFjalekalim
 id emri
 id emriLabel
 id emriTextView
@@ -787,6 +795,7 @@ id message
 id middle
 id multiply
 id never
+id next
 id none
 id normal
 id notification_background
@@ -801,6 +810,7 @@ id perdoruesi
 id perseritFjalekalim
 id personalNr
 id prenotimeButton
+id previous
 id price_wage
 id profile_image
 id progress_circular

@@ -39,18 +39,17 @@ public class JobMarketListRes extends BaseRes implements Serializable {
 
             //Mund te kete edhe ndonje atribut tjeter shtese suportues per security ose per requests monitoring
 
-            JsonObject jobject = json.getAsJsonObject();
 
             JobMarketListRes ret = new JobMarketListRes();
 
             // OsheeBillResItems[] arr = null;
-            ArrayList<JobMarketListItem> jobMarketListInner = null;
+            ArrayList<JobMarketListItem> jobMarketListInner = new ArrayList<>();
 
-            if (jobject.get("jobMarketList").isJsonNull()) {
+            if (json.isJsonNull()) {
                 ret.setJobMarketList(jobMarketListInner);
             } else {
 
-                JsonArray jsonArrayObject = jobject.get("jobMarketList").getAsJsonArray();
+                JsonArray jsonArrayObject = json.getAsJsonArray();
 
 
                 for (int i = 0; i < jsonArrayObject.size(); i++) {

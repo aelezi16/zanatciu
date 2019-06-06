@@ -7,6 +7,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/list_item_oval_background"
+
+    android:clickable="false"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -17,7 +21,10 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/logo1"
         app:civ_border_width="2dp"
-        app:civ_border_color="#000000"/>
+        app:civ_border_color="#000000"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
 
 
@@ -31,7 +38,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:gravity="center"
-
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         />
 
     <TextView
@@ -45,6 +54,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:gravity="center"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
 
         />
 

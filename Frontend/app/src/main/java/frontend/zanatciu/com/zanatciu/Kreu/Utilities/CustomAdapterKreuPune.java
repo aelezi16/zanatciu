@@ -38,7 +38,7 @@ public class CustomAdapterKreuPune implements ListAdapter {
 
     @Override
     public boolean isEnabled(int position) {
-        return false;
+        return true;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class CustomAdapterKreuPune implements ListAdapter {
 
         circleImageView.setImageResource(R.drawable.logo2);
         title.setText(jobMarketListItem.getTitle());
-        price_wage.setText(jobMarketListItem.getPrice_wage());
+        price_wage.setText(jobMarketListItem.getPrice().toString());
 
         return convertView;
     }

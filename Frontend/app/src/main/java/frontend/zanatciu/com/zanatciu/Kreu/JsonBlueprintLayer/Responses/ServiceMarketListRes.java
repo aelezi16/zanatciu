@@ -32,24 +32,22 @@ public class ServiceMarketListRes {
                 throws JsonParseException {
 
 
-            JsonObject jobject = json.getAsJsonObject();
+
 
             ServiceMarketListRes ret = new ServiceMarketListRes();
 
             // OsheeBillResItems[] arr = null;
-            ArrayList<ServiceMarketListItem> serviceMarketListInner = null;
+            ArrayList<ServiceMarketListItem> serviceMarketListInner = new ArrayList<>();
 
-            if (jobject.get("jobMarketList").isJsonNull()) {
+            if (json.isJsonNull()) {
                 ret.setServiceMarketListItem(serviceMarketListInner);
             } else {
 
-                JsonArray jsonArrayObject = jobject.get("jobMarketList").getAsJsonArray();
-
+                JsonArray jsonArrayObject = json.getAsJsonArray();
 
                 for (int i = 0; i < jsonArrayObject.size(); i++) {
 
                     final JsonElement jItem = jsonArrayObject.get(i);
-                    //authors[i] = jsonAuthor.getAsString();
                     Gson gson = new GsonBuilder().registerTypeAdapter(ServiceMarketListItem.class, new ServiceMarketListItem.ServiceMarketListItemDeSerializer()).create();
                     ServiceMarketListItem objItem = gson.fromJson(jItem, ServiceMarketListItem.class);
 
