@@ -1,15 +1,16 @@
-package frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses;
+package frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login;
-import frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Regjistro;
+import frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses.Karta;
+import frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.Kreu;
 import frontend.zanatciu.com.zanatciu.R;
 
-public class Karta extends AppCompatActivity {
+
+public class Cilesime extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +29,10 @@ public class Karta extends AppCompatActivity {
         int id=item.getItemId();
         if(id==android.R.id.home)
         {
-            Intent intent=new Intent(Karta.this, Abonime.class);
+            Intent intent=new Intent(Cilesime.this, Kreu.class);
             startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
     }
-
 }

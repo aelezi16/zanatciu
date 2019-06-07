@@ -28,6 +28,10 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
+import frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses.Abonime;
+import frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses.Karta;
+import frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Cilesime;
+import frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login;
 import frontend.zanatciu.com.zanatciu.Kreu.Interfaces.JobListResponse;
 import frontend.zanatciu.com.zanatciu.Kreu.Interfaces.ServiceListResponse;
 import frontend.zanatciu.com.zanatciu.Kreu.JsonBlueprintLayer.Responses.JobMarketListItem;
@@ -39,7 +43,9 @@ import frontend.zanatciu.com.zanatciu.Kreu.Tasks.ServiceListTask;
 import frontend.zanatciu.com.zanatciu.Kreu.Utilities.CustomAdapterKreuPune;
 import frontend.zanatciu.com.zanatciu.Kreu.Utilities.CustomAdapterKreuSherbim;
 import frontend.zanatciu.com.zanatciu.Kreu.Utilities.PageNumberHolder;
+import frontend.zanatciu.com.zanatciu.PunetEMia.ActivityClasses.PunetEMia;
 import frontend.zanatciu.com.zanatciu.R;
+import frontend.zanatciu.com.zanatciu.SherbimetEMia.ActivityClasses.SherbimetEMia;
 import info.hoang8f.android.segmented.SegmentedGroup;
 
 public class Kreu extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener ,
@@ -198,6 +204,8 @@ public class Kreu extends AppCompatActivity implements  NavigationView.OnNavigat
 
                         startActivity(goPuneItem);
 
+
+
                     }else {
 
                         ServiceMarketListItem clickedService=arrayListServices.get(position);
@@ -275,6 +283,8 @@ public class Kreu extends AppCompatActivity implements  NavigationView.OnNavigat
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
+            Intent intent=new Intent(Kreu.this, Cilesime.class);
+            startActivity(intent);
 
             return true;
         }
@@ -291,12 +301,23 @@ public class Kreu extends AppCompatActivity implements  NavigationView.OnNavigat
         if (id == R.id.kreu) {
             // Handle the camera action
         } else if (id == R.id.sherbimetEMia) {
+            Intent intent=new Intent(Kreu.this, SherbimetEMia.class);
+            startActivity(intent);
 
         } else if (id == R.id.punetEMia) {
 
+            Intent intent=new Intent(Kreu.this, PunetEMia.class);
+            startActivity(intent);
+
         } else if (id == R.id.abonimet) {
 
+            Intent intent=new Intent(Kreu.this, Abonime.class);
+            startActivity(intent);
+
         } else if (id == R.id.dilni) {
+
+            Intent intent=new Intent(Kreu.this, Login.class);
+            startActivity(intent);
 
         }
 

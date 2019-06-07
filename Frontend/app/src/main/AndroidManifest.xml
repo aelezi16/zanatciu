@@ -28,9 +28,8 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".Kreu.ActivityClasses.Kreu"
-
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Funksionalitete.ActivityClasses.Login"
+            >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,22 +53,107 @@
 
 
         <activity
-            android:name=".Funksionalitete.ActivityClasses.Login"
+            android:name=".Kreu.ActivityClasses.Kreu"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
             >
         </activity>
 
         <activity
             android:name=".Kreu.ActivityClasses.PuneItem"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
             >
         </activity>
 
         <activity
             android:name=".Kreu.ActivityClasses.SherbimItem"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
             >
         </activity>
+
+        <activity
+            android:name=".Abonimet.ActivityClasses.Karta"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".Abonimet.ActivityClasses.Abonime"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".Funksionalitete.ActivityClasses.Cilesime"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".Funksionalitete.ActivityClasses.Profili"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".PunetEMia.ActivityClasses.PunetEMia"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".SherbimetEMia.ActivityClasses.SherbimetEMia"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".SherbimetEMia.ActivityClasses.ShtoSherbim"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".PunetEMia.ActivityClasses.ShtoPune"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+        <activity
+            android:name=".PunetEMia.ActivityClasses.PuneItemPunedhenes"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
+        <activity
+            android:name=".SherbimetEMia.ActivityClasses.SherbimItemOfruesi"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
+        <activity
+            android:name=".Kreu.ActivityClasses.AplikimePune"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
+        <activity
+            android:name=".Kreu.ActivityClasses.AplikimePrenotimeSherbim"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
 
        <!--
 

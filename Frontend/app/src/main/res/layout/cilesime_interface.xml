@@ -1,5 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture">
+
+
+    <ImageView
+        android:id="@+id/cilesimeLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_shape"/>
+
+    <TextView
+        android:id="@+id/ndryshoGjuhen"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/cilesimeLogo"
+        android:textColor="@color/black"
+        android:text="Ndrysho Gjuhen:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+
+    <Spinner
+        android:id="@+id/spinerGjuha"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@+id/ndryshoGjuhen"
+        android:layout_toRightOf="@+id/ndryshoGjuhen"
+        android:background="@color/white"/>
+
+
+
+    <TextView
+        android:id="@+id/ndryshoNgjyrat"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/ndryshoGjuhen"
+        android:textColor="@color/black"
+        android:text="Ndrysho ngjyrat:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <Spinner
+        android:id="@+id/spinnerNgjyrat"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@+id/ndryshoNgjyrat"
+        android:layout_toRightOf="@+id/ndryshoNgjyrat"
+        android:background="@color/white"/>
+
+
+    <TextView
+        android:id="@+id/NdryshoFjalekalimin"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/ndryshoNgjyrat"
+        android:textColor="@color/black"
+        android:text="Ndrysho Fjalekalimin:"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/FjalekalimiVjeterCilesime"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/NdryshoFjalekalimin"
+        android:textColor="@color/black"
+        android:text="Fjalekalimi I Vjeter:"
+        android:textStyle="bold"
+
+        android:gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/FjalekalimiVjeterCilesimeFushe"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/FjalekalimiVjeterCilesime"
+        android:layout_toRightOf="@id/FjalekalimiVjeterCilesime"
+        android:background="@drawable/whiteovalbackground"/>
+
+
+    <TextView
+        android:id="@+id/FjalekalimiRi"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/FjalekalimiVjeterCilesime"
+        android:textColor="@color/black"
+        android:text="Fjalekalimi I Ri:"
+        android:textStyle="bold"
+
+        android:gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/FjalekalimiRiFushe"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/FjalekalimiRi"
+        android:layout_toRightOf="@id/FjalekalimiRi"
+        android:background="@drawable/whiteovalbackground"/>
+
+    <TextView
+        android:id="@+id/PerseritFjalekalim"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/FjalekalimiRi"
+        android:textColor="@color/black"
+        android:text="Perserit Fjalekalimin:"
+        android:textStyle="bold"
+
+        android:gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/PerseritFjalekalimFushe"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/PerseritFjalekalim"
+        android:layout_toRightOf="@id/PerseritFjalekalim"
+        android:background="@drawable/whiteovalbackground"/>
+
+
+    <Button
+        android:id="@+id/RuajNdryshimetButtonCilesime"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/PerseritFjalekalim"
+        android:text="Ruaj Ndryshimet"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonsbackground"/>
+
 
 </RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/list_item_less_oval_background">
+
+
+
+
+    <TextView
+        android:id="@+id/fjaliAutomatike"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/profile_image"
+        android:text="Aplikimi juaj per Titulli punes ose sherbimit u aprovoua."
+        android:background="@drawable/whiteovalbackground"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="#000000"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/emriPunedhenesOseSherbimOfrues"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/fjaliAutomatike"
+        android:text="Emri i aprovuesit eshte Emri Mbiemri"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/whiteovalbackground"
+        android:textColor="#000000"
+        android:gravity="center"
+
+        />
+
+    <Button
+        android:id="@+id/telefonoAprovuesin"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/emriPunedhenesOseSherbimOfrues"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/buttonsbackground"
+        android:text="Telefono Nr I aprovuesit"
+        android:textColor="#ffffff"
+        android:gravity="center"
+
+        />
+
+
+
+</RelativeLayout>

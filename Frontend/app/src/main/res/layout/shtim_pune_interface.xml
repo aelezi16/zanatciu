@@ -8,7 +8,7 @@
        android:id="@+id/shtimPuneLogo"
        android:layout_centerHorizontal="true"
        android:layout_width="100dp"
-       android:layout_marginTop="20dp"
+       android:layout_marginTop="10dp"
        android:layout_height="100dp"
        android:src="@drawable/logo_shape"/>
 
@@ -28,7 +28,7 @@
 
    <EditText
        android:id="@+id/titulliShtoPuneFushe"
-       android:layout_width="200dp"
+       android:layout_width="160dp"
        android:layout_height="40dp"
 
        android:layout_marginLeft="40dp"
@@ -51,7 +51,7 @@
 
    <EditText
        android:id="@+id/pershkrimShtoPuneFushe"
-       android:layout_width="200dp"
+       android:layout_width="160dp"
        android:layout_height="240dp"
        android:layout_marginTop="20dp"
        android:layout_alignLeft="@+id/titulliShtoPuneFushe"
@@ -73,7 +73,7 @@
 
    <EditText
        android:id="@+id/cmimiShtoPuneFushe"
-       android:layout_width="200dp"
+       android:layout_width="160dp"
        android:layout_height="40dp"
        android:layout_marginTop="20dp"
        android:layout_alignLeft="@+id/titulliShtoPuneFushe"

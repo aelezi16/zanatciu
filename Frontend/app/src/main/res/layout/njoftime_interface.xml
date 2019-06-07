@@ -4,25 +4,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundtexture">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarPunetEMia"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:fitsSystemWindows="true"
-        />
 
 
-    <Button
-        android:id="@+id/kartaButton"
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+    <TextView
+        android:id="@+id/NjoftimeTextView"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/toolbarPunetEMia"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="APROVIME"/>
 
-        android:text="Karta Credit/Debit"
-        android:textColor="@color/white"
-        android:background="@drawable/buttonsbackground"/>
 
 
     <LinearLayout
@@ -30,7 +23,7 @@
         android:id="@+id/linearLayoutListViewAbonime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/kartaButton"
+        android:layout_below="@+id/NjoftimeTextView"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
@@ -55,8 +48,6 @@
         </ListView>
 
     </LinearLayout>
-
-
 
 
 </RelativeLayout>

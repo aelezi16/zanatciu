@@ -27,9 +27,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.Kreu"
-            android:theme="@style/AppTheme.NoActionBar" >
+        <activity android:name="frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,11 +43,71 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login"
-            android:screenOrientation="portrait" >
+            android:name="frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.Kreu"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name="frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.PuneItem"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.SherbimItem"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses.Karta"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses.Abonime"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Cilesime"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Profili"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.PunetEMia.ActivityClasses.PunetEMia"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.SherbimetEMia.ActivityClasses.SherbimetEMia"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.SherbimetEMia.ActivityClasses.ShtoSherbim"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.PunetEMia.ActivityClasses.ShtoPune"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.PunetEMia.ActivityClasses.PuneItemPunedhenes"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.SherbimetEMia.ActivityClasses.SherbimItemOfruesi"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.AplikimePune"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.AplikimePrenotimeSherbim"
             android:screenOrientation="portrait" >
         </activity>
 

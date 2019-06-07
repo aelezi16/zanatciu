@@ -1,4 +1,4 @@
-package frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses;
+package frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,36 +13,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
-import frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Cilesime;
-import frontend.zanatciu.com.zanatciu.Funksionalitete.ActivityClasses.Login;
-import frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses.Kreu;
+import frontend.zanatciu.com.zanatciu.Abonimet.ActivityClasses.Abonime;
 import frontend.zanatciu.com.zanatciu.PunetEMia.ActivityClasses.PunetEMia;
 import frontend.zanatciu.com.zanatciu.R;
 import frontend.zanatciu.com.zanatciu.SherbimetEMia.ActivityClasses.SherbimetEMia;
 
-public class Abonime extends
-                        AppCompatActivity
-                               implements
-                                      NavigationView.OnNavigationItemSelectedListener{
-
-
-    private Button karta;
-
+public class Profili  extends AppCompatActivity
+                           implements
+                            NavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.navigation_menu_abonimet);
-
-        karta=(Button)findViewById(R.id.kartaButton);
+        setContentView(R.layout.navigation_menu_profili);
 
 
-        Toolbar toolbar = findViewById(R.id.toolbarAbonime);
+        Toolbar toolbar = findViewById(R.id.toolbarProfili);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fabAbonime);
+        FloatingActionButton fab = findViewById(R.id.fabProfili);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,8 +40,8 @@ public class Abonime extends
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_abonime);
-        NavigationView navigationView = findViewById(R.id.nav_view_abonimet);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -60,19 +50,7 @@ public class Abonime extends
 
 
 
-
-        karta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent goKartaCreditDebit=new Intent(Abonime.this,Karta.class);
-                startActivity(goKartaCreditDebit);
-            }
-        });
-
-
-      }
-
+    }
 
     //deactivates back button form device
     @Override
@@ -106,7 +84,7 @@ public class Abonime extends
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
-            Intent intent=new Intent(Abonime.this, Cilesime.class);
+            Intent intent=new Intent(Profili.this, Cilesime.class);
             startActivity(intent);
 
             return true;
@@ -122,32 +100,30 @@ public class Abonime extends
         int id = item.getItemId();
 
         if (id == R.id.kreu) {
-            Intent intent=new Intent(Abonime.this, Kreu.class);
-            startActivity(intent);
+            // Handle the camera action
         } else if (id == R.id.sherbimetEMia) {
-            Intent intent=new Intent(Abonime.this, SherbimetEMia.class);
+            Intent intent=new Intent(Profili.this, SherbimetEMia.class);
             startActivity(intent);
 
         } else if (id == R.id.punetEMia) {
 
-            Intent intent=new Intent(Abonime.this, PunetEMia.class);
+            Intent intent=new Intent(Profili.this, PunetEMia.class);
             startActivity(intent);
 
         } else if (id == R.id.abonimet) {
 
-            Intent intent=new Intent(Abonime.this, Abonime.class);
+            Intent intent=new Intent(Profili.this, Abonime.class);
             startActivity(intent);
 
         } else if (id == R.id.dilni) {
 
-            Intent intent=new Intent(Abonime.this, Login.class);
-            startActivity(intent);
+            //Intent intent=new Intent(Kreu.this, Abonime.class);
+            //startActivity(intent);
 
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout_abonime);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

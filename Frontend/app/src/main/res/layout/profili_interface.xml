@@ -1,5 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/backgroundtexture">
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/profile_image_profili"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/logo1"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#000000"/>
+
+
+
+     <TextView
+         android:id="@+id/first_star"
+         android:layout_width="60dp"
+         android:layout_height="60dp"
+         android:background="@drawable/star_color"
+         android:layout_alignTop="@+id/profile_image_profili"
+         android:layout_toRightOf="@id/profile_image_profili"
+         />
+
+      <TextView
+        android:id="@+id/second_star"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/star_color"
+        android:layout_alignTop="@+id/profile_image_profili"
+        android:layout_toRightOf="@id/first_star"
+        />
+
+       <TextView
+        android:id="@+id/third_star"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/star_color"
+        android:layout_alignTop="@+id/profile_image_profili"
+        android:layout_toRightOf="@id/second_star"
+        />
+       <TextView
+        android:id="@+id/forth_star"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/star_color"
+        android:layout_alignTop="@+id/profile_image_profili"
+        android:layout_toRightOf="@id/third_star"
+        />
+
+
+    <TextView
+        android:id="@+id/emriProfiliLabel"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/profile_image_profili"
+        android:textColor="@color/black"
+        android:text="Emri:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <EditText
+        android:id="@+id/emriProfiliFushe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/emriProfiliLabel"
+        android:layout_toRightOf="@id/emriProfiliLabel"
+        android:background="@drawable/whiteovalbackground"/>
+
+
+    <TextView
+        android:id="@+id/mbiemriProfiliLabel"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/emriProfiliLabel"
+        android:textColor="@color/black"
+        android:text="Mbiemri:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <EditText
+        android:id="@+id/mbiemriProfiliFushe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/mbiemriProfiliLabel"
+        android:layout_toRightOf="@id/mbiemriProfiliLabel"
+        android:background="@drawable/whiteovalbackground"
+        android:editable="false"/>
+
+
+    <TextView
+        android:id="@+id/emailProfiliLabel"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/mbiemriProfiliLabel"
+        android:textColor="@color/black"
+        android:text="Email:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <EditText
+        android:id="@+id/emailProfiliFushe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/emailProfiliLabel"
+        android:layout_toRightOf="@id/emailProfiliLabel"
+        android:background="@drawable/whiteovalbackground"
+        android:editable="false"/>
+
+
+    <TextView
+
+        android:id="@+id/nrTelProfiliLabel"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/emailProfiliLabel"
+        android:textColor="@color/black"
+        android:text="Nr Telefoni:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <EditText
+        android:id="@+id/nrTelProfiliFushe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/nrTelProfiliLabel"
+        android:layout_toRightOf="@id/nrTelProfiliLabel"
+        android:background="@drawable/whiteovalbackground"
+        android:editable="false"/>
+
+
+    <TextView
+
+        android:id="@+id/profesioniProfiliLabel"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/nrTelProfiliLabel"
+        android:textColor="@color/black"
+        android:text="Profesioni:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <EditText
+        android:id="@+id/profesioniProfiliFushe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/profesioniProfiliLabel"
+        android:layout_toRightOf="@id/profesioniProfiliLabel"
+        android:background="@drawable/whiteovalbackground"
+        android:editable="false"/>
+
+
+    <TextView
+
+        android:id="@+id/pershkrimiProfiliLabel"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/profesioniProfiliLabel"
+        android:textColor="@color/black"
+        android:text="Pershkrimi:"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:gravity="center_vertical"/>
+
+
+    <EditText
+        android:id="@+id/pershkrimiProfiliFushe"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignTop="@id/pershkrimiProfiliLabel"
+        android:layout_toRightOf="@id/pershkrimiProfiliLabel"
+        android:background="@drawable/whiteovalbackground"
+        android:editable="false"/>
+
+
+    <Button
+        android:id="@+id/ruajNdryshimeButton"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/pershkrimiProfiliFushe"
+        android:background="@drawable/buttonsbackground"
+        android:text="Ruaj Ndryshimet"
+        android:textColor="@color/white"/>
+
+
 
 </RelativeLayout>
