@@ -18,18 +18,18 @@ public class ReactiveApplication {
         SpringApplication.run(ReactiveApplication.class, args);
     }
 
-        @Bean
-    public MongoClient mongoClient(){
-        return MongoClients.create();
-    }
-
-   @Bean
-   public ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory(){
-        return new SimpleReactiveMongoDatabaseFactory(mongoClient(), "capppeddb");
-   }
-    @Bean
-    public ReactiveMongoTemplate reactiveMongoTemplate(){
-        return new ReactiveMongoTemplate(reactiveMongoDatabaseFactory());
-    }
+//        @Bean
+//    public MongoClient mongoClient(){
+//        return MongoClients.create();
+//    }
+//
+//   @Bean
+//   public ReactiveMongoDatabaseFactory reactiveMongoDatabaseFactory(){
+//        return new SimpleReactiveMongoDatabaseFactory(mongoClient(), "capppeddb");
+//   }
+//    @Bean
+//    public ReactiveMongoTemplate reactiveMongoTemplate(){
+//        return new ReactiveMongoTemplate(reactiveMongoDatabaseFactory());
+//    }
 
 }

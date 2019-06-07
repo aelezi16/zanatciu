@@ -29,8 +29,8 @@ public class NotificationController {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/event", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<ReactiveNotification> getAllAsEvent(@RequestParam String username) {
+    @GetMapping(value="{username}", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Flux<ReactiveNotification> getAllAsEvent(@PathVariable String username) {
         return notificationService.getOnSave(username).delayElements(Duration.ofSeconds(1));
     }
 }

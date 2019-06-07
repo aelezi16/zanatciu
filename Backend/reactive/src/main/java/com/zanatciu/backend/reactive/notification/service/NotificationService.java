@@ -11,8 +11,10 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
+import java.time.Duration;
 
 @Service
 public class NotificationService {
@@ -47,12 +49,18 @@ public class NotificationService {
     public void saveAndSend(String notification) {
         ReactiveNotification reactiveNotification = jsonConverter.fromJson(notification, ReactiveNotification.class);
 
+        System.out.println(notification);
         reactiveNotification.setId(null);
-        reactiveNotificationRepo.save(reactiveNotification);
+        Mono<ReactiveNotification> saved = reactiveNotificationRepo.save(ReactiveNotification.builder().id(reactiveNotification.getId()).username(reactiveNotification.getUsername()).build());
+
+
+        saved.subscribe(s->
+                System.out.println(jsonConverter.toJson(s))
+        );
     }
 
     public Flux<ReactiveNotification> getOnSave(String username) {
-        return reactiveNotificationRepo.findWithTailableCursorBy();
+        return reactiveNotificationRepo.findReactiveNotificationsByUsername(username);
     }
 
 
