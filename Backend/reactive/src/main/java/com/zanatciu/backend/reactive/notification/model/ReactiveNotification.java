@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document("ReactiveNotification")
+@Document
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReactiveNotification {
@@ -21,11 +21,4 @@ public class ReactiveNotification {
     private String username;
     private String status;
 
-    public ReactiveNotification(Notification notification) {
-        publicationTitle = notification.getPublicationTitle();
-        publicationOwnerUsername = notification.getPublicationOwnerUsername();
-        username = notification.getUsername();
-        phone = notification.getPhone();
-        status = notification.getStatus();
-    }
 }

@@ -11,5 +11,5 @@ public interface ReactiveNotificationRepo
         extends ReactiveCrudRepository<ReactiveNotification, String> {
 
     @Tailable
-    Flux<ReactiveNotification> findWithTailableCursorByUsername(String username);
+    Flux<ReactiveNotification> findWithTailableCursorBy();
 }

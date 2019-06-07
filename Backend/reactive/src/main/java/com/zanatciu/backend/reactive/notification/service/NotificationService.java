@@ -15,7 +15,6 @@ import reactor.core.publisher.Flux;
 import javax.annotation.PostConstruct;
 
 @Service
-@EnableReactiveMongoRepositories(basePackageClasses = ReactiveNotificationRepo.class)
 public class NotificationService {
 
     private ReactiveMongoTemplate reactiveMongoTemplate;
@@ -48,11 +47,12 @@ public class NotificationService {
     public void saveAndSend(String notification) {
         ReactiveNotification reactiveNotification = jsonConverter.fromJson(notification, ReactiveNotification.class);
 
+        reactiveNotification.setId(null);
         reactiveNotificationRepo.save(reactiveNotification);
     }
 
     public Flux<ReactiveNotification> getOnSave(String username) {
-        return reactiveNotificationRepo.findWithTailableCursorByUsername(username);
+        return reactiveNotificationRepo.findWithTailableCursorBy();
     }
 
 
