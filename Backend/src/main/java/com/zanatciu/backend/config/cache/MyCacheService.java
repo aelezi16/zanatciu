@@ -8,39 +8,39 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class MyCacheService {
 
-    private ConcurrentHashMap<String, String > cacheLoad;
+    private ConcurrentHashMap<String, String> cacheLoad;
 
     @Autowired
     public MyCacheService(
-            ConcurrentHashMap<String, String > cacheLoad
-    ){
+            ConcurrentHashMap<String, String> cacheLoad
+    ) {
         this.cacheLoad = cacheLoad;
     }
 
-    public void logUserIn(String token, String username){
+    public void logUserIn(String token, String username) {
 
 
-         synchronized (MyCacheService.class) {
-             cacheLoad.put(username, token);
-         }
+        synchronized (MyCacheService.class) {
+            cacheLoad.put(username, token);
+        }
     }
 
-    public void logUserOut(String username){
+    public void logUserOut(String username) {
 
-        if(cacheLoad.containsKey(username)){
+        if (cacheLoad.containsKey(username)) {
             cacheLoad.remove(username);
         }
     }
 
-    public boolean isUserValid(String username){
+    public boolean isUserValid(String username) {
 
-            synchronized (MyCacheService.class) {
+        synchronized (MyCacheService.class) {
 
-                if (cacheLoad.containsKey(username)) {
-                    return true;
-                }
-
-                return false;
+            if (cacheLoad.containsKey(username)) {
+                return true;
             }
+
+            return false;
         }
     }
+}

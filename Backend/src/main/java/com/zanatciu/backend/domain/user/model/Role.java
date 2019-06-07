@@ -9,7 +9,7 @@ public enum Role implements GrantedAuthority {
     JOB_SEEKER,
     SERVICE_SEEKER;
 
-    private String getName(){
+    private String getName() {
         return this.name();
     }
 

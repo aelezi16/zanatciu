@@ -22,9 +22,9 @@ public class RatingServiceImpl implements RatingService {
 
     @Autowired
     public RatingServiceImpl(
-        RatingRepo ratingRepo,
-        ModelMapper<Rating, RatingDto> modelMapper
-    ){
+            RatingRepo ratingRepo,
+            ModelMapper<Rating, RatingDto> modelMapper
+    ) {
         this.ratingRepo = ratingRepo;
         this.modelMapper = modelMapper;
     }
@@ -66,9 +66,9 @@ public class RatingServiceImpl implements RatingService {
 
         Optional<Rating> rating = ratingRepo.findById(id);
 
-        if(!rating.isPresent())return null;
+        if (!rating.isPresent()) return null;
 
-        return rating.map((r)->modelMapper.updateModel(newRating.get(), r)).map(p -> ratingRepo.save(p)).map(modelMapper::modelToDto).get();
+        return rating.map((r) -> modelMapper.updateModel(newRating.get(), r)).map(p -> ratingRepo.save(p)).map(modelMapper::modelToDto).get();
     }
 
     @Override

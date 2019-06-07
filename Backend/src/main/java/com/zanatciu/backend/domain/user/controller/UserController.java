@@ -19,12 +19,12 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    public UserController(UserService userService){
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDto>> getAll(){
+    public ResponseEntity<List<UserDto>> getAll() {
         List<UserDto> userDtoList = userService.getAll();
 
         return !userDtoList.isEmpty()
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getById(@PathVariable String id){
+    public ResponseEntity<UserDto> getById(@PathVariable String id) {
         Optional<UserDto> userDtoOptional = userService.getById(id);
 
         return userDtoOptional.isPresent()
@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @GetMapping("/username/{username}")
-    public ResponseEntity<UserDto> getByUsername(@PathVariable String username){
+    public ResponseEntity<UserDto> getByUsername(@PathVariable String username) {
         Optional<UserDto> userDtoOptional = userService.getByUsername(username);
 
         return userDtoOptional.isPresent()
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDto> post(@Valid @RequestBody UserDto userDto){
+    public ResponseEntity<UserDto> post(@Valid @RequestBody UserDto userDto) {
         Optional<UserDto> userDtoOptional = userService.create(userDto);
 
         return userDtoOptional.isPresent()
@@ -61,7 +61,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDto> update(@RequestBody UserDto userDto, @PathVariable String id){
+    public ResponseEntity<UserDto> update(@RequestBody UserDto userDto, @PathVariable String id) {
         Optional<UserDto> userDtoOptional = userService.update(userDto, id);
 
         return userDtoOptional.isPresent()
@@ -70,7 +70,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable String id) {
         userService.delete(id);
 
         return new ResponseEntity(HttpStatus.ACCEPTED);

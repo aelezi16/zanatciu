@@ -16,7 +16,7 @@ public class SettingsServiceImpl implements SettingsService {
     @Autowired
     public SettingsServiceImpl(
             UserService userService
-    ){
+    ) {
         this.userService = userService;
     }
 
@@ -24,6 +24,6 @@ public class SettingsServiceImpl implements SettingsService {
     public SettingsDto update(SettingsDto settingsDto, String username) {
 
         Optional<SettingsDto> optionalSettings = userService.updateSettings(settingsDto, username);
-        return optionalSettings.isPresent()? optionalSettings.get(): null;
+        return optionalSettings.isPresent() ? optionalSettings.get() : null;
     }
 }

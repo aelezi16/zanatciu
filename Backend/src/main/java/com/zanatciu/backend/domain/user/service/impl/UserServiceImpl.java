@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
             JwtProvider jwtProvider,
             MyCacheService myCacheService,
             SimpMailService simpMailService
-    ){
+    ) {
         this.userRepo = userRepo;
         this.modelMapper = modelMapper;
         this.myPasswordEncoder = myPasswordEncoder;
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
     public Optional<UserDto> getById(String id) {
 
         Optional<User> optionalUser = userRepo.findById(id);
-        if(optionalUser.isPresent())
+        if (optionalUser.isPresent())
             return optionalUser.map(modelMapper::modelToDto);
         return Optional.empty();
     }
@@ -70,8 +70,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> optionalUser = userRepo.findByUsername(username);
 
 
-
-        if(optionalUser.isPresent())
+        if (optionalUser.isPresent())
             return optionalUser.map(modelMapper::modelToDto);
 
         return Optional.empty();
@@ -79,11 +78,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserDto> create(UserDto userDto) {
-        if(!userRepo.findByUsername(userDto.getUsername()).isPresent())
+        if (!userRepo.findByUsername(userDto.getUsername()).isPresent())
             return Optional.of(userRepo.save(
                     Optional.of(userDto).map(modelMapper::dtoToModel)
-                            .map(u-> {
-                                if(u.getPassword() != null)
+                            .map(u -> {
+                                if (u.getPassword() != null)
                                     u.setPassword(myPasswordEncoder.encode(u.getPassword()));
                                 return u;
                             }).get()
@@ -94,16 +93,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserDto> update(UserDto userDto, String id) {
-        if(userRepo.existsById(id)) {
-
+        if (userRepo.existsById(id)) {
 
 
             return Optional.of(userRepo.save(
                     Optional.of(userDto)
                             .map(modelMapper::dtoToModel)
                             .map((u) -> modelMapper.updateModel(u, userRepo.findById(id).get()))
-                            .map(u-> {
-                                if(u.getPassword() != null)
+                            .map(u -> {
+                                if (u.getPassword() != null)
                                     u.setPassword(myPasswordEncoder.encode(u.getPassword()));
                                 return u;
                             }).get()
@@ -142,9 +140,9 @@ public class UserServiceImpl implements UserService {
     public String login(String username, String password) {
         Optional<User> optionalUser = findByUsername(username);
 
-        if(optionalUser.isPresent()){
+        if (optionalUser.isPresent()) {
 
-            if(!myPasswordEncoder.matches(password, optionalUser.get().getPassword()))
+            if (!myPasswordEncoder.matches(password, optionalUser.get().getPassword()))
                 return null;
 
             String token = jwtProvider.createToken(username, optionalUser.get().getRoles());
@@ -162,11 +160,11 @@ public class UserServiceImpl implements UserService {
     public String signup(UserDto userDto) {
         Optional<UserDto> createdUser = create(userDto);
 
-        if(createdUser.isPresent()){
+        if (createdUser.isPresent()) {
 
             Optional<User> authUser = findByUsername(userDto.getUsername());
 
-            if(!myPasswordEncoder.matches(userDto.getPassword(), authUser.get().getPassword()))
+            if (!myPasswordEncoder.matches(userDto.getPassword(), authUser.get().getPassword()))
                 return null;
 
             String token = jwtProvider.createToken(userDto.getUsername(), authUser.get().getRoles());
@@ -203,7 +201,7 @@ public class UserServiceImpl implements UserService {
 
         Optional<User> optionalUser = userRepo.findByUsername(username);
 
-        if(!optionalUser.isPresent())return null;
+        if (!optionalUser.isPresent()) return null;
         String token = jwtProvider.createToken(username, optionalUser.get().getRoles());
         myCacheService.logUserIn(token, username);
         Authentication auth = jwtProvider.getAuthentication(token);
@@ -214,15 +212,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void reset(String email) {
-        Optional<User>  optionalUser = userRepo.findByEmail(email);
+        Optional<User> optionalUser = userRepo.findByEmail(email);
 
-        if(optionalUser.isPresent()){
+        if (optionalUser.isPresent()) {
 
             String token = jwtProvider.createToken(optionalUser.get().getUsername(), optionalUser.get().getRoles());
 
             simpMailService.passwordResetMessage(email, token);
 
-        }else {
+        } else {
             simpMailService.emailNotFoundMessage(email);
         }
     }
@@ -231,12 +229,12 @@ public class UserServiceImpl implements UserService {
     public void resetByToken(String token) {
         boolean flag = jwtProvider.validateToken(token);
 
-        if(flag){
+        if (flag) {
             String username = jwtProvider.getUsername(token);
 
             Optional<User> optionalUser = userRepo.findByUsername(username);
 
-            if(optionalUser.isPresent()){
+            if (optionalUser.isPresent()) {
 
                 String newPassword = generatePassword();
 
@@ -255,16 +253,16 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    private String generatePassword(){
+    private String generatePassword() {
         String pswd = "";
 
         Random random = new Random();
 
-        for(int i = 0; i < 10; i++){
-            pswd += new Character((char)(random.nextInt(25) + 'a'));
+        for (int i = 0; i < 10; i++) {
+            pswd += new Character((char) (random.nextInt(25) + 'a'));
         }
 
-        for(int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             pswd += random.nextInt(10);
         }
 

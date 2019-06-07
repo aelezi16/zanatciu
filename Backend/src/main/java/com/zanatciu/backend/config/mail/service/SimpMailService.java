@@ -7,20 +7,20 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SimpMailService{
+public class SimpMailService {
 
     private JavaMailSender mailSender;
 
     @Autowired
     public SimpMailService(
             JavaMailSender mailSender
-    ){
+    ) {
         this.mailSender = mailSender;
     }
 
     public void sendSimpleMessage(
             String to, String subject, String text
-    ){
+    ) {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
@@ -30,7 +30,7 @@ public class SimpMailService{
         mailSender.send(message);
     }
 
-    public void emailNotFoundMessage(String to){
+    public void emailNotFoundMessage(String to) {
 
         String subject = "Email-i nuk eshte i rregjistruar!";
 
@@ -40,7 +40,7 @@ public class SimpMailService{
         sendSimpleMessage(to, subject, text);
     }
 
-    public void passwordResetMessage(String to, String token){
+    public void passwordResetMessage(String to, String token) {
 
         String subject = "RIVENDOSJE fjalekimi";
 
@@ -53,7 +53,7 @@ public class SimpMailService{
 
     public void passwordResetFinishedMessage(
             String to, String password
-    ){
+    ) {
         String subject = "Your new PASSWORD";
 
         String text = "Below is your new password, please change it for security reasons\n\n\n" +

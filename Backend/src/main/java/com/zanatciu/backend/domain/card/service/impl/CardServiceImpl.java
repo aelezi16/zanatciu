@@ -21,9 +21,9 @@ public class CardServiceImpl implements CardService {
 
     @Autowired
     public CardServiceImpl(
-        CardRepo cardRepo,
-        ModelMapper<Card, CardDto> modelMapper
-    ){
+            CardRepo cardRepo,
+            ModelMapper<Card, CardDto> modelMapper
+    ) {
         this.cardRepo = cardRepo;
         this.modelMapper = modelMapper;
     }
@@ -51,7 +51,7 @@ public class CardServiceImpl implements CardService {
     public CardDto save(CardDto cardDto) {
         Optional<Card> optionalCard = Optional.of(cardDto).map(modelMapper::dtoToModel);
 
-        if(cardRepo.findById(cardDto.getId()).isPresent())
+        if (cardRepo.findById(cardDto.getId()).isPresent())
             return null;
 
         return Optional.of(cardRepo.save(optionalCard.get())).map(modelMapper::modelToDto).get();
@@ -62,13 +62,13 @@ public class CardServiceImpl implements CardService {
 
         Optional<Card> card = cardRepo.findById(id);
 
-        if(!card.isPresent())
+        if (!card.isPresent())
             return null;
 
         Optional<Card> optionalCard = Optional.of(cardDto).map(modelMapper::dtoToModel);
 
         return card.map(
-                (c)-> modelMapper.updateModel(optionalCard.get(), c)
+                (c) -> modelMapper.updateModel(optionalCard.get(), c)
         ).map(c -> cardRepo.save(c)).map(modelMapper::modelToDto).get();
     }
 
@@ -76,7 +76,7 @@ public class CardServiceImpl implements CardService {
     public void delete(String id) {
         Optional<Card> card = cardRepo.findById(id);
 
-        if(!card.isPresent())
+        if (!card.isPresent())
             return;
 
         cardRepo.delete(card.get());

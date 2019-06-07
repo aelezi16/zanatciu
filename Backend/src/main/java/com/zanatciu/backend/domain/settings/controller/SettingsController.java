@@ -15,12 +15,12 @@ public class SettingsController {
     private SettingsService settingsService;
 
     @Autowired
-    public SettingsController(SettingsService settingsService){
+    public SettingsController(SettingsService settingsService) {
         this.settingsService = settingsService;
     }
 
     @PutMapping("/{username}")
-    public ResponseEntity<SettingsDto> updatePerOwner(@PathVariable String username, @RequestBody SettingsDto settingsDto){
+    public ResponseEntity<SettingsDto> updatePerOwner(@PathVariable String username, @RequestBody SettingsDto settingsDto) {
 
         SettingsDto dto = settingsService.update(settingsDto, username);
         return dto != null

@@ -15,8 +15,8 @@ public class AuthServiceImpl implements AuthService {
 
     @Autowired
     public AuthServiceImpl(
-        UserService userService
-    ){
+            UserService userService
+    ) {
         this.userService = userService;
     }
 

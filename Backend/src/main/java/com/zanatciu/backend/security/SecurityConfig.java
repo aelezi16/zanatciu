@@ -26,13 +26,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SecurityConfig(
             JwtProvider jwtProvider,
             MyCacheService myCacheService
-    ){
+    ) {
         this.jwtProvider = jwtProvider;
         this.myCacheService = myCacheService;
     }
 
     @Override
-    public void configure(HttpSecurity http) throws Exception{
+    public void configure(HttpSecurity http) throws Exception {
 
         http.httpBasic().disable()
                 .csrf().disable()
@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/login").permitAll()
                 .antMatchers("/auth/signup").permitAll()
                 .antMatchers("/auth/reset/**").permitAll()
+                .antMatchers("/notification/event").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .cors()

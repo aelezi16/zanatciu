@@ -18,13 +18,12 @@ public class RatingController {
     private RatingService ratingService;
 
     @Autowired
-    public RatingController(RatingService ratingService){
+    public RatingController(RatingService ratingService) {
         this.ratingService = ratingService;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<RatingDto> getById(@PathVariable String id)
-    {
+    public ResponseEntity<RatingDto> getById(@PathVariable String id) {
         RatingDto dto = ratingService.getById(id);
 
         return dto != null
@@ -33,7 +32,7 @@ public class RatingController {
     }
 
     @GetMapping("/pub")
-    public ResponseEntity<List<RatingDto>> getByPublication(@RequestParam String publicationId){
+    public ResponseEntity<List<RatingDto>> getByPublication(@RequestParam String publicationId) {
 
         List<RatingDto> list = ratingService.getByPublicationId(publicationId);
         return !list.isEmpty()
@@ -42,7 +41,7 @@ public class RatingController {
     }
 
     @GetMapping("/username")
-    public ResponseEntity<List<RatingDto>> getByUsername(@RequestParam String username){
+    public ResponseEntity<List<RatingDto>> getByUsername(@RequestParam String username) {
         List<RatingDto> list = ratingService.getByUsername(username);
 
         return !list.isEmpty()
@@ -51,7 +50,7 @@ public class RatingController {
     }
 
     @PostMapping
-    public ResponseEntity<RatingDto> post(@Valid @RequestBody RatingDto ratingDto){
+    public ResponseEntity<RatingDto> post(@Valid @RequestBody RatingDto ratingDto) {
         RatingDto dto = ratingService.save(ratingDto);
 
         return dto != null
@@ -60,7 +59,7 @@ public class RatingController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<RatingDto> update(@PathVariable String id, @RequestBody RatingDto ratingDto){
+    public ResponseEntity<RatingDto> update(@PathVariable String id, @RequestBody RatingDto ratingDto) {
         RatingDto dto = ratingService.save(ratingDto, id);
 
         return dto != null
@@ -69,7 +68,7 @@ public class RatingController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable String id) {
         ratingService.delete(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }

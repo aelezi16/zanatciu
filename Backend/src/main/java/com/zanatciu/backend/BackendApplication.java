@@ -5,8 +5,10 @@ import com.zanatciu.backend.domain.user.model.Role;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +18,8 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableScheduling
+//@EnableReactiveMongoRepositories
+//@EnableAsync
 public class BackendApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
@@ -49,7 +53,6 @@ public class BackendApplication implements CommandLineRunner {
 //        String token = res.getBody();
 
 //        System.out.println(new Date().);
-
 
 
     }

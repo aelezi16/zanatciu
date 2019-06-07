@@ -26,20 +26,20 @@ public class JwtProvider {
     private long validityInMilliseconds = 3600000;
 
     private MyUserDetails myUserDetails;
-    
+
     @Autowired
     public JwtProvider(
             MyUserDetails myUserDetails
-    ){
+    ) {
         this.myUserDetails = myUserDetails;
     }
 
     @PostConstruct
-    protected void init(){
+    protected void init() {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
 
-    public String createToken(String username, List<Role> roles){
+    public String createToken(String username, List<Role> roles) {
         Claims claims = Jwts.claims().setSubject(username);
         claims.put("Authorization", roles.stream().map(s -> new SimpleGrantedAuthority(s.getAuthority())).filter(Objects::nonNull).collect(Collectors.toList()));
 
@@ -59,8 +59,8 @@ public class JwtProvider {
     public String resolveToken(HttpServletRequest req) {
         String bearerToken = req.getHeader("Authorization");
 
-        if(bearerToken != null){
-            if(bearerToken.startsWith("Bearer ")){
+        if (bearerToken != null) {
+            if (bearerToken.startsWith("Bearer ")) {
                 return bearerToken.substring(7);
             }
             return bearerToken;
@@ -89,7 +89,7 @@ public class JwtProvider {
         return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
     }
 
-    public Date getExpiration(String token){
+    public Date getExpiration(String token) {
         return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getExpiration();
     }
 }

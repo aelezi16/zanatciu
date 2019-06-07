@@ -23,9 +23,9 @@ public class PublicationServiceImpl implements PublicationService {
 
     @Autowired
     public PublicationServiceImpl(
-        PublicationRepo publicationRepo,
-        ModelMapper<Publication, PublicationDto> modelMapper
-    ){
+            PublicationRepo publicationRepo,
+            ModelMapper<Publication, PublicationDto> modelMapper
+    ) {
         this.publicationRepo = publicationRepo;
         this.modelMapper = modelMapper;
     }
@@ -42,17 +42,17 @@ public class PublicationServiceImpl implements PublicationService {
     @Override
     public List<PublicationDto> getAll() {
         return publicationRepo.findAll()
-                              .stream()
-                              .map(modelMapper::modelToDto)
-                              .collect(Collectors.toList());
+                .stream()
+                .map(modelMapper::modelToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<PublicationDto> getByUsername(String username, String type) {
         return publicationRepo.findAllByUsernameAndType(username, type)
-                              .stream()
-                              .map(modelMapper::modelToDto)
-                              .collect(Collectors.toList());
+                .stream()
+                .map(modelMapper::modelToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -60,16 +60,16 @@ public class PublicationServiceImpl implements PublicationService {
 
         Pageable pageable = PageRequest.of(page, size);
         return publicationRepo.findAllByType(type, pageable)
-                                .stream()
-                                .map(modelMapper::modelToDto)
-                                .collect(Collectors.toList());
+                .stream()
+                .map(modelMapper::modelToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
     public PublicationDto save(PublicationDto publicationDto) {
 
         Optional<Publication> publication = Optional.of(publicationDto).map(modelMapper::dtoToModel);
-        if(publicationRepo.findByTitle(publicationDto.getTitle()).isPresent())
+        if (publicationRepo.findByTitle(publicationDto.getTitle()).isPresent())
             return null;
 
         return Optional.of(publicationRepo.save(publication.get())).map(modelMapper::modelToDto).get();
@@ -77,14 +77,14 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     @Override
-    public PublicationDto save(PublicationDto publicationDto, String id){
+    public PublicationDto save(PublicationDto publicationDto, String id) {
         Optional<Publication> newPub = Optional.of(publicationDto).map(modelMapper::dtoToModel);
 
         Optional<Publication> publication = publicationRepo.findById(id);
 
-        if(!publication.isPresent())return null;
+        if (!publication.isPresent()) return null;
 
-        return publication.map((p)->modelMapper.updateModel(newPub.get(), p)).map(p -> publicationRepo.save(p)).map(modelMapper::modelToDto).get();
+        return publication.map((p) -> modelMapper.updateModel(newPub.get(), p)).map(p -> publicationRepo.save(p)).map(modelMapper::modelToDto).get();
     }
 
     @Override

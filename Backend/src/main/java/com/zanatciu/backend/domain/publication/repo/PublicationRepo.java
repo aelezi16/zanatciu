@@ -11,9 +11,14 @@ import java.util.Optional;
 @Repository
 public interface PublicationRepo extends PagingAndSortingRepository<Publication, String> {
     List<Publication> findAll();
+
     Optional<Publication> findById(String id);
+
     Optional<Publication> findByTitle(String title);
+
     List<Publication> findAllByUsernameAndType(String username, String type);
+
     List<Publication> findAllByType(String type, Pageable pageable);
+
     void deleteById(String id);
 }
