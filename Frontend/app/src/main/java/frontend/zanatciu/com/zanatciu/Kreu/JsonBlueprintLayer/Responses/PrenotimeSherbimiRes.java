@@ -29,12 +29,10 @@ public class PrenotimeSherbimiRes extends BaseRes implements Serializable {
         this.prenotimeSherbimiArrayList = prenotimeSherbimiArrayList;
     }
 
-    public static class PrenotimeSherbimiResDeSerializer implements JsonDeserializer<PrenotimeSherbimiRes>
-    {
+    public static class PrenotimeSherbimiResDeSerializer implements JsonDeserializer<PrenotimeSherbimiRes> {
 
         public PrenotimeSherbimiRes deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
                 throws JsonParseException {
-
 
 
             //Mund te kete edhe ndonje atribut tjeter shtese suportues per security

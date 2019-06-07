@@ -93,28 +93,30 @@ public class UserProfile {
     }
 
     private static UserProfile myObj;
+
     /**
      * Create private constructor
      */
-    private UserProfile(){
+    private UserProfile() {
 
     }
+
     /**
      * Create a static method to get instance.
      */
-    public static UserProfile getInstance(){
-        if(myObj == null){
+    public static UserProfile getInstance() {
+        if (myObj == null) {
             myObj = new UserProfile();
         }
         return myObj;
     }
 
-    public void getSomeThing(){
+    public void getSomeThing() {
         // do something here
         System.out.println("I am here....");
     }
 
-    public static void main(String a[]){
+    public static void main(String a[]) {
         UserProfile st = UserProfile.getInstance();
         st.getSomeThing();
     }

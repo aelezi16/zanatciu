@@ -16,8 +16,6 @@ public class AplikimePuneItem implements Serializable {
     private String timeUntilExpiration;
 
 
-
-
     public AplikimePuneItem() {
     }
 
@@ -26,7 +24,6 @@ public class AplikimePuneItem implements Serializable {
         this.emriAplikantit = emriAplikantit;
         this.timeUntilExpiration = timeUntilExpiration;
     }
-
 
 
     public String getImageString() {
@@ -54,13 +51,6 @@ public class AplikimePuneItem implements Serializable {
     }
 
 
-
-
-
-
-
-
-
     public static class AplikimePuneItemDeSerializer implements JsonDeserializer<AplikimePuneItem> {
 
         public AplikimePuneItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -70,7 +60,6 @@ public class AplikimePuneItem implements Serializable {
 
 
             AplikimePuneItem ret = new AplikimePuneItem();
-
 
 
             if (jobject.get("imageString").isJsonNull()) {
@@ -99,8 +88,6 @@ public class AplikimePuneItem implements Serializable {
             return ret;
         }
     }
-
-
 
 
 }

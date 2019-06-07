@@ -44,7 +44,7 @@ public class MerrPrenotimeTask extends AsyncTask<String, String, PrenotimeSherbi
 
     protected PrenotimeSherbimiRes doInBackground(String... params) {
 
-        PrenotimeSherbimiRes ret =new PrenotimeSherbimiRes();
+        PrenotimeSherbimiRes ret = new PrenotimeSherbimiRes();
 
         try {
 
@@ -64,12 +64,9 @@ public class MerrPrenotimeTask extends AsyncTask<String, String, PrenotimeSherbi
 
             try {
 
-                response= client.execute(request);
+                response = client.execute(request);
 
-            }
-
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 /*ret.setResult(false);
                 ret.setTokenValid(true);
                 String strMsg = e.getMessage();
@@ -88,12 +85,11 @@ public class MerrPrenotimeTask extends AsyncTask<String, String, PrenotimeSherbi
             Log.i("Response is", "" + _response);
 
 
-            Gson gson= new GsonBuilder().registerTypeAdapter(PrenotimeSherbimiRes.class, new PrenotimeSherbimiRes.PrenotimeSherbimiResDeSerializer()).create() ;
+            Gson gson = new GsonBuilder().registerTypeAdapter(PrenotimeSherbimiRes.class, new PrenotimeSherbimiRes.PrenotimeSherbimiResDeSerializer()).create();
             ret = gson.fromJson(_response, PrenotimeSherbimiRes.class);
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 

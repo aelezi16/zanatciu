@@ -25,9 +25,8 @@ public class JobListTask extends AsyncTask<String, String, JobMarketListRes> {
     public JobListResponse<JobMarketListRes> delegate;
 
 
-    public JobListTask(JobListResponse<JobMarketListRes> jobMarketListResJobListResponse)
-    {
-        this.delegate=jobMarketListResJobListResponse;
+    public JobListTask(JobListResponse<JobMarketListRes> jobMarketListResJobListResponse) {
+        this.delegate = jobMarketListResJobListResponse;
     }
 
     public JobListTask() {
@@ -35,7 +34,7 @@ public class JobListTask extends AsyncTask<String, String, JobMarketListRes> {
 
     protected JobMarketListRes doInBackground(String... params) {
 
-        JobMarketListRes ret =new JobMarketListRes();
+        JobMarketListRes ret = new JobMarketListRes();
 
         try {
 
@@ -55,12 +54,9 @@ public class JobListTask extends AsyncTask<String, String, JobMarketListRes> {
 
             try {
 
-                response= client.execute(request);
+                response = client.execute(request);
 
-            }
-
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 /*ret.setResult(false);
                 ret.setTokenValid(true);
                 String strMsg = e.getMessage();
@@ -79,12 +75,11 @@ public class JobListTask extends AsyncTask<String, String, JobMarketListRes> {
             Log.i("Response is", "" + _response);
 
 
-            com.google.gson.Gson gson= new GsonBuilder().registerTypeAdapter(JobMarketListRes.class, new JobMarketListRes.JobMarketListResDeSerializer()).create() ;
+            com.google.gson.Gson gson = new GsonBuilder().registerTypeAdapter(JobMarketListRes.class, new JobMarketListRes.JobMarketListResDeSerializer()).create();
             ret = gson.fromJson(_response, JobMarketListRes.class);
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 

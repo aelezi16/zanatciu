@@ -21,11 +21,11 @@ public class ServiceMarketListItem {
     public ServiceMarketListItem() {
     }
 
-    public ServiceMarketListItem(String imageString, String title, String price_wage,String emriSherbimOfruesi,String pershkrimi) {
+    public ServiceMarketListItem(String imageString, String title, String price_wage, String emriSherbimOfruesi, String pershkrimi) {
         this.imageString = imageString;
         this.title = title;
-        this.emriSherbimOfruesi=emriSherbimOfruesi;
-        this.pershkrimi=pershkrimi;
+        this.emriSherbimOfruesi = emriSherbimOfruesi;
+        this.pershkrimi = pershkrimi;
         this.price_wage = price_wage;
     }
 
@@ -78,8 +78,6 @@ public class ServiceMarketListItem {
             JsonObject jobject = json.getAsJsonObject();
 
             ServiceMarketListItem ret = new ServiceMarketListItem();
-
-
 
 
             if (jobject.get("imageString").isJsonNull()) {

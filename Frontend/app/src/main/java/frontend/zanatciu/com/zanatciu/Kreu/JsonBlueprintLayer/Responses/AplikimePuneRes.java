@@ -21,10 +21,6 @@ public class AplikimePuneRes extends BaseRes implements Serializable {
     private ArrayList<AplikimePuneItem> aplikimePuneList;
 
 
-
-
-
-
     public ArrayList<AplikimePuneItem> getAplikimePuneList() {
         return aplikimePuneList;
     }
@@ -34,16 +30,10 @@ public class AplikimePuneRes extends BaseRes implements Serializable {
     }
 
 
-
-
-
-
-    public static class AplikimePuneResDeSerializer implements JsonDeserializer<AplikimePuneRes>
-    {
+    public static class AplikimePuneResDeSerializer implements JsonDeserializer<AplikimePuneRes> {
 
         public AplikimePuneRes deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
                 throws JsonParseException {
-
 
 
             //Mund te kete edhe ndonje atribut tjeter shtese suportues per security

@@ -16,8 +16,6 @@ public class PrenotimeSherbimiItem implements Serializable {
     private String timeUntilExpiration;
 
 
-
-
     public PrenotimeSherbimiItem() {
     }
 
@@ -26,7 +24,6 @@ public class PrenotimeSherbimiItem implements Serializable {
         this.emriAplikantit = emriAplikantit;
         this.timeUntilExpiration = timeUntilExpiration;
     }
-
 
 
     public String getImageString() {
@@ -54,13 +51,6 @@ public class PrenotimeSherbimiItem implements Serializable {
     }
 
 
-
-
-
-
-
-
-
     public static class PrenotimeSherbimiItemDeSerializer implements JsonDeserializer<PrenotimeSherbimiItem> {
 
         public PrenotimeSherbimiItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -70,7 +60,6 @@ public class PrenotimeSherbimiItem implements Serializable {
 
 
             PrenotimeSherbimiItem ret = new PrenotimeSherbimiItem();
-
 
 
             if (jobject.get("imageString").isJsonNull()) {

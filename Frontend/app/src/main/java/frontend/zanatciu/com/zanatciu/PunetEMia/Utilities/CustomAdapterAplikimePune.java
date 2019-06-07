@@ -18,20 +18,19 @@ public class CustomAdapterAplikimePune extends BaseAdapter {
 
     ArrayList<JobMarketListItem> jobMarketList;
 
-    Context         context;
+    Context context;
     CircleImageView profileImagePunedhenesi;
-    TextView        emriPunedhenesit;
-    Button          aprovo;
-    TextView        afatiKohorIAplikimit;
+    TextView emriPunedhenesit;
+    Button aprovo;
+    TextView afatiKohorIAplikimit;
 
 
     public CustomAdapterAplikimePune(Context context, ArrayList<JobMarketListItem> jobMarketList) {
 
-        this.context=context;
-        this.jobMarketList=jobMarketList;
+        this.context = context;
+        this.jobMarketList = jobMarketList;
 
     }
-
 
 
     @Override
@@ -53,12 +52,12 @@ public class CustomAdapterAplikimePune extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        convertView = layoutInflater.inflate(R.layout.aplikime_custom_list_item,null);
+        convertView = layoutInflater.inflate(R.layout.aplikime_custom_list_item, null);
 
         profileImagePunedhenesi = convertView.findViewById(R.id.profile_image);
-        emriPunedhenesit=convertView.findViewById(R.id.emri);
-        aprovo=convertView.findViewById(R.id.Aprovo);
-        afatiKohorIAplikimit=convertView.findViewById(R.id.countDownValidation);
+        emriPunedhenesit = convertView.findViewById(R.id.emri);
+        aprovo = convertView.findViewById(R.id.Aprovo);
+        afatiKohorIAplikimit = convertView.findViewById(R.id.countDownValidation);
 
         jobMarketList.get(position);
 

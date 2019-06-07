@@ -39,7 +39,7 @@ public class PrenotoTask extends AsyncTask<String, String, PrenotoRes> {
 
     protected PrenotoRes doInBackground(String... params) {
 
-        PrenotoRes ret =new PrenotoRes();
+        PrenotoRes ret = new PrenotoRes();
 
         try {
 
@@ -59,12 +59,9 @@ public class PrenotoTask extends AsyncTask<String, String, PrenotoRes> {
 
             try {
 
-                response= client.execute(request);
+                response = client.execute(request);
 
-            }
-
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 /*ret.setResult(false);
                 ret.setTokenValid(true);
                 String strMsg = e.getMessage();
@@ -83,12 +80,11 @@ public class PrenotoTask extends AsyncTask<String, String, PrenotoRes> {
             Log.i("Response is", "" + _response);
 
 
-            Gson gson= new GsonBuilder().registerTypeAdapter(PrenotoRes.class, new PrenotoRes.AplikoResDeSerializer()).create() ;
+            Gson gson = new GsonBuilder().registerTypeAdapter(PrenotoRes.class, new PrenotoRes.AplikoResDeSerializer()).create();
             ret = gson.fromJson(_response, PrenotoRes.class);
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 

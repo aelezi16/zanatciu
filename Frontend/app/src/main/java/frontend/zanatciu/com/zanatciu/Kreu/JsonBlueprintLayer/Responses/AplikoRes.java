@@ -14,11 +14,6 @@ import frontend.zanatciu.com.zanatciu.Utilities.BaseResponses.BaseRes;
 public class AplikoRes extends BaseRes implements Serializable {
 
 
-
-
-
-
-
     public static class AplikoResDeSerializer implements JsonDeserializer<AplikoRes> {
 
         public AplikoRes deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -28,7 +23,6 @@ public class AplikoRes extends BaseRes implements Serializable {
 
 
             AplikoRes ret = new AplikoRes();
-
 
 
             if (jobject.get("message").isJsonNull()) {
@@ -50,7 +44,6 @@ public class AplikoRes extends BaseRes implements Serializable {
             return ret;
         }
     }
-
 
 
 }

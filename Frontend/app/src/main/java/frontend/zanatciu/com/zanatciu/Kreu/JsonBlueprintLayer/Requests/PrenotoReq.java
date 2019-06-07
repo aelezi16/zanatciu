@@ -25,7 +25,6 @@ public class PrenotoReq extends BaseReq {
     }
 
 
-
     public static class PrenotoReqSerializer implements JsonSerializer<PrenotoReq> {
 
         public JsonElement serialize(final PrenotoReq obj, final Type type, final JsonSerializationContext context) {
@@ -33,15 +32,12 @@ public class PrenotoReq extends BaseReq {
             JsonObject result = new JsonObject();
 
 
-            if (obj.getPerdoruesi() == null )
-            {
+            if (obj.getPerdoruesi() == null) {
                 result.add("perdoruesi", new JsonPrimitive(""));
-            }
-            else {
+            } else {
 
                 result.add("perdoruesi", new JsonPrimitive(obj.getPerdoruesi()));
             }
-
 
 
             return result;

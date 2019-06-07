@@ -66,7 +66,7 @@ public class ApplicationController {
     @GetMapping("/eval/{applicationId}")
     public ResponseEntity evaluate(@PathVariable String applicationId, @RequestParam String verdict) {
         applicationService.evaluate(applicationId, verdict);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
 

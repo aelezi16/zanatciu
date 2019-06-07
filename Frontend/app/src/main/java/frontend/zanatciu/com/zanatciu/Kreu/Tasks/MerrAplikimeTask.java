@@ -45,7 +45,7 @@ public class MerrAplikimeTask extends AsyncTask<String, String, AplikimePuneRes>
 
     protected AplikimePuneRes doInBackground(String... params) {
 
-        AplikimePuneRes ret =new AplikimePuneRes();
+        AplikimePuneRes ret = new AplikimePuneRes();
 
         try {
 
@@ -65,12 +65,9 @@ public class MerrAplikimeTask extends AsyncTask<String, String, AplikimePuneRes>
 
             try {
 
-                response= client.execute(request);
+                response = client.execute(request);
 
-            }
-
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 /*ret.setResult(false);
                 ret.setTokenValid(true);
                 String strMsg = e.getMessage();
@@ -89,12 +86,11 @@ public class MerrAplikimeTask extends AsyncTask<String, String, AplikimePuneRes>
             Log.i("Response is", "" + _response);
 
 
-            Gson gson= new GsonBuilder().registerTypeAdapter(AplikimePuneRes.class, new AplikimePuneRes.AplikimePuneResDeSerializer()).create() ;
+            Gson gson = new GsonBuilder().registerTypeAdapter(AplikimePuneRes.class, new AplikimePuneRes.AplikimePuneResDeSerializer()).create();
             ret = gson.fromJson(_response, AplikimePuneRes.class);
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 

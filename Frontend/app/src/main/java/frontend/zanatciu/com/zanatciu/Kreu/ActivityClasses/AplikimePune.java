@@ -20,7 +20,7 @@ import frontend.zanatciu.com.zanatciu.R;
 
 public class AplikimePune extends AppCompatActivity {
 
-    private ListView listView ;
+    private ListView listView;
     private CustomAdapterAplikimePune customAdapterAplikimePune;
     private ArrayList<AplikimePuneItem> arraListAplikimePune;
 
@@ -29,8 +29,7 @@ public class AplikimePune extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aplikime_pune_interface);
 
-        arraListAplikimePune=new ArrayList<>();
-
+        arraListAplikimePune = new ArrayList<>();
 
 
         Bundle bundle = getIntent().getExtras();
@@ -43,13 +42,8 @@ public class AplikimePune extends AppCompatActivity {
         arraListAplikimePune = gson.fromJson(empStr, type);
 
 
-
-        listView=(ListView)findViewById(R.id.list_aplikime_pune);
-        customAdapterAplikimePune=new CustomAdapterAplikimePune(this,arraListAplikimePune);
-
-
-
-
+        listView = (ListView) findViewById(R.id.list_aplikime_pune);
+        customAdapterAplikimePune = new CustomAdapterAplikimePune(this, arraListAplikimePune);
 
 
     }
