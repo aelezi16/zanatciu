@@ -1,6 +1,7 @@
 package com.zanatciu.backend.domain.publication.service.impl;
 
 import com.zanatciu.backend.config.converter.ModelMapper;
+import com.zanatciu.backend.domain.application.service.ApplicationService;
 import com.zanatciu.backend.domain.publication.dto.PublicationDto;
 import com.zanatciu.backend.domain.publication.model.Publication;
 import com.zanatciu.backend.domain.publication.repo.PublicationRepo;
@@ -20,14 +21,17 @@ public class PublicationServiceImpl implements PublicationService {
 
     private PublicationRepo publicationRepo;
     private ModelMapper<Publication, PublicationDto> modelMapper;
+    private ApplicationService applicationService;
 
     @Autowired
     public PublicationServiceImpl(
             PublicationRepo publicationRepo,
-            ModelMapper<Publication, PublicationDto> modelMapper
+            ModelMapper<Publication, PublicationDto> modelMapper,
+            ApplicationService applicationService
     ) {
         this.publicationRepo = publicationRepo;
         this.modelMapper = modelMapper;
+        this.applicationService = applicationService;
     }
 
     @Override
@@ -89,6 +93,10 @@ public class PublicationServiceImpl implements PublicationService {
 
     @Override
     public void delete(String id) {
+
         publicationRepo.deleteById(id);
+        applicationService.getPerPublication(id).forEach(a -> {
+            applicationService.delete(a.getId());
+        });
     }
 }
