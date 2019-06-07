@@ -51,7 +51,7 @@ public class NotificationService {
 
         System.out.println(notification);
         reactiveNotification.setId(null);
-        Mono<ReactiveNotification> saved = reactiveNotificationRepo.save(ReactiveNotification.builder().id(reactiveNotification.getId()).username(reactiveNotification.getUsername()).build());
+        Mono<ReactiveNotification> saved = reactiveNotificationRepo.save(reactiveNotification);
 
 
         saved.subscribe(s->
