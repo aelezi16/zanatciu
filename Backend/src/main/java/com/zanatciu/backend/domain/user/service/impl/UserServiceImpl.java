@@ -3,6 +3,8 @@ package com.zanatciu.backend.domain.user.service.impl;
 import com.zanatciu.backend.config.cache.MyCacheService;
 import com.zanatciu.backend.config.converter.ModelMapper;
 import com.zanatciu.backend.config.mail.service.SimpMailService;
+import com.zanatciu.backend.domain.publication.model.Publication;
+import com.zanatciu.backend.domain.publication.service.PublicationService;
 import com.zanatciu.backend.domain.settings.dto.SettingsDto;
 import com.zanatciu.backend.domain.user.dto.UserDto;
 import com.zanatciu.backend.domain.user.model.User;
@@ -31,6 +33,7 @@ public class UserServiceImpl implements UserService {
     private MyCacheService myCacheService;
     private JwtProvider jwtProvider;
     private SimpMailService simpMailService;
+    private PublicationService publicationService;
 
     @Autowired
     public UserServiceImpl(
@@ -39,7 +42,8 @@ public class UserServiceImpl implements UserService {
             BCryptPasswordEncoder myPasswordEncoder,
             JwtProvider jwtProvider,
             MyCacheService myCacheService,
-            SimpMailService simpMailService
+            SimpMailService simpMailService,
+            PublicationService publicationService
     ) {
         this.userRepo = userRepo;
         this.modelMapper = modelMapper;
@@ -47,6 +51,7 @@ public class UserServiceImpl implements UserService {
         this.jwtProvider = jwtProvider;
         this.myCacheService = myCacheService;
         this.simpMailService = simpMailService;
+        this.publicationService = publicationService;
     }
 
     @Override
@@ -114,6 +119,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(String id) {
         userRepo.deleteById(id);
+
+        publicationService.getAll().forEach(
+                p -> publicationService.delete(p.getId())
+        );
     }
 
     @Override
