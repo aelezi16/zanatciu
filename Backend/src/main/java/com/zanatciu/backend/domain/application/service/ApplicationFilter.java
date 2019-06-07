@@ -17,17 +17,17 @@ public class ApplicationFilter {
     @Autowired
     public ApplicationFilter(
             ApplicationRepo applicationRepo
-    ){
+    ) {
         this.applicationRepo = applicationRepo;
     }
 
-    @Scheduled(fixedDelay = 1000*60*30)
-    private void filterExpiredApplications(){
+    @Scheduled(fixedDelay = 1000 * 60 * 30)
+    private void filterExpiredApplications() {
         List<Application> all = applicationRepo.findAll();
 
         Date now = new Date();
-        all.forEach(a->{
-            if(now.getTime() - a.getTimestamp().getTime() >= 1000*60*60){
+        all.forEach(a -> {
+            if (now.getTime() - a.getTimestamp().getTime() >= 1000 * 60 * 60) {
                 a.setStatus("EXPIRED");
                 applicationRepo.save(a);
             }

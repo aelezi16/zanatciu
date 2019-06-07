@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Settings {
 
+
     private String username;
 
     private String theme;

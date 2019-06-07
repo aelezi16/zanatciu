@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/applications")
 public class ApplicationController {
@@ -18,12 +19,12 @@ public class ApplicationController {
     private ApplicationService applicationService;
 
     @Autowired
-    public ApplicationController(ApplicationService applicationService){
+    public ApplicationController(ApplicationService applicationService) {
         this.applicationService = applicationService;
     }
 
     @GetMapping
-    public ResponseEntity<List<ApplicationDto>> getAll(){
+    public ResponseEntity<List<ApplicationDto>> getAll() {
         List<ApplicationDto> list = applicationService.getAll();
         return !list.isEmpty()
                 ? new ResponseEntity<>(list, HttpStatus.OK)
@@ -31,7 +32,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/pub")
-    public ResponseEntity<List<ApplicationDto>> getPerPublication(@RequestParam String pubId){
+    public ResponseEntity<List<ApplicationDto>> getPerPublication(@RequestParam String pubId) {
         List<ApplicationDto> list = applicationService.getPerPublication(pubId);
         return !list.isEmpty()
                 ? new ResponseEntity<>(list, HttpStatus.OK)
@@ -39,7 +40,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApplicationDto> getById(@PathVariable String id){
+    public ResponseEntity<ApplicationDto> getById(@PathVariable String id) {
         ApplicationDto dto = applicationService.getById(id);
         return dto != null
                 ? new ResponseEntity<>(dto, HttpStatus.OK)
@@ -47,7 +48,7 @@ public class ApplicationController {
     }
 
     @PostMapping
-    public ResponseEntity<ApplicationDto> post(@Valid @RequestBody ApplicationDto applicationDto){
+    public ResponseEntity<ApplicationDto> post(@Valid @RequestBody ApplicationDto applicationDto) {
         ApplicationDto dto = applicationService.save(applicationDto);
         return dto != null
                 ? new ResponseEntity<>(dto, HttpStatus.CREATED)
@@ -55,15 +56,22 @@ public class ApplicationController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ApplicationDto> update(@Valid @RequestBody ApplicationDto applicationDto, @PathVariable String id){
+    public ResponseEntity<ApplicationDto> update(@Valid @RequestBody ApplicationDto applicationDto, @PathVariable String id) {
         ApplicationDto dto = applicationService.save(applicationDto, id);
         return dto != null
                 ? new ResponseEntity<>(dto, HttpStatus.ACCEPTED)
                 : new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
     }
 
+    @GetMapping("/eval/{applicationId}")
+    public ResponseEntity evaluate(@PathVariable String applicationId, @RequestParam String verdict) {
+        applicationService.evaluate(applicationId, verdict);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable String id) {
         applicationService.delete(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }

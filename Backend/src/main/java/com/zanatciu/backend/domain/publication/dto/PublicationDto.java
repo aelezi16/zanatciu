@@ -22,4 +22,7 @@ public class PublicationDto {
 
     private String ratingsUri;
     private String applicationsUri;
+
+    private String image;
+    private Double price;
 }
