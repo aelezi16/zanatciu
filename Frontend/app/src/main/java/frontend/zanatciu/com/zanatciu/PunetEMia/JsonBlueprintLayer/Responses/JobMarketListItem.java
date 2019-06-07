@@ -18,15 +18,14 @@ public class JobMarketListItem implements Serializable {
     private String price_wage;
 
 
-
     public JobMarketListItem() {
     }
 
-    public JobMarketListItem(String imageString, String title,String pershkrimi,String emriPunedhenesit, String price_wage) {
+    public JobMarketListItem(String imageString, String title, String pershkrimi, String emriPunedhenesit, String price_wage) {
         this.imageString = imageString;
         this.title = title;
-        this.emriPunedhenesit=emriPunedhenesit;
-        this.pershkrimi=pershkrimi;
+        this.emriPunedhenesit = emriPunedhenesit;
+        this.pershkrimi = pershkrimi;
         this.price_wage = price_wage;
     }
 
@@ -72,8 +71,6 @@ public class JobMarketListItem implements Serializable {
     }
 
 
-
-
     public static class JobMarketListItemDeSerializer implements JsonDeserializer<JobMarketListItem> {
 
         public JobMarketListItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -83,7 +80,6 @@ public class JobMarketListItem implements Serializable {
 
 
             JobMarketListItem ret = new JobMarketListItem();
-
 
 
             if (jobject.get("imageString").isJsonNull()) {

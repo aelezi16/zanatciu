@@ -27,9 +27,8 @@ public class ServiceListTask extends AsyncTask<Integer, String, ServiceMarketLis
 
     public ServiceListResponse<ServiceMarketListRes> delegate;
 
-    public ServiceListTask(ServiceListResponse<ServiceMarketListRes> delegate)
-    {
-        this.delegate=delegate;
+    public ServiceListTask(ServiceListResponse<ServiceMarketListRes> delegate) {
+        this.delegate = delegate;
     }
 
     public ServiceListTask() {
@@ -37,7 +36,7 @@ public class ServiceListTask extends AsyncTask<Integer, String, ServiceMarketLis
 
     protected ServiceMarketListRes doInBackground(Integer... params) {
 
-        ServiceMarketListRes ret =new ServiceMarketListRes();
+        ServiceMarketListRes ret = new ServiceMarketListRes();
 
         try {
 
@@ -55,12 +54,9 @@ public class ServiceListTask extends AsyncTask<Integer, String, ServiceMarketLis
 
             try {
 
-                response= client.execute(request);
+                response = client.execute(request);
 
-            }
-
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 /*ret.setResult(false);
                 ret.setTokenValid(true);
                 String strMsg = e.getMessage();
@@ -79,12 +75,11 @@ public class ServiceListTask extends AsyncTask<Integer, String, ServiceMarketLis
             Log.i("Response is", "" + _response);
 
 
-            com.google.gson.Gson gson= new GsonBuilder().registerTypeAdapter(ServiceMarketListRes.class, new ServiceMarketListRes.ServiceMarketListResDeSerializer()).create() ;
+            com.google.gson.Gson gson = new GsonBuilder().registerTypeAdapter(ServiceMarketListRes.class, new ServiceMarketListRes.ServiceMarketListResDeSerializer()).create();
             ret = gson.fromJson(_response, ServiceMarketListRes.class);
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 

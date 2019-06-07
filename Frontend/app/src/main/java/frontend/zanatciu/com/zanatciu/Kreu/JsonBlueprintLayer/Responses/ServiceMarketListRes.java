@@ -25,8 +25,7 @@ public class ServiceMarketListRes {
         this.serviceMarketList = serviceMarketListItem;
     }
 
-    public static class ServiceMarketListResDeSerializer implements JsonDeserializer<ServiceMarketListRes>
-    {
+    public static class ServiceMarketListResDeSerializer implements JsonDeserializer<ServiceMarketListRes> {
 
         public ServiceMarketListRes deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
                 throws JsonParseException {

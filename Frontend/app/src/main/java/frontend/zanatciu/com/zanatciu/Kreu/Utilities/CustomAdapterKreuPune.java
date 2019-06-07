@@ -26,8 +26,8 @@ public class CustomAdapterKreuPune implements ListAdapter {
 
     public CustomAdapterKreuPune(Context context, ArrayList<JobMarketListItem> jobMarketList) {
 
-        this.context=context;
-        this.jobMarketList=jobMarketList;
+        this.context = context;
+        this.jobMarketList = jobMarketList;
 
     }
 
@@ -90,14 +90,14 @@ public class CustomAdapterKreuPune implements ListAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        convertView = layoutInflater.inflate(R.layout.kreu_custom_list_item,null);
+        convertView = layoutInflater.inflate(R.layout.kreu_custom_list_item, null);
 
         CircleImageView circleImageView = convertView.findViewById(R.id.profile_image);
-        TextView title=convertView.findViewById(R.id.title);
-        TextView price_wage=convertView.findViewById(R.id.price_wage);
+        TextView title = convertView.findViewById(R.id.title);
+        TextView price_wage = convertView.findViewById(R.id.price_wage);
 
 
-        JobMarketListItem jobMarketListItem=jobMarketList.get(position);
+        JobMarketListItem jobMarketListItem = jobMarketList.get(position);
 
 
         circleImageView.setImageResource(R.drawable.logo2);

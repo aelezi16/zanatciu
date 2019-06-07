@@ -14,8 +14,6 @@ import frontend.zanatciu.com.zanatciu.Utilities.BaseResponses.BaseRes;
 public class PrenotoRes extends BaseRes implements Serializable {
 
 
-
-
     public static class AplikoResDeSerializer implements JsonDeserializer<PrenotoRes> {
 
         public PrenotoRes deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -25,7 +23,6 @@ public class PrenotoRes extends BaseRes implements Serializable {
 
 
             PrenotoRes ret = new PrenotoRes();
-
 
 
             if (jobject.get("message").isJsonNull()) {

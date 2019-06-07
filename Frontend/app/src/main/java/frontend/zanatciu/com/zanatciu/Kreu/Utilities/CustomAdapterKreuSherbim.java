@@ -26,11 +26,10 @@ public class CustomAdapterKreuSherbim extends BaseAdapter {
 
     public CustomAdapterKreuSherbim(Context context, ArrayList<ServiceMarketListItem> serviceMarketListItems) {
 
-        this.context=context;
-        this.serviceMarketListItems=serviceMarketListItems;
+        this.context = context;
+        this.serviceMarketListItems = serviceMarketListItems;
 
     }
-
 
 
     @Override
@@ -52,14 +51,13 @@ public class CustomAdapterKreuSherbim extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        convertView = layoutInflater.inflate(R.layout.kreu_custom_list_item,null);
+        convertView = layoutInflater.inflate(R.layout.kreu_custom_list_item, null);
 
         circleImageView = convertView.findViewById(R.id.profile_image);
-        title=convertView.findViewById(R.id.title);
-        price_wage=convertView.findViewById(R.id.price_wage);
+        title = convertView.findViewById(R.id.title);
+        price_wage = convertView.findViewById(R.id.price_wage);
 
         serviceMarketListItems.get(position);
-
 
 
         return convertView;

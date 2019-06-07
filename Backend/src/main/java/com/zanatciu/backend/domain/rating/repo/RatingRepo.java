@@ -10,7 +10,10 @@ import java.util.Optional;
 @Repository
 public interface RatingRepo extends MongoRepository<Rating, String> {
     Optional<Rating> findById(String id);
+
     List<Rating> findAllByPublicationId(String publicationId);
+
     List<Rating> findAllByUsername(String username);
+
     void deleteById(String id);
 }

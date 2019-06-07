@@ -12,8 +12,6 @@ import java.lang.reflect.Type;
 import frontend.zanatciu.com.zanatciu.Utilities.BaseRequests.BaseReq;
 
 
-
-
 public class LoginReq extends BaseReq implements Serializable {
 
     private String userName;
@@ -37,31 +35,24 @@ public class LoginReq extends BaseReq implements Serializable {
     }
 
 
-
-
     public static class LoginSerializer implements JsonSerializer<LoginReq> {
         public JsonElement serialize(final LoginReq obj, final Type type, final JsonSerializationContext context) {
             JsonObject result = new JsonObject();
 
 
-            if (obj.getUserName() == null )
-            {
+            if (obj.getUserName() == null) {
                 result.add("userName", new JsonPrimitive(""));
-            }
-            else {
+            } else {
 
                 result.add("userName", new JsonPrimitive(obj.getUserName()));
             }
 
 
-            if (obj.getPassWord() == null ) {
+            if (obj.getPassWord() == null) {
                 result.add("passWord", new JsonPrimitive(""));
-            }
-            else
-            {
+            } else {
                 result.add("passWord", new JsonPrimitive(obj.getPassWord()));
             }
-
 
 
             return result;

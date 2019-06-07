@@ -1,19 +1,19 @@
 {
-    "logs": [
+  "logs": [
+    {
+      "outputFile": "/home/gerild/Desktop/zanatciu/Frontend/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+      "map": [
         {
-            "outputFile": "/home/gerild/Desktop/zanatciu/Frontend/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
-            "map": [
-                {
-                    "source": "/home/gerild/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/03d5ca635802f3e77e9764ab07686975/res/values-h720dp-v13/values-h720dp-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "66",
-                        "endOffsets": "117"
-                    }
-                }
-            ]
+          "source": "/home/gerild/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/03d5ca635802f3e77e9764ab07686975/res/values-h720dp-v13/values-h720dp-v13.xml",
+          "from": {
+            "startLines": "2",
+            "startColumns": "4",
+            "startOffsets": "55",
+            "endColumns": "66",
+            "endOffsets": "117"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

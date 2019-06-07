@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/card")
 public class CardController {
@@ -17,14 +18,13 @@ public class CardController {
     private CardService cardService;
 
     @Autowired
-    public CardController(CardService cardService){
+    public CardController(CardService cardService) {
         this.cardService = cardService;
     }
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<CardDto> getById(@PathVariable String id)
-    {
+    public ResponseEntity<CardDto> getById(@PathVariable String id) {
         CardDto dto = cardService.getById(id);
         return dto != null
                 ? new ResponseEntity<>(dto, HttpStatus.OK)
@@ -32,8 +32,7 @@ public class CardController {
     }
 
     @GetMapping("/user/{username}")
-    public ResponseEntity<List<CardDto>> getByUsername(@PathVariable String username)
-    {
+    public ResponseEntity<List<CardDto>> getByUsername(@PathVariable String username) {
         List<CardDto> list = cardService.getByUsername(username);
 
         return !list.isEmpty()
@@ -42,7 +41,7 @@ public class CardController {
     }
 
     @PostMapping
-    public ResponseEntity<CardDto> post(@Valid @RequestBody CardDto cardDto){
+    public ResponseEntity<CardDto> post(@Valid @RequestBody CardDto cardDto) {
         CardDto dto = cardService.save(cardDto);
 
         return dto != null
@@ -51,7 +50,7 @@ public class CardController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CardDto> put(@Valid @RequestBody CardDto cardDto, @PathVariable String id){
+    public ResponseEntity<CardDto> put(@Valid @RequestBody CardDto cardDto, @PathVariable String id) {
         CardDto dto = cardService.save(cardDto, id);
 
         return dto != null
@@ -60,7 +59,7 @@ public class CardController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable String id) {
         cardService.delete(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }

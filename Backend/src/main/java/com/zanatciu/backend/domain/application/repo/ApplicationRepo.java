@@ -10,5 +10,6 @@ import java.util.Optional;
 @Repository
 public interface ApplicationRepo extends MongoRepository<Application, String> {
     List<Application> findAllByPublicationId(String publicationId);
+
     Optional<Application> findById(String id);
-}
+    }

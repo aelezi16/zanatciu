@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundtexture">
@@ -20,5 +21,8 @@
     </ListView>
 
 
+=======
+                android:layout_width="match_parent" android:layout_height="match_parent">
+>>>>>>> fc7e4a4e49809f7cb771d2a65aef94e9f60dc428
 
 </RelativeLayout>

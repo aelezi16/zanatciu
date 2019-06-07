@@ -24,7 +24,7 @@ import frontend.zanatciu.com.zanatciu.Kreu.Utilities.UrlUtil;
 
 public class AplikoTask extends AsyncTask<String, String, AplikoRes> {
 
-    public AplikoResponse <AplikoRes> delegate;
+    public AplikoResponse<AplikoRes> delegate;
 
     public AplikoTask(AplikoResponse<AplikoRes> delegate) {
         this.delegate = delegate;
@@ -35,7 +35,7 @@ public class AplikoTask extends AsyncTask<String, String, AplikoRes> {
 
     protected AplikoRes doInBackground(String... params) {
 
-        AplikoRes ret =new AplikoRes();
+        AplikoRes ret = new AplikoRes();
 
         try {
 
@@ -55,12 +55,9 @@ public class AplikoTask extends AsyncTask<String, String, AplikoRes> {
 
             try {
 
-                response= client.execute(request);
+                response = client.execute(request);
 
-            }
-
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 /*ret.setResult(false);
                 ret.setTokenValid(true);
                 String strMsg = e.getMessage();
@@ -79,12 +76,11 @@ public class AplikoTask extends AsyncTask<String, String, AplikoRes> {
             Log.i("Response is", "" + _response);
 
 
-            Gson gson= new GsonBuilder().registerTypeAdapter(AplikoRes.class, new AplikoRes.AplikoResDeSerializer()).create() ;
+            Gson gson = new GsonBuilder().registerTypeAdapter(AplikoRes.class, new AplikoRes.AplikoResDeSerializer()).create();
             ret = gson.fromJson(_response, AplikoRes.class);
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
         }
 

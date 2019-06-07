@@ -6,5 +6,4 @@ import frontend.zanatciu.com.zanatciu.Utilities.BaseRequests.BaseReq;
 public class JobMarketListReq extends BaseReq {
 
 
-
 }

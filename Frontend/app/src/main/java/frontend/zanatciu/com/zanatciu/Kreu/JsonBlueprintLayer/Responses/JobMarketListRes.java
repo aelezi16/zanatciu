@@ -20,7 +20,7 @@ public class JobMarketListRes extends BaseRes implements Serializable {
 
     private ArrayList<JobMarketListItem> jobMarketList;
 
-    public  ArrayList<JobMarketListItem> getJobMarketList() {
+    public ArrayList<JobMarketListItem> getJobMarketList() {
         return jobMarketList;
     }
 
@@ -29,12 +29,10 @@ public class JobMarketListRes extends BaseRes implements Serializable {
     }
 
 
-    public static class JobMarketListResDeSerializer implements JsonDeserializer<JobMarketListRes>
-    {
+    public static class JobMarketListResDeSerializer implements JsonDeserializer<JobMarketListRes> {
 
         public JobMarketListRes deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
                 throws JsonParseException {
-
 
 
             //Mund te kete edhe ndonje atribut tjeter shtese suportues per security ose per requests monitoring

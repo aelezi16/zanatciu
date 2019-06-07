@@ -25,7 +25,6 @@ public class AplikoReq extends BaseReq {
     }
 
 
-
     public static class AplikoReqSerializer implements JsonSerializer<AplikoReq> {
 
         public JsonElement serialize(final AplikoReq obj, final Type type, final JsonSerializationContext context) {
@@ -33,16 +32,12 @@ public class AplikoReq extends BaseReq {
             JsonObject result = new JsonObject();
 
 
-            if (obj.getPerdoruesi() == null )
-            {
+            if (obj.getPerdoruesi() == null) {
                 result.add("perdoruesi", new JsonPrimitive(""));
-            }
-            else {
+            } else {
 
                 result.add("perdoruesi", new JsonPrimitive(obj.getPerdoruesi()));
             }
-
-
 
 
             return result;

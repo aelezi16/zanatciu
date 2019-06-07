@@ -25,24 +25,18 @@ public class PrenotimeSherbimiReq {
     }
 
 
-
-
     public static class AplikimePuneReqSerializer implements JsonSerializer<AplikimePuneReq> {
 
         public JsonElement serialize(final AplikimePuneReq obj, final Type type, final JsonSerializationContext context) {
             JsonObject result = new JsonObject();
 
 
-            if (obj.getJobId() == null )
-            {
+            if (obj.getJobId() == null) {
                 result.add("serviceId", new JsonPrimitive(""));
-            }
-            else {
+            } else {
 
                 result.add("serviceId", new JsonPrimitive(obj.getJobId()));
             }
-
-
 
 
             return result;

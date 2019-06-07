@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/package")
 public class PackageController {
@@ -20,12 +21,12 @@ public class PackageController {
     @Autowired
     public PackageController(
             PackageService packageService
-    ){
+    ) {
         this.packageService = packageService;
     }
 
     @GetMapping
-    public ResponseEntity<List<PackageDto>> getAll(){
+    public ResponseEntity<List<PackageDto>> getAll() {
         List<PackageDto> list = packageService.getAll();
         return list != null
                 ? new ResponseEntity<List<PackageDto>>(list, HttpStatus.OK)
@@ -33,7 +34,7 @@ public class PackageController {
     }
 
     @PostMapping
-    public ResponseEntity<PackageDto> post(@Valid @RequestBody PackageDto packageDto){
+    public ResponseEntity<PackageDto> post(@Valid @RequestBody PackageDto packageDto) {
         PackageDto dto = packageService.save(packageDto);
 
         return dto != null
@@ -42,13 +43,13 @@ public class PackageController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable String id) {
         packageService.delete(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping("/subscribe")
-    public ResponseEntity subscribe(@RequestParam String packageId, @RequestParam String userId){
+    public ResponseEntity subscribe(@RequestParam String packageId, @RequestParam String userId) {
         return packageService.subscribe(packageId, userId);
     }
 }
