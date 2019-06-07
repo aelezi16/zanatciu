@@ -27,7 +27,7 @@ public class PackageServiceImpl implements PackageService {
             ModelMapper<Package, PackageDto> modelMapper,
             PackageRepo packageRepo,
             UserService userService
-            ){
+    ) {
         this.modelMapper = modelMapper;
         this.packageRepo = packageRepo;
         this.userService = userService;
@@ -40,7 +40,7 @@ public class PackageServiceImpl implements PackageService {
 
     @Override
     public PackageDto save(PackageDto packageDto) {
-        Optional<PackageDto> dto =  Optional.of(
+        Optional<PackageDto> dto = Optional.of(
                 packageRepo.save(
                         Optional.of(packageDto).map(modelMapper::dtoToModel).get()
                 )).map(modelMapper::modelToDto);
@@ -49,7 +49,7 @@ public class PackageServiceImpl implements PackageService {
 
     @Override
     public void delete(String id) {
-            packageRepo.delete(packageRepo.findById(id).get());
+        packageRepo.delete(packageRepo.findById(id).get());
     }
 
     @Override

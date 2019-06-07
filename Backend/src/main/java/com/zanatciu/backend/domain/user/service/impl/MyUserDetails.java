@@ -18,7 +18,7 @@ public class MyUserDetails implements UserDetailsService {
     @Autowired
     public MyUserDetails(
             UserRepo userRepo
-    ){
+    ) {
         this.userRepo = userRepo;
     }
 
@@ -26,7 +26,7 @@ public class MyUserDetails implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final Optional<User> user = userRepo.findByUsername(username);
 
-        if(!user.isPresent()){
+        if (!user.isPresent()) {
             throw new UsernameNotFoundException("User does not exist");
         }
 
@@ -43,7 +43,7 @@ public class MyUserDetails implements UserDetailsService {
                 .build();
     }
 
-    public boolean findByUsername(String username){
-       return userRepo.findByUsername(username).isPresent();
+    public boolean findByUsername(String username) {
+        return userRepo.findByUsername(username).isPresent();
     }
 }

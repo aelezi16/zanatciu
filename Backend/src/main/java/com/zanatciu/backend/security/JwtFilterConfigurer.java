@@ -11,13 +11,13 @@ public class JwtFilterConfigurer extends SecurityConfigurerAdapter<DefaultSecuri
     private JwtProvider jwtProvider;
     private MyCacheService myCacheService;
 
-    public JwtFilterConfigurer(JwtProvider jwtProvider, MyCacheService myCacheService){
+    public JwtFilterConfigurer(JwtProvider jwtProvider, MyCacheService myCacheService) {
         this.myCacheService = myCacheService;
         this.jwtProvider = jwtProvider;
     }
 
     @Override
-    public void configure(HttpSecurity http) throws  Exception{
+    public void configure(HttpSecurity http) throws Exception {
         JwtFilter customFilter = new JwtFilter(jwtProvider, myCacheService);
         http.addFilterBefore(customFilter, UsernamePasswordAuthenticationFilter.class);
     }

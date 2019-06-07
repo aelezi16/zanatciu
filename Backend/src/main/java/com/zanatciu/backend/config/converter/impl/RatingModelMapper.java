@@ -27,7 +27,7 @@ public class RatingModelMapper implements ModelMapper<Rating, RatingDto> {
 
         Rating model = new Rating();
 
-        if(ratingDto.getId() != null)
+        if (ratingDto.getId() != null)
             model.setId(ratingDto.getId());
 
         model.setId(ratingDto.getId());
@@ -42,17 +42,17 @@ public class RatingModelMapper implements ModelMapper<Rating, RatingDto> {
     @Override
     public Rating updateModel(Rating model1, Rating model2) {
 
-        if(model1.getId() != null)
+        if (model1.getId() != null)
             model2.setId(model1.getId());
-        if(model1.getDate() != null)
+        if (model1.getDate() != null)
             model2.setDate(model1.getDate());
-        if(model1.getPublicationId() != null)
+        if (model1.getPublicationId() != null)
             model2.setPublicationId(model1.getPublicationId());
-        if(model1.getRate() != null)
+        if (model1.getRate() != null)
             model2.setRate(model1.getRate());
-        if(model1.getUsername() != null)
+        if (model1.getUsername() != null)
             model2.setUsername(model1.getUsername());
-        if(model1.getMessage() != null)
+        if (model1.getMessage() != null)
             model2.setMessage(model1.getMessage());
 
         return model2;

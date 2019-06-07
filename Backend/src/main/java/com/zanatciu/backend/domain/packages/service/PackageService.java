@@ -9,6 +9,7 @@ public interface PackageService {
     List<PackageDto> getAll();
 
     PackageDto save(PackageDto packageDto);
+
     void delete(String id);
 
     ResponseEntity subscribe(String packageId, String userId);

@@ -6,7 +6,7 @@ import com.zanatciu.backend.domain.card.model.Card;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CardModelMapper  implements ModelMapper<Card, CardDto> {
+public class CardModelMapper implements ModelMapper<Card, CardDto> {
 
     @Override
     public CardDto modelToDto(Card card) {
@@ -32,11 +32,11 @@ public class CardModelMapper  implements ModelMapper<Card, CardDto> {
 
     @Override
     public Card updateModel(Card model1, Card model2) {
-        if(model1.getId() != null)
+        if (model1.getId() != null)
             model2.setId(model1.getId());
-        if(model1.getUsername() != null)
+        if (model1.getUsername() != null)
             model2.setUsername(model1.getUsername());
-        if(model1.getCreditCard() != null)
+        if (model1.getCreditCard() != null)
             model2.setCreditCard(model1.getCreditCard());
 
         return model2;

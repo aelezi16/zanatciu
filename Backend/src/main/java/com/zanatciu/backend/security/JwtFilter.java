@@ -19,10 +19,10 @@ public class JwtFilter extends OncePerRequestFilter {
     public JwtFilter(
             JwtProvider jwtProvider,
             MyCacheService myCacheService
-    ){
+    ) {
 
         this.jwtProvider = jwtProvider;
-        this.myCacheService  = myCacheService;
+        this.myCacheService = myCacheService;
     }
 
 
@@ -35,15 +35,15 @@ public class JwtFilter extends OncePerRequestFilter {
                 String user = jwtProvider.getUsername(token);
                 Authentication auth = null;
 
-                if(myCacheService.isUserValid(user)) {
+                if (myCacheService.isUserValid(user)) {
                     auth = jwtProvider.getAuthentication(token);
-                }else{
+                } else {
                     SecurityContextHolder.clearContext();
                 }
 
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             SecurityContextHolder.clearContext();
             return;
         }

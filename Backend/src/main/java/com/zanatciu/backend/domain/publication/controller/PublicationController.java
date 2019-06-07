@@ -18,12 +18,12 @@ public class PublicationController {
     private PublicationService publicationService;
 
     @Autowired
-    public PublicationController(PublicationService publicationService){
+    public PublicationController(PublicationService publicationService) {
         this.publicationService = publicationService;
     }
 
     @GetMapping
-    public ResponseEntity<List<PublicationDto>> getAll(){
+    public ResponseEntity<List<PublicationDto>> getAll() {
         List<PublicationDto> list = publicationService.getAll();
 
         return !list.isEmpty()
@@ -32,7 +32,7 @@ public class PublicationController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PublicationDto> getById(@PathVariable String id){
+    public ResponseEntity<PublicationDto> getById(@PathVariable String id) {
         PublicationDto dto = publicationService.getById(id);
 
         return dto != null
@@ -41,7 +41,7 @@ public class PublicationController {
     }
 
     @GetMapping("/username")
-    public ResponseEntity<List<PublicationDto>> getPubsByUsername(@RequestParam String username, @RequestParam String type){
+    public ResponseEntity<List<PublicationDto>> getPubsByUsername(@RequestParam String username, @RequestParam String type) {
         List<PublicationDto> list = publicationService.getByUsername(username, type);
 
         return !list.isEmpty()
@@ -50,7 +50,7 @@ public class PublicationController {
     }
 
     @GetMapping("/type")
-    public ResponseEntity<List<PublicationDto>> getByType(@RequestParam String type, @RequestParam Integer page, @RequestParam Integer size){
+    public ResponseEntity<List<PublicationDto>> getByType(@RequestParam String type, @RequestParam Integer page, @RequestParam Integer size) {
         List<PublicationDto> list = publicationService.getByType(type, page, size);
 
         return !list.isEmpty()
@@ -59,7 +59,7 @@ public class PublicationController {
     }
 
     @PostMapping
-    public ResponseEntity<PublicationDto> post(@Valid @RequestBody PublicationDto publicationDto){
+    public ResponseEntity<PublicationDto> post(@Valid @RequestBody PublicationDto publicationDto) {
 
         PublicationDto dto = publicationService.save(publicationDto);
 
@@ -70,7 +70,7 @@ public class PublicationController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PublicationDto> update(@Valid @RequestBody PublicationDto publicationDto, @PathVariable String id){
+    public ResponseEntity<PublicationDto> update(@Valid @RequestBody PublicationDto publicationDto, @PathVariable String id) {
         PublicationDto dto = publicationService.save(publicationDto, id);
 
         return dto != null
@@ -80,7 +80,7 @@ public class PublicationController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable String id) {
 
         publicationService.delete(id);
         return new ResponseEntity(HttpStatus.ACCEPTED);
