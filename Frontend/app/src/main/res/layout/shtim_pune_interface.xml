@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundtexture">
+
+   <ImageView
+       android:id="@+id/shtimPuneLogo"
+       android:layout_centerHorizontal="true"
+       android:layout_width="100dp"
+       android:layout_marginTop="20dp"
+       android:layout_height="100dp"
+       android:src="@drawable/logo_shape"/>
+
+
+   <TextView
+       android:id="@+id/titulliShtoPuneLabel"
+       android:layout_width="100dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="20dp"
+       android:layout_marginLeft="40dp"
+       android:text="Titulli:"
+       android:layout_gravity="start"
+       android:gravity="center_vertical"
+       android:textStyle="bold"
+       android:textColor="@color/black"
+       android:layout_below="@+id/shtimPuneLogo"/>
+
+   <EditText
+       android:id="@+id/titulliShtoPuneFushe"
+       android:layout_width="200dp"
+       android:layout_height="40dp"
+
+       android:layout_marginLeft="40dp"
+       android:layout_alignTop="@+id/titulliShtoPuneLabel"
+       android:layout_toRightOf="@id/titulliShtoPuneLabel"
+       android:background="@drawable/whiteovalbackground"/>
+
+   <TextView
+       android:id="@+id/pershkrimShtoPuneLabel"
+       android:layout_width="100dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="20dp"
+       android:layout_marginLeft="40dp"
+       android:text="Pershkrimi:"
+       android:layout_gravity="start"
+       android:gravity="center_vertical"
+       android:textStyle="bold"
+       android:textColor="@color/black"
+       android:layout_below="@+id/titulliShtoPuneLabel"/>
+
+   <EditText
+       android:id="@+id/pershkrimShtoPuneFushe"
+       android:layout_width="200dp"
+       android:layout_height="240dp"
+       android:layout_marginTop="20dp"
+       android:layout_alignLeft="@+id/titulliShtoPuneFushe"
+       android:layout_below="@+id/titulliShtoPuneFushe"
+       android:background="@drawable/whiteovalbackground"/>
+
+   <TextView
+       android:id="@+id/cmimiShtoPuneLabel"
+       android:layout_width="100dp"
+       android:layout_height="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="Cmimi:"
+       android:layout_gravity="start"
+       android:gravity="center_vertical"
+       android:textStyle="bold"
+       android:textColor="@color/black"
+       android:layout_alignTop="@id/cmimiShtoPuneFushe"
+       />
+
+   <EditText
+       android:id="@+id/cmimiShtoPuneFushe"
+       android:layout_width="200dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="20dp"
+       android:layout_alignLeft="@+id/titulliShtoPuneFushe"
+       android:layout_below="@+id/pershkrimShtoPuneFushe"
+       android:background="@drawable/whiteovalbackground"/>
+
+
+   <LinearLayout
+       android:id="@+id/shtoPuneButtons"
+       android:layout_width="wrap_content"
+       android:layout_marginTop="20dp"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/cmimiShtoPuneFushe"
+       android:orientation="horizontal"
+       android:layout_centerHorizontal="true">
+
+      <Button
+          android:id="@+id/shtoPune"
+          android:layout_width="100dp"
+          android:layout_height="40dp"
+          android:background="@drawable/buttonsbackground"
+          android:text="Shto"
+          android:textColor="@color/white"
+          />
+
+      <Button
+          android:id="@+id/anulloShtoPune"
+          android:layout_width="100dp"
+          android:layout_marginLeft="20dp"
+          android:layout_height="40dp"
+          android:background="@drawable/buttonsbackground"
+          android:text="Anullo"
+          android:textColor="@color/white"
+          />
+   </LinearLayout>
+
+</RelativeLayout>

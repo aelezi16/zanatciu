@@ -1,4 +1,6 @@
 package frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses;
 
-public class AplikimePrenotimeSherbim {
+import android.support.v7.app.AppCompatActivity;
+
+public class AplikimePrenotimeSherbim extends AppCompatActivity {
 }

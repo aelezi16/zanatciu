@@ -2,6 +2,7 @@ package frontend.zanatciu.com.zanatciu.Funksionalitete;
 
 public class UserProfile {
 
+    private String Username;
     private String Emri;
     private String Mbiemri;
     private String Profesioni;
@@ -11,6 +12,13 @@ public class UserProfile {
     private String SecretKey;
     private int IDStatus;
 
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
 
     public String getEmri() {
         return Emri;

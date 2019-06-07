@@ -68,7 +68,7 @@
 
         android:id="@+id/relativeLayoutInfoPuna"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="320dp"
         android:layout_below="@id/relativeLayoutInfoPunedhenes"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
@@ -76,7 +76,7 @@
         android:background="@drawable/whiteovalbackground"
         >
 
-    <TextView
+       <TextView
         android:id="@+id/titleInfo"
         android:layout_width="match_parent"
         android:layout_height="40dp"
@@ -92,7 +92,7 @@
         <TextView
             android:id="@+id/textArea"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_below="@id/titleInfo"
             android:text="PERSHKRIMI I PUNES"
             android:background="@drawable/whiteovalbackground"

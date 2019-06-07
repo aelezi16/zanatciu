@@ -53,11 +53,11 @@ public class SherbimItem extends AppCompatActivity {
         serviceMarketListItem = gson.fromJson(empStr, type);
 
 
-        emriSherbimOfruesi.setText(serviceMarketListItem.getEmriSherbimOfruesi());
+        emriSherbimOfruesi.setText(serviceMarketListItem.getUsername());
 
-        pershkrimiTextArea.setText(serviceMarketListItem.getTitle()+"\n"+serviceMarketListItem.getPershkrimi());
+        pershkrimiTextArea.setText(serviceMarketListItem.getTitle()+"\n"+serviceMarketListItem.getDescription());
 
-        cmimi.setText(serviceMarketListItem.getPrice_wage());
+        cmimi.setText(serviceMarketListItem.getPrice().toString());
 
 
 

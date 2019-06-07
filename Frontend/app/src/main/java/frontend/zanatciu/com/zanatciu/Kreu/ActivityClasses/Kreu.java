@@ -2,11 +2,21 @@ package frontend.zanatciu.com.zanatciu.Kreu.ActivityClasses;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,10 +38,14 @@ import frontend.zanatciu.com.zanatciu.Kreu.Tasks.JobListTask;
 import frontend.zanatciu.com.zanatciu.Kreu.Tasks.ServiceListTask;
 import frontend.zanatciu.com.zanatciu.Kreu.Utilities.CustomAdapterKreuPune;
 import frontend.zanatciu.com.zanatciu.Kreu.Utilities.CustomAdapterKreuSherbim;
+import frontend.zanatciu.com.zanatciu.Kreu.Utilities.PageNumberHolder;
 import frontend.zanatciu.com.zanatciu.R;
 import info.hoang8f.android.segmented.SegmentedGroup;
 
-public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, JobListResponse<JobMarketListRes> , ServiceListResponse <ServiceMarketListRes> {
+public class Kreu extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener ,
+                                             RadioGroup.OnCheckedChangeListener,
+                                             JobListResponse<JobMarketListRes>,
+                                             ServiceListResponse <ServiceMarketListRes> {
 
     private ListView listViewMarket;
     private CustomAdapterKreuPune customAdapterKreuPune;
@@ -47,27 +61,52 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
     private JobListTask jobListTaskAsync= new JobListTask();
     private ServiceListTask serviceListTaskAsync= new ServiceListTask();
 
+
+    private Button next,previous;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kreu_pune_sherbim_interface);
+        setContentView(R.layout.navigation_menu);
+
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+
+
 
         listViewMarket=(ListView)findViewById(R.id.list_market);
         segmented2=(SegmentedGroup)findViewById(R.id.segmented2);
         search=(EditText)findViewById(R.id.search);
         listLinearLayout=(LinearLayout) findViewById(R.id.linearLayoutListView);
+        next=(Button)findViewById(R.id.next);
+        previous=(Button)findViewById(R.id.previous);
         listLinearLayout.setVisibility(View.INVISIBLE);
         segmented2.setOnCheckedChangeListener(Kreu.this);
 
         //test arraylist from client
 
         arrayListJobs = new ArrayList<>();
-        arrayListJobs.add(new JobMarketListItem("","sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
-        arrayListJobs.add(new JobMarketListItem("","sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
-        arrayListJobs.add(new JobMarketListItem("","sdsd", "Pastrues Eventi","","","Cmimi: 50 $"));
-
-
         arrayListServices=new ArrayList<>();
 
 
@@ -77,10 +116,73 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
 
 
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                Integer counter=0;
+                if(listViewMarket.getAdapter().equals(customAdapterKreuPune)) {
+
+
+                    if(arrayListJobs.size()==50) {
+                        PageNumberHolder.getInstance().incrementJobPageCounter();
+                        counter = PageNumberHolder.getInstance().getCounterPageJobs();
+                        jobListTaskAsync.execute(counter);
+                    }
+
+
+                }else {
+
+                    if(arrayListJobs.size()==50) {
+                        PageNumberHolder.getInstance().incrementServicePageCounter();
+                        counter = PageNumberHolder.getInstance().getCounterPageJobs();
+                        serviceListTaskAsync.execute(counter);
+                    }
+
+                }
+            }
+        });
+
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer counter=0;
+
+                if(listViewMarket.getAdapter().equals(customAdapterKreuPune)) {
+
+                    if (PageNumberHolder.getInstance().getCounterPageJobs() > 0) {
+
+                        PageNumberHolder.getInstance().decrementJobPageCounter();
+                        counter=PageNumberHolder.getInstance().getCounterPageJobs();
+                        jobListTaskAsync.execute(counter);
+
+                    }
+
+
+
+
+                }else {
+
+                    if (PageNumberHolder.getInstance().getCounterPageJobs() > 0) {
+
+                        PageNumberHolder.getInstance().decrementServicePageCounter();
+                        counter=PageNumberHolder.getInstance().getCounterPageServices();
+                        serviceListTaskAsync.execute(counter);
+                    }
+
+                }
+            }
+        });
+
         listViewMarket.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
 
 
                     if(listViewMarket.getAdapter().equals(customAdapterKreuPune)) {
@@ -102,7 +204,7 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
                         String clickedServiceSerialized=new Gson().toJson(clickedService);
 
-                        Intent goSherbimItem= new Intent(Kreu.this,PuneItem.class);
+                        Intent goSherbimItem= new Intent(Kreu.this,SherbimItem.class);
 
                         goSherbimItem.putExtra("itemClicked",clickedServiceSerialized);
 
@@ -141,6 +243,69 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
 
 
+    //deactivates back button form device
+    @Override
+    public void onBackPressed(){
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.kreu) {
+            // Handle the camera action
+        } else if (id == R.id.sherbimetEMia) {
+
+        } else if (id == R.id.punetEMia) {
+
+        } else if (id == R.id.abonimet) {
+
+        } else if (id == R.id.dilni) {
+
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -153,16 +318,15 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
 
                 toast.show();
 
-                jobListTaskAsync.execute();
+                //jobListTaskAsync.execute();
+
+                PageNumberHolder.getInstance().setCounterPageJobs(0);
+
+                Integer counter=PageNumberHolder.getInstance().getCounterPageJobs();
+                jobListTaskAsync.execute(counter);
 
 
-                //below not here but in the response
-                listLinearLayout.setVisibility(View.VISIBLE);
-                customAdapterKreuPune=new CustomAdapterKreuPune(this,arrayListJobs);
-                listViewMarket.setAdapter(customAdapterKreuPune);
 
-                //listViewMarket.setAdapter(customAdapterKreuPune);
-                //listViewMarket.setVisibility(View.VISIBLE);
 
                 break;
 
@@ -172,19 +336,15 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
                 toast1.show();
 
 
-                serviceListTaskAsync.execute();
+                PageNumberHolder.getInstance().setCounterPageServices(0);
 
-                listLinearLayout.setVisibility(View.VISIBLE);
-                customAdapterKreuSherbim=new CustomAdapterKreuSherbim(this,arrayListServices);
-                listViewMarket.setAdapter(customAdapterKreuSherbim);
+                Integer counterpageservice=PageNumberHolder.getInstance().getCounterPageJobs();
 
-
+                serviceListTaskAsync.execute(counterpageservice);
 
 
 
                 break;
-
-
 
 
             default:
@@ -196,10 +356,14 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
     @Override
     public void onPostTaskJobs(JobMarketListRes jobMarketListRes) {
 
+        arrayListJobs.clear();
         arrayListJobs=jobMarketListRes.getJobMarketList();
         listLinearLayout.setVisibility(View.VISIBLE);
         customAdapterKreuPune=new CustomAdapterKreuPune(this,arrayListJobs);
         listViewMarket.setAdapter(customAdapterKreuPune);
+        jobListTaskAsync= new JobListTask();
+        jobListTaskAsync.delegate=this;
+
 
     }
 
@@ -207,11 +371,13 @@ public class Kreu extends AppCompatActivity implements RadioGroup.OnCheckedChang
     @Override
     public void onPostTaskServices(ServiceMarketListRes serviceMarketListRes) {
 
+        arrayListServices.clear();
         arrayListServices=serviceMarketListRes.getServiceMarketListItem();
         listLinearLayout.setVisibility(View.VISIBLE);
         customAdapterKreuSherbim=new CustomAdapterKreuSherbim(this,arrayListServices);
         listViewMarket.setAdapter(customAdapterKreuSherbim);
-
+        serviceListTaskAsync= new ServiceListTask();
+        serviceListTaskAsync.delegate=this;
 
     }
 

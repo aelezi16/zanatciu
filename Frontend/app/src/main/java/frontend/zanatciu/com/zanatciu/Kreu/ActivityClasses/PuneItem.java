@@ -62,11 +62,11 @@ public class PuneItem extends AppCompatActivity implements MerrAplikimeResponse<
         jobMarketListItem = gson.fromJson(empStr, type);
 
 
-        emriPunedhenesi.setText(jobMarketListItem.getEmriPunedhenesit());
+        emriPunedhenesi.setText(jobMarketListItem.getUsername());
 
-        pershkrimiTextArea.setText(jobMarketListItem.getTitle()+"\n"+jobMarketListItem.getPershkrimi());
+        pershkrimiTextArea.setText(jobMarketListItem.getTitle()+"\n"+jobMarketListItem.getDescription());
 
-        cmimi.setText(jobMarketListItem.getPrice_wage());
+        cmimi.setText(jobMarketListItem.getPrice().toString());
 
 
         aplikoTask.delegate=this;
